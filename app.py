@@ -3,13 +3,16 @@ import requests
 import time
 import base64
 import re
+import random
+import urllib.parse
+from datetime import datetime, timedelta
 from pypdf import PdfReader
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 1. PAGE CONFIGURATION
 st.set_page_config(page_title="Nyaya-Agent | Chambers OS", page_icon="⚖️", layout="wide")
 
-# 2. VERBATIM SENIOR-ADVOCATE DRAFTING BLUEPRINTS (ALL 6 DOCUMENTS PRE-AUDITED & HARDENED)
+# 2. VERBATIM SENIOR-ADVOCATE DRAFTING BLUEPRINTS (ALL 7 DOCUMENTS PRE-AUDITED & HARDENED)
 DRAFT_BLUEPRINTS = {
     "Statutory Demand Notice (Sec 138 NI Act)": """
 DRAFTING BLUEPRINT — STATUTORY DEMAND NOTICE UNDER SECTION 138 READ WITH SECTION 141 NI ACT, 1881:
@@ -443,13 +446,64 @@ FILED BY:
 [NAME OF ADVOCATE]
 Advocate — Counsel for the Party
 Enrollment No.: [INSERT ENROLLMENT NO.]
+""",
+
+    "Vakalatnama (Court Authorization Form)": """
+DRAFTING BLUEPRINT — COURT-READY VAKALATNAMA:
+STRICT RULES FOR THIS TEMPLATE:
+- Output ONLY the formal Court Vakalatnama below.
+- Populate the Court Name, Party Names, and Party Roles from the record, and retain bold `[INSERT ...]` placeholders in ALL CAPS for any missing advocate or case number detail.
+- Keep `... COMPLAINANT / PETITIONER / PLAINTIFF` and `... ACCUSED / RESPONDENT / DEFENDANT` on their own separate line below the party names.
+
+IN THE COURT OF [INSERT COURT NAME] AT [INSERT PLACE]
+CASE / COMPLAINT / PETITION NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Full Name of Complainant / Petitioner / Plaintiff]
+... COMPLAINANT / PETITIONER / PLAINTIFF
+
+VERSUS
+
+[Full Name of Accused / Respondent / Defendant]
+... ACCUSED / RESPONDENT / DEFENDANT
+
+VAKALATNAMA
+
+KNOW ALL TO WHOM THESE PRESENTS SHALL COME that I/We, the undersigned **[INSERT FULL NAME & ADDRESS OF CLIENT SIGNING VAKALATNAMA]**, being the **[Complainant / Petitioner / Plaintiff / Accused / Respondent / Defendant]** in the above-captioned matter, do hereby appoint, retain, and engage:
+
+[NAME OF ADVOCATE]
+Advocate | Enrollment No.: [INSERT ENROLLMENT NO.]
+Chamber / Office: [INSERT CHAMBER / OFFICE ADDRESS]
+Email: [INSERT EMAIL] | Mobile: [INSERT MOBILE NO.]
+
+(hereinafter called the "Advocate(s)") to be my/our true and lawful Advocate(s) to act, appear, and plead for me/us in the above-captioned matter on the following terms:
+
+1. **AUTHORITY TO APPEAR & PLEAD:** To appear, act, and plead for me/us before the aforesaid Hon'ble Court or any other Court or Tribunal to which the said matter may be transferred, committed, or appealed, and to file complaints, petitions, plaints, written statements, replies, affidavits, applications, and documents.
+2. **AUTHORITY TO EXAMINE & CONDUCT TRIAL:** To summon and examine witnesses, cross-examine opposing witnesses, file applications under the Negotiable Instruments Act, 1881, Bharatiya Nagarik Suraksha Sanhita, 2023, Bharatiya Sakshya Adhiniyam, 2023, or Code of Civil Procedure, 1908, and obtain certified copies of judicial records.
+3. **AUTHORITY TO COMPROMISE, COMPOUND & RECEIVE MONIES:** To compound the offence under Section 147 of the Negotiable Instruments Act, 1881, refer the dispute to mediation/Lok Adalat, withdraw or settle the matter under my/our instructions, and receive or deposit any cheques, demand drafts, interim compensation under Section 143A NI Act, or decreetal/settlement amounts on my/our behalf.
+4. **AUTHORITY TO APPOINT ASSOCIATE COUNSEL:** To appoint and instruct any other Advocate or junior counsel to appear and act on my/our behalf whenever necessary.
+5. **RATIFICATION & UNDERTAKING:** I/We hereby agree to ratify and confirm all lawful acts done by my/our said Advocate(s) in pursuance of this engagement as if done by me/us personally, and undertake to appear before the Hon'ble Court on every date of hearing as directed.
+
+IN WITNESS WHEREOF, I/We have signed and executed this Vakalatnama at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026.
+
+IDENTIFIED & ACCEPTED BY:
+
+[NAME OF ADVOCATE]
+Advocate | Enrollment No.: [INSERT ENROLLMENT NO.]
+(Signature of Advocate)
+
+CLIENT(S) / EXECUTANT(S) SIGNATURE BLOCK:
+| S.No. | Name & Designation of Executant / Client | Role in Case | Signature & Stamp |
+| :--- | :--- | :--- | :--- |
+| 1. | [Insert Name of Client No. 1] | [Insert Role] | [SIGN HERE] |
+| 2. | [Insert Name of Client No. 2 / Authorized Signatory] | [Insert Role] | [SIGN HERE] |
 """
 }
 
 # 3. MASTER AUDIT SYSTEM ROLE (FOR CHAT & PDF DOCKET AUDITS — MODES 1, 2 & 3)
 SYSTEM_ROLE = """
 You are an expert Indian Litigation & Chambers Audit Engine (Agent VIDHI).
-Your job is to audit case facts/documents, identify every legal flaw, tell the lawyer the EXACT next procedural step for BOTH sides (Defense and Complainant) based on the current stage of the matter, and direct them to generate the required documents via **Section 3: Agent LEKHAK (Drafting Engine)** in the sidebar.
+Your job is to audit case facts/documents, identify every legal flaw, tell the lawyer the EXACT next procedural step for BOTH sides (Defense and Complainant) based on the current stage of the matter, and direct them to generate the required documents via **Section 3: Agent LEKHAK (Drafting Engine)** and **Section 4: Agent DOOT (Clerk & Dispatch)** in the sidebar.
 
 CORE LEGAL & MATH RULES (PERFORM AUTOMATICALLY):
 1. Calendar Math [Sec 9 General Clauses Act]:
@@ -468,13 +522,14 @@ STRICT ACCURACY & FORMATTING RULES:
 - NEVER ECHO PROMPT INSTRUCTIONS: Never print internal instructions or template directions in your response. Output only the final legal analysis.
 - HIGH RECALL & UTILITY: Never hide or suppress a genuine factual, procedural, or statutory flaw. Every point must be accurate, grounded in the text, and useful.
 - NO HTML IN TABLES: NEVER use `<br>` or any HTML tags inside Markdown tables. Keep table cells on a single line using dashes (`—`) or semicolons (`;`).
-- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Section 3: Agent LEKHAK (Drafting Engine)** for BOTH **Defense** and **Complainant** from these 6 options:
+- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Section 3: Agent LEKHAK (Drafting Engine)** for BOTH **Defense** and **Complainant** from these 7 options:
   1. `"Statutory Demand Notice (Sec 138 NI Act)"`
   2. `"Reply to Legal Demand Notice (Defense)"`
   3. `"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`
   4. `"Sec 528 BNSS (482 CrPC) Quashing Petition"`
   5. `"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`
   6. `"Court List of Dates & Events (LoD)"`
+  7. `"Vakalatnama (Court Authorization Form)"`
 
 ===================================================================
 MODE 1: WHEN NO PDF IS UPLOADED
@@ -488,9 +543,9 @@ MODE 1: WHEN NO PDF IS UPLOADED
   ### 3. Immediate Next Course of Action & Document Generation
   * **🛡️ If Acting for Defense (Noticee / Accused):** Exact next procedural step and defense strategy.
   * **⚔️ If Acting for Complainant (Payee / Claimant):** Exact next procedural step, curability, or civil recovery route.
-  * **⚡ Generate in Nyaya-Agent Now (Section 3 — Agent LEKHAK):**
+  * **⚡ Generate in Nyaya-Agent Now (Section 3 — Agent LEKHAK & Section 4 — Agent DOOT):**
     * **For Defense:** Select 👉 **`"[Exact Defense Template Name]"`** (and **`"[2nd Defense Template if applicable]"`**)
-    * **For Complainant:** Select 👉 **`"[Exact Complainant Template Name]"`**
+    * **For Complainant:** Select 👉 **`"[Exact Complainant Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
 
 - If the user asks a GENERAL / CONCEPTUAL LEGAL QUESTION (no case dates):
   Answer directly and clearly in under 180 words using clean headings and bullet points with exact statutory sections and Supreme Court precedents. Do NOT show a timeline table if no dates are involved.
@@ -512,9 +567,9 @@ MODE 2: WHEN PDF DOCKET(S) ARE UPLOADED (CASE AUDIT & ACTION PLAN)
 ### 3. Next Course of Action & Document Generation
 * **🛡️ If Acting for Defense (Recipient / Noticee / Accused):** State the immediate next procedural step (e.g., serve a formal Reply to Notice locking in all statutory objections on record and warning against malicious prosecution u/s 223(1) BNSS, or move the High Court u/s 528 BNSS for quashing if a complaint/summoning order is already passed).
 * **⚔️ If Acting for Complainant (Sender / Payee / Claimant):** State whether each defect can be cured (e.g., re-present cheque if still within 3 months, issue a corrected severed notice if still within 30 days of Return Memo, or abandon Sec 138 criminal prosecution if the cheque is stale and institute a Summary Suit u/o XXXVII CPC with 18% interest u/s 80 NI Act).
-* **⚡ Generate in Nyaya-Agent Now (Navigate to Section 3: Agent LEKHAK in Sidebar):**
-  * **🛡️ If Acting for Defense:** Select 👉 **`"Reply to Legal Demand Notice (Defense)"`** (at Pre-Cognizance Notice stage) OR 👉 **`"Sec 528 BNSS (482 CrPC) Quashing Petition"`** + **`"Court List of Dates & Events (LoD)"`** (if Summons/Complaint is issued).
-  * **⚔️ If Acting for Complainant:** Select 👉 **`"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`** (where Sec 138 is time-barred/stale) OR 👉 **`"Statutory Demand Notice (Sec 138 NI Act)"`** / **`"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`** (where timelines are valid).
+* **⚡ Generate in Nyaya-Agent Now (Navigate to Section 3: Agent LEKHAK & Section 4: Agent DOOT):**
+  * **🛡️ If Acting for Defense:** Select 👉 **`"Reply to Legal Demand Notice (Defense)"`** (at Pre-Cognizance Notice stage) OR 👉 **`"Sec 528 BNSS (482 CrPC) Quashing Petition"`** + **`"Court List of Dates & Events (LoD)"`** + **`"Vakalatnama (Court Authorization Form)"`** (if Summons/Complaint is issued).
+  * **⚔️ If Acting for Complainant:** Select 👉 **`"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`** + **`"Vakalatnama (Court Authorization Form)"`** (where Sec 138 is time-barred/stale) OR 👉 **`"Statutory Demand Notice (Sec 138 NI Act)"`** / **`"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`** (where timelines are valid).
 
 *(Note: If the uploaded PDF is a Court Judgment/Order, summarize: **1. Bench & Holding**, **2. Key Facts**, **3. Core Ratio & Paragraphs (`[PAGE X]`)**, and **4. How to Deploy This Precedent**).*
 
@@ -599,7 +654,7 @@ st.markdown("""
     
     <div class="legal-header">
         <h1>⚖️ Nyaya-Agent: Autonomous Chambers OS</h1>
-        <p>Multi-Agent Legal Architecture — <b>NETRA</b> (Docket/Vision) • <b>VIDHI</b> (Procedural & Limitation Audit) • <b>LEKHAK</b> (Senior Pleading Engine)</p>
+        <p>Multi-Agent Legal Architecture — <b>NETRA</b> (Docket/Vision) • <b>VIDHI</b> (Procedural Audit) • <b>LEKHAK</b> (Senior Pleading Engine) • <b>DOOT</b> (Clerk & Dispatch)</p>
     </div>
 """, unsafe_allow_html=True)
 
@@ -622,8 +677,40 @@ if "generated_draft_title" not in st.session_state:
     st.session_state.generated_draft_title = ""
 if "pending_request" not in st.session_state:
     st.session_state.pending_request = None
+if "doot_whatsapp_msg" not in st.session_state:
+    st.session_state.doot_whatsapp_msg = ""
+if "doot_calendar_ics" not in st.session_state:
+    st.session_state.doot_calendar_ics = ""
 
-# 6. DETERMINISTIC COURTROOM WORD (.DOC) RENDERING ENGINE (VERIFIED ACROSS ALL 6 TEMPLATES)
+# 6. DETERMINISTIC COURTROOM WORD (.DOC) & CALENDAR (.ICS) RENDERING ENGINES
+def create_ics_alert(event_title, deadline_date, description):
+    dt_start = deadline_date.strftime("%Y%m%d")
+    dt_end = (deadline_date + timedelta(days=1)).strftime("%Y%m%d")
+    now_stamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    clean_desc = re.sub(r'[\r\n]+', ' ', description)[:400]
+    ics_content = (
+        "BEGIN:VCALENDAR\r\n"
+        "VERSION:2.0\r\n"
+        "PRODID:-//Nyaya-Agent//Agent DOOT Chambers Clerk//EN\r\n"
+        "CALSCALE:GREGORIAN\r\n"
+        "METHOD:PUBLISH\r\n"
+        "BEGIN:VEVENT\r\n"
+        f"UID:nyaya-doot-{now_stamp}@chambers.os\r\n"
+        f"DTSTAMP:{now_stamp}\r\n"
+        f"DTSTART;VALUE=DATE:{dt_start}\r\n"
+        f"DTEND;VALUE=DATE:{dt_end}\r\n"
+        f"SUMMARY:⚖️ [NYAYA-AGENT DEADLINE] {event_title}\r\n"
+        f"DESCRIPTION:{clean_desc}\r\n"
+        "BEGIN:VALARM\r\n"
+        "TRIGGER:-PT24H\r\n"
+        "ACTION:DISPLAY\r\n"
+        "DESCRIPTION:Statutory Legal Deadline Reminder (Agent DOOT)\r\n"
+        "END:VALARM\r\n"
+        "END:VEVENT\r\n"
+        "END:VCALENDAR\r\n"
+    )
+    return ics_content.encode("utf-8")
+
 def format_inline_md(text):
     text = text.replace("`", "")
     text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)
@@ -714,11 +801,12 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
 
         # 1. Centered Court Headings, Pleading Titles & Short Top Dispatch Headers
         if (
-            plain_upper in ["WITHOUT PREJUDICE", "WITHOUT PREJUDICE:", "LEGAL NOTICE", "INDEX", "SYNOPSIS", "SUPPORTING AFFIDAVIT"]
+            plain_upper in ["WITHOUT PREJUDICE", "WITHOUT PREJUDICE:", "LEGAL NOTICE", "INDEX", "SYNOPSIS", "SUPPORTING AFFIDAVIT", "VAKALATNAMA"]
             or any(plain_upper.startswith(p) for p in [
                 "IN THE COURT OF", "IN THE HIGH COURT OF", "IN THE SUPREME COURT OF",
                 "COMPLAINT CASE NO", "CRIMINAL MISC", "CRL.M.C.", "SUMMARY CIVIL SUIT",
-                "CIVIL SUIT", "CASE / PETITION NO", "EXTRAORDINARY CRIMINAL JURISDICTION",
+                "CIVIL SUIT", "CASE / PETITION NO", "CASE / COMPLAINT / PETITION NO",
+                "EXTRAORDINARY CRIMINAL JURISDICTION",
                 "(SUIT UNDER ORDER", "COMPLAINT UNDER SECTION", "PETITION UNDER SECTION",
                 "SUIT FOR RECOVERY", "SUIT UNDER ORDER",
                 "PRE-SUMMONING EVIDENCE", "AFFIDAVIT IN SUPPORT",
@@ -757,7 +845,7 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
             html_blocks.append(f"<p class='salutation-line'>{wrap_bold(format_inline_md(line))}</p>")
 
         # 6. Notice Sign-Off ("Yours faithfully,") vs. Court Deponent/Litigant Signature Block
-        elif plain_upper in ["YOURS FAITHFULLY,", "YOURS TRULY,", "FILED BY:", "THROUGH", "THROUGH:"]:
+        elif plain_upper in ["YOURS FAITHFULLY,", "YOURS TRULY,", "FILED BY:", "THROUGH", "THROUGH:", "IDENTIFIED & ACCEPTED BY:"]:
             html_blocks.append(f"<p class='signoff-line'>{wrap_bold(format_inline_md(line))}</p>")
 
         elif plain_upper in ["COMPLAINANT", "PETITIONER(S)", "PETITIONER", "PLAINTIFF", "DEPONENT"]:
@@ -779,12 +867,12 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
         # 9. Major Section Headings
         elif any(plain_upper.startswith(p) for p in [
             "PART I", "PART II", "PART III", "SECTION A", "SECTION B",
-            "PRELIMINARY STATEMENT", "PRAYER", "VERIFICATION", "SYNOPSIS OF CASE"
+            "PRELIMINARY STATEMENT", "PRAYER", "VERIFICATION", "SYNOPSIS OF CASE", "CLIENT(S) / EXECUTANT(S)"
         ]):
             html_blocks.append(f"<p class='sec-heading'>{wrap_bold(format_inline_md(line))}</p>")
 
         # 10. Short Left-Aligned Lines (Addresses, Place/Date at bottom, Counsel titles) -> NEVER JUSTIFY
-        elif len(line) < 95 and not re.match(r'^(\d+(?:\.\d+)?\.|\([a-z]\)|-\s|•\s|GROUND\s+[A-Z]|QUESTION\s+[A-Z]|Reply to Para|Without prejudice)', line, re.IGNORECASE):
+        elif len(line) < 95 and not re.match(r'^(\d+(?:\.\d+)?\.|\([a-z]\)|-\s|•\s|GROUND\s+[A-Z]|QUESTION\s+[A-Z]|Reply to Para|Without prejudice|KNOW ALL|IN WITNESS)', line, re.IGNORECASE):
             html_blocks.append(f"<p class='left-line'>{format_inline_md(line)}</p>")
 
         # 11. Full Legal Body Paragraphs & Numbered Clauses -> Justified + Auto-Bold Lead-In
@@ -943,10 +1031,71 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
     </html>"""
     return word_xml.encode("utf-8")
 
-# 7. STREAMLINED SIDEBAR (MULTI-AGENT CHAMBERS WORKFLOW)
+# 7. MULTI-KEY POOL LOADER & ZERO-DOWNTIME MODEL ROUTER
+def get_api_key_pool(user_input_key=""):
+    if user_input_key.strip():
+        return [k.strip() for k in user_input_key.split(",") if k.strip()]
+    try:
+        secret_val = st.secrets.get("GEMINI_API_KEY", "")
+        if isinstance(secret_val, list):
+            return [str(k).strip() for k in secret_val if str(k).strip()]
+        return [k.strip() for k in str(secret_val).split(",") if k.strip()]
+    except Exception:
+        return []
+
+def call_model(model_name, api_key_or_pool, payload):
+    keys = api_key_or_pool if isinstance(api_key_or_pool, list) else [k.strip() for k in str(api_key_or_pool).split(",") if k.strip()]
+    if not keys:
+        return {"success": False, "model": model_name, "error": "No API Key configured", "time": 0.0}
+
+    shuffled_keys = keys.copy()
+    random.shuffle(shuffled_keys)
+
+    start_time = time.time()
+    last_error = ""
+
+    for attempt_key in shuffled_keys:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={attempt_key}"
+        for _ in range(2):
+            try:
+                res = requests.post(
+                    url,
+                    headers={"Content-Type": "application/json"},
+                    json=payload,
+                    timeout=45
+                )
+                elapsed = time.time() - start_time
+                if res.status_code == 200:
+                    data = res.json()
+                    text = data['candidates'][0]['content']['parts'][0]['text']
+                    return {"success": True, "model": model_name, "text": text, "time": elapsed}
+                elif res.status_code in [429, 503]:
+                    last_error = f"{res.status_code} (Quota/Busy)"
+                    time.sleep(0.9 + random.uniform(0.1, 0.5))
+                    continue
+                else:
+                    last_error = f"{res.status_code}"
+                    break
+            except Exception as e:
+                last_error = str(e)
+                break
+
+    elapsed = time.time() - start_time
+    return {"success": False, "model": model_name, "error": last_error, "time": elapsed}
+
+# 8. STREAMLINED SIDEBAR (MULTI-AGENT CHAMBERS WORKFLOW)
 with st.sidebar:
     st.markdown("### 1. Chambers Setup")
-    api_key = st.text_input("Google API Key", type="password", placeholder="Paste AI Studio Key...")
+    cloud_keys = get_api_key_pool("")
+    user_api_key = st.text_input(
+        "Google API Key (Optional if Cloud Key Active)",
+        type="password",
+        placeholder="Chambers Cloud Key Pool Active..." if cloud_keys else "Paste AI Studio Key(s)..."
+    )
+    api_key_pool = get_api_key_pool(user_api_key)
+    if cloud_keys and not user_api_key.strip():
+        st.caption(f"🔒 **Chambers Cloud Key Active ({len(cloud_keys)} Key Pool)** — Ready for law firm testing.")
+
     routing_mode = st.radio(
         "Inference Mode",
         [
@@ -1056,35 +1205,77 @@ with st.sidebar:
         st.caption("💡 Click **✍️ Hand Off to Agent LEKHAK** above to unlock the editable Word (`.doc`) download.")
 
     st.markdown("---")
-    st.caption("🤖 **Active Swarm (v1.0):** `NETRA` → `VIDHI` → `LEKHAK`  \n🚀 **v2.0 Pipeline:** `KHOJ` (E-Courts) • `DOOT` (Clerk/Alerts) • `BHASHA` (Indic Layer)")
+    st.markdown("### 4. Agent DOOT (Clerk & Dispatch)")
+    doot_deadline_type = st.selectbox(
+        "Statutory Deadline / Alert Type",
+        [
+            "15-Day Notice Cure Expiry (Sec 138(c) NI Act)",
+            "30-Day Notice Dispatch Limit (Sec 138(b) NI Act)",
+            "1-Month Complaint Filing Limit (Sec 142(1)(b))",
+            "Sec 528 BNSS High Court Filing / Hearing"
+        ]
+    )
+    doot_date = st.date_input("Statutory Deadline / Hearing Date", value=datetime.today() + timedelta(days=15))
+
+    if st.button("📬 Agent DOOT: Prepare Client Dispatch", use_container_width=True):
+        if not st.session_state.messages and not st.session_state.docket_text:
+            st.warning("Run an Audit or enter case facts first so Agent DOOT can summarize the case.")
+        elif not api_key_pool:
+            st.error("Please configure your Google API Key in Sidebar or Streamlit Secrets.")
+        else:
+            with st.spinner("📬 Agent DOOT: Drafting WhatsApp Client Update & Calendar Alert..."):
+                case_ctx = "\n\n".join([f"{m['role'].upper()}: {m['content']}" for m in st.session_state.messages[-4:]])
+                if not case_ctx and st.session_state.docket_text:
+                    case_ctx = st.session_state.docket_text[:8000]
+                doot_prompt = f"""
+                You are Agent DOOT (Autonomous Chambers Law Clerk). Based on the case audit/facts below, write a crisp, professional 5-line WhatsApp update for the Lawyer to send to their Client:
+                - Line 1: *⚖️ CASE STATUS UPDATE — CHAMBERS BRIEFING*
+                - Line 2: *Matter / Instrument:* (Parties, Cheque No. & Amount)
+                - Line 3: *Legal Audit Verdict:* (1-sentence summary of key statutory finding)
+                - Line 4: *Immediate Next Action:* (What pleading/step we are taking next)
+                - Line 5: *Key Statutory Date:* {doot_deadline_type} on {doot_date.strftime('%d %b %Y')}.
+                Keep it under 95 words, plain WhatsApp formatting (*bold*), no markdown tables.
+
+                CASE CONTEXT:
+                {case_ctx[:15000]}
+                """
+                doot_payload = {
+                    "contents": [{"role": "user", "parts": [{"text": doot_prompt}]}],
+                    "generationConfig": {"temperature": 0.1}
+                }
+                for m_name in ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]:
+                    res = call_model(m_name, api_key_pool, doot_payload)
+                    if res["success"]:
+                        st.session_state.doot_whatsapp_msg = res["text"].strip()
+                        st.session_state.doot_calendar_ics = create_ics_alert(
+                            doot_deadline_type,
+                            doot_date,
+                            st.session_state.doot_whatsapp_msg
+                        )
+                        break
+
+    if st.session_state.doot_whatsapp_msg:
+        st.text_area("📱 WhatsApp Client Summary (Agent DOOT)", st.session_state.doot_whatsapp_msg, height=145)
+        encoded_wa = urllib.parse.quote(st.session_state.doot_whatsapp_msg)
+        st.link_button("📲 Send to Client on WhatsApp", f"https://wa.me/?text={encoded_wa}", use_container_width=True)
+        st.download_button(
+            label="📅 Download Calendar Alert (.ics)",
+            data=st.session_state.doot_calendar_ics,
+            file_name="Nyaya_Agent_Statutory_Deadline.ics",
+            mime="text/calendar",
+            use_container_width=True
+        )
+
+    st.markdown("---")
+    st.caption("🤖 **Active Swarm (v1.1):** `NETRA` → `VIDHI` → `LEKHAK` → `DOOT`  \n🚀 **v2.0 Next:** `BHASHA` (Indic Layer) • `KHOJ` (E-Courts)")
     if st.button("🗑️ New Case / Clear Chat", use_container_width=True):
         st.session_state.messages = []
         st.session_state.generated_draft = ""
         st.session_state.generated_draft_title = ""
         st.session_state.pending_request = None
+        st.session_state.doot_whatsapp_msg = ""
+        st.session_state.doot_calendar_ics = ""
         st.rerun()
-
-# 8. MODEL ROUTER WORKER
-def call_model(model_name, api_key, payload):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
-    start_time = time.time()
-    try:
-        res = requests.post(
-            url,
-            headers={"Content-Type": "application/json"},
-            json=payload,
-            timeout=45
-        )
-        elapsed = time.time() - start_time
-        if res.status_code == 200:
-            data = res.json()
-            text = data['candidates'][0]['content']['parts'][0]['text']
-            return {"success": True, "model": model_name, "text": text, "time": elapsed}
-        else:
-            return {"success": False, "model": model_name, "error": f"{res.status_code}: {res.text}", "time": elapsed}
-    except Exception as e:
-        elapsed = time.time() - start_time
-        return {"success": False, "model": model_name, "error": str(e), "time": elapsed}
 
 # 9. DISPLAY CONVERSATION HISTORY
 for message in st.session_state.messages:
@@ -1093,6 +1284,7 @@ for message in st.session_state.messages:
 
 # 10. CAPTURE USER ACTION (CHAT, AUDIT, OR DRAFT) & LOCK IN SESSION STATE
 chat_prompt = st.chat_input("Ask a legal question, paste case dates, or ask about the uploaded PDF...")
+
 if trigger_audit and st.session_state.docket_signature:
     st.session_state.messages = []
     st.session_state.generated_draft = ""
@@ -1127,10 +1319,10 @@ if st.session_state.pending_request:
     active_draft_type = st.session_state.pending_request["draft_type"] or draft_type
 
     with st.chat_message("assistant"):
-        if not api_key:
+        if not api_key_pool:
             st.session_state.messages.pop()
             st.session_state.pending_request = None
-            st.error("Please enter your Google API Key in the sidebar.")
+            st.error("Please enter your Google API Key in the sidebar or configure `GEMINI_API_KEY` in Streamlit Secrets.")
         else:
             spinner_text = (
                 f"🤝 Multi-Agent Handoff (VIDHI → LEKHAK): Drafting {active_draft_type}..."
@@ -1221,7 +1413,7 @@ if st.session_state.pending_request:
                     winner = None
                     errors = []
                     
-                    # OPTION 1: HIGH MODE (TOP PRO & LATEST FULL MODELS ONLY — NO LITE)
+                    # OPTION 1: HIGH MODE (TOP PRO & LATEST FULL MODELS + CROSS-GEN SAFETY NET)
                     if "High" in routing_mode:
                         high_models = [
                             "gemini-3.8-pro",
@@ -1229,10 +1421,12 @@ if st.session_state.pending_request:
                             "gemini-3.6-pro",
                             "gemini-3.1-pro",
                             "gemini-3.6-flash",
-                            "gemini-3.5-flash"
+                            "gemini-3.5-flash",
+                            "gemini-2.5-pro",
+                            "gemini-2.5-flash"
                         ]
                         for model in high_models:
-                            result = call_model(model, api_key, payload)
+                            result = call_model(model, api_key_pool, payload)
                             if result["success"]:
                                 winner = result
                                 break
@@ -1240,15 +1434,17 @@ if st.session_state.pending_request:
                                 errors.append(f"{result['model']} ({result['error']})")
                         mode_badge = "🔥 High Mode"
                         
-                    # OPTION 2: PARALLEL RACE (3.6 DOWN TO 3.5-FLASH-LITE, NO 3.1)
+                    # OPTION 2: PARALLEL RACE (3.6 DOWN TO 3.5-FLASH-LITE + 2.5 SAFETY NET)
                     else:
                         race_models = [
                             "gemini-3.6-flash",
                             "gemini-3.5-flash",
-                            "gemini-3.5-flash-lite"
+                            "gemini-3.5-flash-lite",
+                            "gemini-2.5-flash",
+                            "gemini-2.5-flash-lite"
                         ]
                         executor = ThreadPoolExecutor(max_workers=len(race_models))
-                        futures = [executor.submit(call_model, model, api_key, payload) for model in race_models]
+                        futures = [executor.submit(call_model, model, api_key_pool, payload) for model in race_models]
                         for future in as_completed(futures):
                             result = future.result()
                             if result["success"]:
