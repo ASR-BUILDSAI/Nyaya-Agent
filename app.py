@@ -325,19 +325,20 @@ Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that
 DEPONENT
 """,
 
-    "Anticipatory / Regular Bail Application (Sec 482 / 483 BNSS)": """
+   "Anticipatory / Regular Bail Application (Sec 482 / 483 BNSS)": """
 DRAFTING BLUEPRINT — APPLICATION FOR ANTICIPATORY BAIL (SECTION 482 BNSS) OR REGULAR BAIL (SECTION 483 BNSS):
 STRICT RULES FOR THIS TEMPLATE:
-- Output ONLY the complete Court Bail Application package below (Cause Title, Verbatim Paragraphs 1–11, Grounds including *Arnesh Kumar* / *Satender Kumar Antil* / *Gurbaksh Singh Sibbia* / *Sushila Aggarwal*, Mandatory Non-Filing Declaration, Undertaking, Prayer, and Page-Separated Supporting Affidavit).
-- Select Section 482 BNSS (corresponding to Section 438 CrPC) if the Applicant apprehends arrest (Anticipatory Bail), or Section 483 BNSS (corresponding to Section 439 CrPC) if the Applicant is already in custody (Regular Bail).
-- Never invent FIR numbers, Police Station names, or dates of arrest; keep bold `[INSERT ...]` placeholders in ALL CAPS for any missing fact.
+- Output ONLY the complete Court Bail Application package below (Cause Title, FIR Index Block, Verbatim Paragraphs 1–11, Prayer, Counsel Filing Block, and Page-Separated Supporting Affidavit).
+- SELECT EXACT PROVISION (NO SLASHES): If the Applicant apprehends arrest and is not in custody, draft strictly under **SECTION 482 OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (ANTICIPATORY BAIL)** and have the Applicant personally swear the Supporting Affidavit. If the Applicant is already arrested/in custody, draft strictly under **SECTION 483 OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (REGULAR BAIL)**.
+- Never invent FIR numbers, Police Station names, or dates; keep bold `[INSERT ...]` placeholders in ALL CAPS for any missing fact.
 - Keep `... APPLICANT / ACCUSED` and `... RESPONDENT / STATE` on their own separate line below the party names.
 
 IN THE COURT OF THE LEARNED SESSIONS JUDGE / HIGH COURT OF [INSERT STATE / DISTRICT] AT [INSERT PLACE]
 BAIL APPLICATION NO. ________ OF 2026
 
 IN THE MATTER OF:
-[Full Name, Parentage, Age & Residential Address of Applicant / Accused]
+[Full Name of Applicant / Accused], S/o [INSERT FATHER'S NAME], Aged about [INSERT AGE] years,
+R/o [Insert Address from record or `[INSERT COMPLETE RESIDENTIAL ADDRESS]`]
 ... APPLICANT / ACCUSED
 
 VERSUS
@@ -348,42 +349,43 @@ State of [INSERT STATE]
 
 FIR No.: [INSERT FIR NO.]
 Dated: [INSERT FIR DATE]
-Under Section(s): [INSERT SECTIONS OF BNS, 2023 / IPC, 1860]
-Police Station: [INSERT POLICE STATION]
+Under Section(s): [INSERT OFFENCE SECTIONS OF BNS, 2023 / IPC, 1860]
+Police Station: [INSERT POLICE STATION NAME]
 
-APPLICATION UNDER SECTION [482 (ANTICIPATORY BAIL) / 483 (REGULAR BAIL)] OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (CORRESPONDING TO SECTION [438 / 439] OF THE ERSTWHILE CODE OF CRIMINAL PROCEDURE, 1973) ON BEHALF OF THE APPLICANT ABOVE-NAMED SEEKING GRANT OF [ANTICIPATORY / REGULAR] BAIL
+APPLICATION UNDER SECTION [Select 482 OR 483] OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (CORRESPONDING TO SECTION [Select 438 OR 439] OF THE ERSTWHILE CODE OF CRIMINAL PROCEDURE, 1973) ON BEHALF OF THE APPLICANT ABOVE-NAMED SEEKING GRANT OF [Select ANTICIPATORY BAIL OR REGULAR BAIL]
 
 MOST RESPECTFULLY SHOWETH:
 
-1. **PRELIMINARY SUBMISSION & LIBERTY INVOCATION:** That the Applicant above-named is a law-abiding citizen having deep roots in society and permanent residence at [Insert Address from record or `[INSERT COMPLETE RESIDENTIAL ADDRESS]`], and is constrained to approach this Hon'ble Court under Section [482 / 483] of the Bharatiya Nagarik Suraksha Sanhita, 2023 seeking protection of personal liberty guaranteed under Article 21 of the Constitution of India in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS].
+1. **PRELIMINARY SUBMISSION & LIBERTY INVOCATION:** That the Applicant above-named is a law-abiding citizen having deep roots in society and permanent residence at [Insert Address from record or `[INSERT COMPLETE RESIDENTIAL ADDRESS]`], and is constrained to approach this Hon'ble Court seeking protection of personal liberty guaranteed under Article 21 of the Constitution of India in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS].
 2. **BRIEF CASE OF THE PROSECUTION AS PER FIR:** That the impugned FIR came to be registered on the complaint of [Insert Name of Complainant/Informant from record] alleging inter alia that [Summarize the core allegations, dates, and events stated in the FIR/record accurately].
-3. **FALSE IMPLICATION & DEFENSE VERSION OF THE APPLICANT:** That the Applicant is wholly innocent and has been falsely implicated in the present matter with an ulterior motive to exert pressure and settle a purely civil/commercial/personal dispute through the machinery of criminal law. (Set out the Applicant's factual defense and chronological truth from the record, or retain `[INSERT APPLICANT'S SPECIFIC FACTUAL DEFENSE & CHRONOLOGY]` if not on record).
-4. **NON-COMPLIANCE WITH MANDATORY SAFEGUARDS UNDER SECTION 35(3) BNSS (EARLIER SECTION 41A CRPC):** That where the alleged offence(s) carry a maximum punishment of up to 7 (seven) years, mechanical arrest without recording reasons under Section 35(1)(b) BNSS and without first serving a mandatory Notice of Appearance under Section 35(3) of the Bharatiya Nagarik Suraksha Sanhita, 2023 directly contravenes the binding directions of the Hon'ble Supreme Court in *Arnesh Kumar v. State of Bihar*, (2014) 8 SCC 273 and *Satender Kumar Antil v. Central Bureau of Investigation*, (2022) 10 SCC 51.
-5. **NO REQUIREMENT OF CUSTODIAL INTERROGATION & DOCUMENTARY NATURE OF EVIDENCE:** That the entire case of the prosecution rests upon documentary/electronic evidence which is either already in the possession of the Complainant/Investigating Agency or which the Applicant is ready and willing to produce forthwith. Consequently, custodial interrogation or prolonged incarceration of the Applicant is neither warranted nor necessary for fair investigation (*Sushila Aggarwal v. State (NCT of Delhi)*, (2020) 5 SCC 1; *Gurbaksh Singh Sibbia v. State of Punjab*, (1980) 2 SCC 565).
+3. **FALSE IMPLICATION & DEFENSE VERSION OF THE APPLICANT:** That the Applicant is wholly innocent and has been falsely implicated in the present matter with an ulterior motive to exert pressure and settle a purely civil and commercial dispute through the machinery of criminal law. (Set out the Applicant's factual defense, absence of *mens rea ab initio* per *Hridaya Ranjan Prasad Verma v. State of Bihar*, (2000) 4 SCC 168, and chronological truth from the record).
+4. **NON-COMPLIANCE WITH MANDATORY SAFEGUARDS UNDER SECTION 35(3) BNSS (EARLIER SECTION 41A CRPC):** That where the alleged offence(s) carry a maximum punishment of up to 7 (seven) years, mechanical arrest without recording justifiable reasons under Section 35(1)(b) BNSS and without first serving a mandatory Notice of Appearance under Section 35(3) of the Bharatiya Nagarik Suraksha Sanhita, 2023 directly contravenes the binding directions of the Hon'ble Supreme Court in *Arnesh Kumar v. State of Bihar*, (2014) 8 SCC 273 and *Satender Kumar Antil v. Central Bureau of Investigation*, (2022) 10 SCC 51.
+5. **NO REQUIREMENT OF CUSTODIAL INTERROGATION & DOCUMENTARY NATURE OF EVIDENCE:** That the entire case of the prosecution rests upon documentary/electronic evidence which is already in the possession of the Complainant/Investigating Agency or which the Applicant is ready and willing to produce forthwith. Consequently, custodial interrogation or prolonged detention of the Applicant is neither warranted nor necessary for fair investigation (*Sushila Aggarwal v. State (NCT of Delhi)*, (2020) 5 SCC 1; *Gurbaksh Singh Sibbia v. State of Punjab*, (1980) 2 SCC 565).
 6. **ABSENCE OF ESSENTIAL INGREDIENTS OF ALLEGED OFFENCE:** That even taking the allegations in the FIR at face value, the essential statutory ingredients of the offence(s) under Section(s) [Insert Sections] are wholly absent, and a predominantly civil dispute has been given the colour of a criminal offence (*Lalita Kumari v. Govt. of U.P.*, (2014) 2 SCC 1; *G. Sagar Suri v. State of U.P.*, (2000) 2 SCC 636).
-7. **SATISFACTION OF THE TRIPLE TEST FOR BAIL:** That the Applicant fully satisfies the Triple Test for grant of bail laid down by the Hon'ble Supreme Court:
-   (i) **No Flight Risk:** The Applicant is a permanent resident of [Insert City/Place] with family and property ties and has no likelihood of absconding or fleeing from justice;
-   (ii) **No Tampering with Evidence:** All material evidence is documentary in nature and beyond any scope of tampering; and
-   (iii) **No Influencing of Witnesses:** The Applicant undertakes not to directly or indirectly contact, induce, or threaten any prosecution witness.
+7. **SATISFACTION OF THE TRIPLE TEST FOR BAIL:** That the Applicant fully satisfies the Triple Test for grant of bail laid down by the Hon'ble Supreme Court: (i) **No Flight Risk:** The Applicant is a permanent resident of [Insert City/District from record or `[INSERT CITY/DISTRICT]`] with family and property ties and has no likelihood of absconding or fleeing from justice; (ii) **No Tampering with Evidence:** All material evidence is documentary in nature and beyond any scope of tampering; and (iii) **No Influencing of Witnesses:** The Applicant undertakes not to directly or indirectly contact, induce, or threaten any prosecution witness.
 8. **CLEAN ANTECEDENTS:** That the Applicant has clean antecedents and has never been convicted in any criminal case by any Court of Law.
-9. **UNDERTAKING TO COOPERATE WITH INVESTIGATION & CONDITIONS UNDER SECTION 482(2) / 480(3) BNSS:** That the Applicant undertakes to join and cooperate with the investigation as and when called upon by the Investigating Officer, to furnish sound surety to the satisfaction of this Hon'ble Court / Arresting Officer, and to abide by all conditions imposed under Section 482(2) / Section 483 of the BNSS, 2023.
+9. **UNDERTAKING TO COOPERATE WITH INVESTIGATION & ABIDE BY STATUTORY CONDITIONS:** That the Applicant undertakes to join and cooperate with the investigation as and when called upon by the Investigating Officer, to furnish sound surety to the satisfaction of this Hon'ble Court / Arresting Officer, and to abide by all conditions imposed under Section [Select 482(2) OR 483] of the BNSS, 2023.
 10. **BAIL IS THE RULE AND JAIL IS THE EXCEPTION:** That as reiterated by the Hon'ble Supreme Court from *State of Rajasthan v. Balchand*, (1977) 4 SCC 308 to *Satender Kumar Antil v. CBI*, (2022) 10 SCC 51, pre-trial detention is not meant to be punitive and *"Bail is the rule, while jail is the exception"*.
-11. **MANDATORY DISCLOSURE OF PRIOR BAIL APPLICATIONS:** That no other application for [Anticipatory / Regular] Bail in the present FIR has been filed or is pending before this Hon'ble Court, the Hon'ble High Court, or the Hon'ble Supreme Court of India, save as disclosed herein: `[NIL / INSERT DETAILS OF ANY PRIOR BAIL ORDER IF APPLICABLE]`.
+11. **MANDATORY DISCLOSURE OF PRIOR BAIL APPLICATIONS:** That no other application for [Select Anticipatory OR Regular] Bail in the present FIR has been filed or is pending before this Hon'ble Court, the Hon'ble High Court, or the Hon'ble Supreme Court of India, save as disclosed herein: NIL.
 
 PRAYER:
 In view of the facts and submissions made hereinabove, it is most respectfully prayed that this Hon'ble Court may graciously be pleased to:
-(a) Grant **[Anticipatory Bail under Section 482 BNSS / Regular Bail under Section 483 BNSS]** to the Applicant, directing that in the event of arrest / pending trial in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS], the Applicant be released on bail on such terms and conditions as this Hon'ble Court may deem fit and proper;
+(a) Grant [Select Anticipatory Bail under Section 482 BNSS OR Regular Bail under Section 483 BNSS] to the Applicant in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS], on such terms and conditions as this Hon'ble Court may deem fit and proper;
 (b) Grant *ad-interim* protection from arrest / coercive action to the Applicant pending final disposal of the present Bail Application; and
 (c) Pass such other or further order(s) as this Hon'ble Court may deem fit and proper in the interest of justice and personal liberty.
 
-Place: [INSERT PLACE]
+Place: [Insert City/Place]
 Date: [INSERT DATE]
 
 APPLICANT / ACCUSED
+
 THROUGH
+
 [NAME OF ADVOCATE]
 Advocate — Counsel for the Applicant
 Enrollment No.: [INSERT ENROLLMENT NO.]
+Chamber / Office: [INSERT CHAMBER / OFFICE ADDRESS]
+Email: [INSERT EMAIL] | Mobile: [INSERT MOBILE NO.]
 
 ---
 IN THE COURT OF THE LEARNED SESSIONS JUDGE / HIGH COURT OF [INSERT STATE / DISTRICT] AT [INSERT PLACE]
@@ -392,22 +394,24 @@ BAIL APPLICATION NO. ________ OF 2026
 IN THE MATTER OF:
 [Applicant Name]
 ... APPLICANT / ACCUSED
+
 VERSUS
+
 State of [INSERT STATE]
 ... RESPONDENT / STATE
 
 SUPPORTING AFFIDAVIT
 
-I, [INSERT NAME OF DEPONENT / PAIROKAR], S/o [INSERT FATHER'S NAME], aged about [INSERT AGE] years, R/o [Insert Address], do hereby solemnly affirm and declare on oath as under:
+I, [Insert Applicant Name for Anticipatory Bail, OR `[INSERT NAME OF PAIROKAR]` for Regular Bail], S/o [INSERT FATHER'S NAME], aged about [INSERT AGE] years, R/o [INSERT COMPLETE RESIDENTIAL ADDRESS], do hereby solemnly affirm and declare on oath as under:
 
-1. **COMPETENCY OF DEPONENT:** That I am the Applicant / Pairvikar of the Applicant in the accompanying Bail Application under Section [482 / 483] of the Bharatiya Nagarik Suraksha Sanhita, 2023 and am well conversant with the facts and circumstances of the case, and am competent to swear the present Affidavit.
-2. **ADOPTION OF APPLICATION CONTENTS:** That the accompanying Bail Application has been drafted by Counsel under instructions, and the contents of Paragraphs 1 to 11 thereof are true and correct to my knowledge and belief based on records and legal advice believed to be true.
+1. **COMPETENCY OF DEPONENT:** That I am the Applicant (or Pairvikar of the Applicant if in custody) in the accompanying Bail Application under Section [Select 482 OR 483] of the Bharatiya Nagarik Suraksha Sanhita, 2023 and am well conversant with the facts and circumstances of the case, and am competent to swear the present Affidavit.
+2. **ADOPTION OF APPLICATION CONTENTS:** That the accompanying Bail Application has been drafted by my Counsel under my instructions, and the contents of Paragraphs 1 to 11 thereof are true and correct to my knowledge and belief based on records and legal advice believed to be true.
 3. **NON-FILING AFFIRMATION:** That no other bail application on behalf of the Applicant in respect of the subject FIR is pending before any Court in India.
 
 DEPONENT
 
 VERIFICATION:
-Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Paragraphs 1 to 3 of my above Affidavit are true and correct to my knowledge and belief, and nothing material has been concealed therefrom.
+Verified at [Insert City/Place] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Paragraphs 1 to 3 of my above Affidavit are true and correct to my knowledge and belief, and nothing material has been concealed therefrom.
 
 DEPONENT
 """,
@@ -1130,6 +1134,10 @@ st.markdown("""
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-weight: 600 !important;
     }
+    /* Hide awkward 'Press Enter to apply' overlay inside all Streamlit text inputs */
+    [data-testid="InputInstructions"] {
+        display: none !important;
+    }
     </style>
     
     <div class="sovereign-masthead">
@@ -1171,25 +1179,44 @@ if "adv_enroll" not in st.session_state:
     st.session_state.adv_enroll = ""
 if "adv_chamber" not in st.session_state:
     st.session_state.adv_chamber = ""
-if "adv_contact" not in st.session_state:
-    st.session_state.adv_contact = ""
+if "adv_email" not in st.session_state:
+    st.session_state.adv_email = ""
+if "adv_mobile" not in st.session_state:
+    st.session_state.adv_mobile = ""
 
 # 6. DETERMINISTIC ADVOCATE LETTERHEAD INJECTOR, WORD (.DOC) & CALENDAR (.ICS) COMPILERS
 def apply_advocate_profile(text):
     out = text
-    if st.session_state.adv_name.strip():
-        out = re.sub(r'\[NAME OF ADVOCATE\]', st.session_state.adv_name.strip(), out, flags=re.IGNORECASE)
-    if st.session_state.adv_enroll.strip():
-        out = re.sub(r'\[INSERT ENROLLMENT NO\.\]', st.session_state.adv_enroll.strip(), out, flags=re.IGNORECASE)
-    if st.session_state.adv_chamber.strip():
-        out = re.sub(r'\[INSERT CHAMBER\s*/\s*OFFICE ADDRESS\]', st.session_state.adv_chamber.strip(), out, flags=re.IGNORECASE)
-    if st.session_state.adv_contact.strip():
-        out = re.sub(
-            r'Email:\s*\[INSERT EMAIL\]\s*\|\s*Mobile:\s*\[INSERT MOBILE NO\.\]',
-            st.session_state.adv_contact.strip(),
-            out,
-            flags=re.IGNORECASE
-        )
+    name_val = st.session_state.adv_name.strip()
+    enroll_val = st.session_state.adv_enroll.strip()
+    chamber_val = st.session_state.adv_chamber.strip()
+    email_val = st.session_state.adv_email.strip()
+    mobile_val = st.session_state.adv_mobile.strip()
+
+    if name_val:
+        out = re.sub(r'\[NAME OF ADVOCATE\]', name_val, out, flags=re.IGNORECASE)
+    if enroll_val:
+        out = re.sub(r'\[INSERT ENROLLMENT NO\.\]', enroll_val, out, flags=re.IGNORECASE)
+    if chamber_val:
+        out = re.sub(r'\[INSERT CHAMBER\s*/\s*OFFICE ADDRESS\]', chamber_val, out, flags=re.IGNORECASE)
+    if email_val:
+        out = re.sub(r'\[INSERT EMAIL\]', email_val, out, flags=re.IGNORECASE)
+    if mobile_val:
+        out = re.sub(r'\[INSERT MOBILE NO\.\]', mobile_val, out, flags=re.IGNORECASE)
+
+    # Also append Chamber, Email & Mobile to any Court Pleading bottom signature block if missing
+    extra_lines = []
+    if chamber_val and chamber_val not in out:
+        extra_lines.append(f"Chamber / Office: {chamber_val}")
+    if (email_val and email_val not in out) or (mobile_val and mobile_val not in out):
+        e_part = f"Email: {email_val}" if email_val else "Email: [INSERT EMAIL]"
+        m_part = f"Mobile: {mobile_val}" if mobile_val else "Mobile: [INSERT MOBILE NO.]"
+        extra_lines.append(f"{e_part} | {m_part}")
+
+    if extra_lines:
+        addon = "\n" + "\n".join(extra_lines)
+        out = re.sub(r'(Enrollment No\.:\s*[^\n]+)', r'\1' + addon, out, count=1)
+
     return out
 
 def create_ics_alert(event_title, deadline_date, description):
@@ -1349,7 +1376,7 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
                 html_blocks.append(f"<p class='sig-block'>{wrap_bold(format_inline_md(line))}</p>")
 
         # 3. Automatic Solid Divider Under Letterhead Email/Mobile Line
-        elif (plain_upper.startswith("EMAIL:") or (st.session_state.adv_contact.strip() and plain_upper == st.session_state.adv_contact.strip().upper())) and len(html_blocks) < 12:
+        elif plain_upper.startswith("EMAIL:") and len(html_blocks) < 12:
             html_blocks.append(f"<p class='left-line'>{format_inline_md(line)}</p>")
             html_blocks.append("<hr>")
 
@@ -1736,26 +1763,26 @@ with st.sidebar:
 
     # SECTION IV: CHAMBERS LETTERHEAD & ENGINE SETUP (COLLAPSIBLE DRAWER)
     with st.expander("IV. Chambers Letterhead & Engine Setup", expanded=not bool(cloud_keys)):
-        st.caption("Advocate Letterhead Lock (Auto-Stamps All Pleadings & Vakalatnama)")
+        st.caption("Advocate Letterhead Lock (Stamps Notices, Pleadings & Vakalatnama)")
         st.session_state.adv_name = st.text_input(
             "Advocate Full Name",
-            value=st.session_state.adv_name,
-            placeholder="e.g., Adv. Rajesh Singh Rajput"
+            value=st.session_state.adv_name
         )
         st.session_state.adv_enroll = st.text_input(
             "Bar Council Enrollment No.",
-            value=st.session_state.adv_enroll,
-            placeholder="e.g., PH/1234/2005 or D/5678/2010"
+            value=st.session_state.adv_enroll
         )
         st.session_state.adv_chamber = st.text_input(
             "Chamber / Office Address",
-            value=st.session_state.adv_chamber,
-            placeholder="e.g., Chamber No. 402, District Courts, Faridabad"
+            value=st.session_state.adv_chamber
         )
-        st.session_state.adv_contact = st.text_input(
-            "Email & Mobile Line",
-            value=st.session_state.adv_contact,
-            placeholder="e.g., Email: counsel@chambers.in | Mobile: +91-98XXXXXXXX"
+        st.session_state.adv_email = st.text_input(
+            "Official Email ID",
+            value=st.session_state.adv_email
+        )
+        st.session_state.adv_mobile = st.text_input(
+            "Mobile Number",
+            value=st.session_state.adv_mobile
         )
         if st.session_state.adv_name.strip():
             st.caption(f"✓ Active Letterhead: {st.session_state.adv_name.strip()}")
@@ -1763,8 +1790,7 @@ with st.sidebar:
         st.markdown("---")
         user_api_key = st.text_input(
             "Google API Key",
-            type="password",
-            placeholder="Cloud Key Pool Active..." if cloud_keys else "Paste AI Studio Key(s)..."
+            type="password"
         )
         api_key_pool = get_api_key_pool(user_api_key)
         if cloud_keys and not user_api_key.strip():
