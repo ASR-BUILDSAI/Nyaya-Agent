@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # 1. PAGE CONFIGURATION
 st.set_page_config(page_title="Nyaya-Agent | Chambers OS", page_icon="⚖️", layout="wide")
 
-# 2. VERBATIM SENIOR-ADVOCATE DRAFTING BLUEPRINTS (ALL 7 DOCUMENTS PRE-AUDITED & HARDENED)
+# 2. VERBATIM SENIOR-ADVOCATE DRAFTING BLUEPRINTS (11 MULTI-PRACTICE INSTRUMENTS)
 DRAFT_BLUEPRINTS = {
     "Statutory Demand Notice (Sec 138 NI Act)": """
 DRAFTING BLUEPRINT — STATUTORY DEMAND NOTICE UNDER SECTION 138 READ WITH SECTION 141 NI ACT, 1881:
@@ -235,7 +235,7 @@ DRAFTING BLUEPRINT — HIGH COURT QUASHING PETITION UNDER SECTION 528 OF THE BHA
 STRICT RULES FOR THIS TEMPLATE:
 - Output ONLY the complete High Court Quashing Petition package below (Cause Title, Verbatim Paragraphs, Questions of Law, Chronological Facts in numbered sub-paragraphs 3.1 to 3.4, Grounds A–E, Mandatory Non-Filing Declaration, Prayer, and Page-Separated Supporting Affidavit).
 - DYNAMIC STATE & HIGH COURT MAPPING: Identify the State/UT from the court/bank/party addresses in the uploaded document and use the exact official High Court title and State Respondent name (e.g., "IN THE HIGH COURT OF PUNJAB AND HARYANA AT CHANDIGARH" & "State of Haryana"; "IN THE HIGH COURT OF JUDICATURE AT BOMBAY" & "State of Maharashtra"; "IN THE HIGH COURT OF JUDICATURE AT ALLAHABAD" & "State of Uttar Pradesh"; "IN THE HIGH COURT OF DELHI AT NEW DELHI" & "State of NCT of Delhi"). Never write "High Court of New Delhi" or "High Court of Judicature at New Delhi". If no city/state is mentioned in the record, keep the neutral placeholders `IN THE HIGH COURT OF [INSERT STATE] AT [INSERT BENCH]` and `State of [INSERT STATE]`.
-- Never invent Complaint Case Numbers or Summoning Order dates; keep bold `[INSERT ...]` placeholders in ALL CAPS.
+- Never invent Complaint Case Numbers, FIR numbers, or Summoning Order dates; keep bold `[INSERT ...]` placeholders in ALL CAPS.
 - Keep `... PETITIONER(S)` and `... RESPONDENT(S)` on their own separate line below the party addresses.
 
 IN THE HIGH COURT OF [INSERT STATE, E.G., DELHI AT NEW DELHI / PUNJAB AND HARYANA AT CHANDIGARH / JUDICATURE AT BOMBAY]
@@ -243,51 +243,50 @@ EXTRAORDINARY CRIMINAL JURISDICTION
 CRIMINAL MISC. PETITION NO. ________ OF 2026
 
 IN THE MATTER OF:
-1. [Full Name & Registered Address of Petitioner No. 1 / Drawer Company]
-2. [Full Name & Residential Address of Petitioner No. 2 / Director]
+1. [Full Name & Registered Address of Petitioner No. 1]
+2. [Full Name & Residential Address of Petitioner No. 2 (if applicable)]
 ... PETITIONER(S)
 
 VERSUS
 
 1. State of [INSERT STATE] (Through Standing Counsel / Public Prosecutor)
-2. [Full Name & Address of Complainant / Respondent No. 2]
+2. [Full Name & Address of Complainant / Informant / Respondent No. 2]
 ... RESPONDENT(S)
 
-PETITION UNDER SECTION 528 OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (CORRESPONDING TO SECTION 482 OF THE CODE OF CRIMINAL PROCEDURE, 1973) SEEKING QUASHING OF CRIMINAL COMPLAINT CASE NO. [INSERT COMPLAINT CASE NO.] TITLED "[COMPLAINANT] V. [ACCUSED]" UNDER SECTION 138 READ WITH SECTION 141 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881 PENDING BEFORE THE LEARNED JUDICIAL MAGISTRATE FIRST CLASS (NI ACT), [INSERT DISTRICT / COURT], THE IMPUGNED SUMMONING ORDER DATED [INSERT SUMMONING ORDER DATE], AND ALL CONSEQUENTIAL PROCEEDINGS ARISING THEREFROM.
+PETITION UNDER SECTION 528 OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (CORRESPONDING TO SECTION 482 OF THE CODE OF CRIMINAL PROCEDURE, 1973) SEEKING QUASHING OF [CRIMINAL COMPLAINT CASE NO. / FIR NO.] [INSERT CASE / FIR NO.] UNDER SECTION(S) [INSERT OFFENCE SECTIONS] PENDING BEFORE [INSERT COURT / POLICE STATION], AND ALL CONSEQUENTIAL PROCEEDINGS ARISING THEREFROM.
 
 MOST RESPECTFULLY SHOWETH:
 
-1. **INVOCATION OF INHERENT JURISDICTION:** That by way of the present Petition under Section 528 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (corresponding to Section 482 of the erstwhile Code of Criminal Procedure, 1973), the Petitioner(s) invoke the inherent and extraordinary jurisdiction of this Hon'ble Court to prevent manifest abuse of the process of the Court and to secure the ends of justice, seeking quashing of Criminal Complaint Case No. [INSERT COMPLAINT CASE NO.], the impugned Summoning Order dated [INSERT SUMMONING ORDER DATE], and the underlying defective Legal Demand Notice dated [Insert Notice Date].
+1. **INVOCATION OF INHERENT JURISDICTION:** That by way of the present Petition under Section 528 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (corresponding to Section 482 of the erstwhile Code of Criminal Procedure, 1973), the Petitioner(s) invoke the inherent and extraordinary jurisdiction of this Hon'ble Court to prevent manifest abuse of the process of the Court and to secure the ends of justice, seeking quashing of the impugned [Criminal Complaint / FIR] and all consequential proceedings arising therefrom.
 
 2. **SUBSTANTIAL QUESTIONS OF LAW INVOLVED:**
 That the present Petition raises the following substantial Questions of Law of public and statutory importance:
-- **QUESTION A:** Whether a criminal prosecution under Section 138 of the Negotiable Instruments Act, 1881 is maintainable where the Respondent's own statutory notice/complaint admits on the face of the record that Cheque No. [Insert Cheque No.] dated [Insert Draw Date] was presented to the drawee bank on [Insert Presentation Date], after the expiry of the mandatory 3-calendar-month validity period under Proviso (a) to Section 138 of the NI Act (*Shri Ishar Alloy Steels Ltd. v. Jayaswal Neco Ltd.*, (2001) 3 SCC 609)?
-- **QUESTION B:** Whether a Legal Demand Notice that demands an indivisible, consolidated omnibus sum of Rs. [Insert Omnibus Amount]/- (merging unquantified damages and penalties with the principal cheque amount of Rs. [Insert Exact Cheque Amount]/- without severance) complies with Proviso (b) to Section 138 of the NI Act, or is *void ab initio* under the binding ratio of *Suman Sethi v. Ajay K. Churiwal*, (2000) 2 SCC 380 and *Rahul Builders v. Arihant Fertilizers & Chemical*, (2008) 2 SCC 321?
-- **QUESTION C:** Whether a Legal Demand Notice that truncates the mandatory 15-day statutory cure period to [Insert Truncated Days, e.g., 07] days under threat of immediate prosecution satisfies Proviso (c) to Section 138 read with Section 142(1)(b) of the NI Act in light of the Three-Judge Bench decision of the Hon'ble Supreme Court in *Yogendra Pratap Singh v. Savitri Pandey*, (2014) 10 SCC 713?
-- **QUESTION D:** Whether a non-signatory, non-executive director against whom the statutory notice/complaint itself contains an express admission of non-involvement in day-to-day business operations can be vicariously prosecuted under Section 141 of the NI Act in light of *SMS Pharmaceuticals Ltd. v. Neeta Bhalla*, (2005) 8 SCC 89 and *Pooja Ravinder Devidasani v. State of Maharashtra*, (2014) 16 SCC 1?
+- **QUESTION A:** (State the primary statutory bar or absence of essential ingredients of the alleged offence from the record, citing the applicable provision of the NI Act, 1881 / BNS, 2023 / BNSS, 2023 and binding Supreme Court precedent).
+- **QUESTION B:** (State the second decisive legal question arising from the case audit—such as omnibus notice defect per *Suman Sethi*, pure civil dispute given a cloak of criminality per *G. Sagar Suri v. State of U.P.*, (2000) 2 SCC 636, or violation of *State of Haryana v. Bhajan Lal*, 1992 Supp (1) SCC 335).
+- **QUESTION C:** (State the third decisive legal question arising from the record—such as truncated 15-day cure window per *Yogendra Pratap Singh* or non-compliance with mandatory pre-cognizance/procedural safeguards under the BNSS, 2023).
+- **QUESTION D:** Whether continuation of the impugned criminal proceedings against the Petitioner(s) despite express statutory bars on the face of the record constitutes a gross abuse of process warranting interference under Section 528 of the BNSS, 2023?
 
 3. **BRIEF CHRONOLOGICAL FACTS OF THE CASE:**
-3.1. **Alleged Commercial Transaction:** That Respondent No. 2 alleges to have supplied goods/services to Petitioner No. 1 under Invoice No. [Insert Invoice No.] dated [Insert Invoice Date] for a stated sum of Rs. [Insert Exact Cheque Amount]/-.
-3.2. **Issuance & Late Presentation of Instrument:** That Cheque No. [Insert Cheque No.] bears the draw date of [Insert Draw Date] for Rs. [Insert Exact Cheque Amount]/- drawn on [Insert Drawee Bank & Branch]. Under Section 138 Proviso (a) of the NI Act, the 3-calendar-month validity of the said instrument expired on [Insert 3-Month Expiry Date]. However, as admitted in Para 3 of Respondent No. 2's own Legal Notice, the cheque was presented to the drawee bank only on [Insert Presentation Date], after the instrument had already become stale, and was returned vide Return Memo dated [Insert Return Memo Date].
-3.3. **Service of Statutorily Defective Demand Notice:** That Respondent No. 2 thereafter issued a defective Legal Demand Notice dated [Insert Notice Date] which (i) demanded an illegal, indivisible omnibus sum of Rs. [Insert Omnibus Amount]/- instead of the cheque amount of Rs. [Insert Exact Cheque Amount]/- (Para 6), (ii) illegally truncated the mandatory 15-day cure window to [Insert Days, e.g., 07] days (Para 7), and (iii) arrayed Petitioner No. 2 despite admitting in Para 2 that Petitioner No. 2 is a non-executive director who neither participates in day-to-day business operations nor signed the instrument.
-3.4. **Impugned Summoning Order:** That despite the aforesaid express statutory bars apparent on the face of the record, the Learned Trial Court mechanically took cognizance and passed the impugned Summoning Order dated [INSERT SUMMONING ORDER DATE] in Criminal Complaint Case No. [INSERT COMPLAINT CASE NO.].
+3.1. **Background of Transaction / Dispute:** (Set out the chronological background from the record with exact dates, invoice/agreement references, and amounts).
+3.2. **Core Factual & Statutory Events:** (Set out the exact sequence of events—such as cheque issuance/presentation dates or FIR registration details—from the record).
+3.3. **Statutory & Procedural Infirmities Apparent on Record:** (Set out the specific admissions, timeline breaches, or legal defects identified by Agent VIDHI in the audit).
+3.4. **Impugned Proceeding:** That despite the aforesaid express legal bars apparent on the face of the record, the impugned [Complaint / Summoning Order / FIR] was instituted, compelling the Petitioner(s) to approach this Hon'ble Court.
 
 4. **GROUNDS FOR QUASHING:**
-That the impugned Criminal Complaint and Summoning Order are manifestly illegal, without jurisdiction, and constitute a gross abuse of the criminal justice machinery on the following amongst other grounds:
-
-- **GROUND A: BECAUSE THE CHEQUE WAS STALE AND PRESENTED BEYOND THREE MONTHS UNDER SECTION 138 PROVISO (a) NI ACT:** That under Proviso (a) to Section 138 of the NI Act, presentation of the cheque to the drawee bank within 3 calendar months from the date on which it is drawn is an absolute statutory condition precedent. In the present case, Cheque No. [Insert Cheque No.] was drawn on [Insert Draw Date] and its 3-month validity expired on [Insert Expiry Date]. By the Respondent's own admission in Para 3 of the Notice, the instrument was presented on [Insert Presentation Date]—after expiry of its validity. Per *Shri Ishar Alloy Steels Ltd. v. Jayaswal Neco Ltd.*, (2001) 3 SCC 609, dishonour of a stale instrument cannot attract penal liability under Section 138 NI Act.
-- **GROUND B: BECAUSE THE STATUTORY NOTICE IS VITIATED BY AN ILLEGAL INDIVISIBLE OMNIBUS DEMAND UNDER SECTION 138 PROVISO (b) NI ACT:** That in Para 6 of the Notice, Respondent No. 2 demanded a consolidated lump sum of Rs. [Insert Omnibus Amount]/- instead of the cheque amount of Rs. [Insert Exact Cheque Amount]/-, arbitrarily clubbing unquantified damages and penalties without severance. In *Suman Sethi v. Ajay K. Churiwal*, (2000) 2 SCC 380 and *Rahul Builders v. Arihant Fertilizers*, (2008) 2 SCC 321, the Hon'ble Supreme Court settled the law that an omnibus demand for a consolidated amount exceeding the cheque sum without clear severance invalidates the notice in toto.
-- **GROUND C: BECAUSE THE NOTICE ILLEGALLY TRUNCATED THE MANDATORY 15-DAY STATUTORY CURE PERIOD UNDER SECTION 138 PROVISO (c) R/W SECTION 142(1)(b) NI ACT:** That Proviso (c) to Section 138 read with Section 142(1)(b) of the NI Act mandates a clear 15-day cure period from the date of receipt of notice before any cause of action can accrue on Day 16 (*Yogendra Pratap Singh v. Savitri Pandey*, (2014) 10 SCC 713). In Para 7 of the Notice, Respondent No. 2 unlawfully restricted the cure period to [Insert Days, e.g., 07 (SEVEN) DAYS], rendering the notice statutorily infirm.
-- **GROUND D: BECAUSE IMPLEADMENT OF A NON-SIGNATORY NON-EXECUTIVE DIRECTOR VIOLATES SECTION 141 NI ACT:** That in Para 2 of the Notice, Respondent No. 2 explicitly admitted that Petitioner No. 2 ([Insert Name of Non-Executive Director]) is a non-executive director who does not participate in day-to-day business operations and did not sign the instrument. In light of the Three-Judge Bench ruling in *SMS Pharmaceuticals Ltd. v. Neeta Bhalla*, (2005) 8 SCC 89, *Pooja Ravinder Devidasani v. State of Maharashtra*, (2014) 16 SCC 1, and *Aparna A. Shah v. Sheth Developers Pvt. Ltd.*, (2013) 8 SCC 71, prosecuting a non-signatory, non-executive director in the face of such an admission is a textbook abuse of process.
-- **GROUND E: BECAUSE CONTINUATION OF PROCEEDINGS VIOLATES PEPSI FOODS AND BHAJAN LAL PARAMETERS:** That as held by the Hon'ble Supreme Court in *Pepsi Foods Ltd. v. Special Judicial Magistrate*, (1998) 5 SCC 749, summoning of an accused in a criminal case is a serious matter and a Magistrate cannot act as a silent spectator. Furthermore, the present case falls squarely within Categories (1), (3), and (6) of *State of Haryana v. Bhajan Lal*, 1992 Supp (1) SCC 335, as the uncontroverted allegations in the notice/complaint disclose an express statutory bar to the institution and continuance of the proceeding.
+That the impugned criminal proceedings are manifestly illegal, without jurisdiction, and constitute a gross abuse of the criminal justice machinery on the following amongst other grounds:
+- **GROUND A:** (Set out the first major statutory ground from the audit with full Supreme Court citation and exact factual application).
+- **GROUND B:** (Set out the second major statutory ground from the audit with full Supreme Court citation and exact factual application).
+- **GROUND C:** (Set out the third major statutory ground from the audit with full Supreme Court citation and exact factual application).
+- **GROUND D:** (Set out the fourth major ground—such as absence of vicarious liability u/s 141 NI Act per *SMS Pharmaceuticals* or absence of *mens rea* from inception per *Hridaya Ranjan Prasad Verma v. State of Bihar*, (2000) 4 SCC 168).
+- **GROUND E: BECAUSE THE CASE FALLS SQUARELY WITHIN BHAJAN LAL AND PEPSI FOODS PARAMETERS:** That the uncontroverted allegations in the impugned record do not disclose the commission of any cognizable or maintainable penal offence and are barred by express provisions of law, falling squarely within Categories (1), (3), (6), and (7) of *State of Haryana v. Bhajan Lal*, 1992 Supp (1) SCC 335 and *Pepsi Foods Ltd. v. Special Judicial Magistrate*, (1998) 5 SCC 749.
 
 5. **MANDATORY NON-FILING DECLARATION:**
-That the Petitioner(s) have not filed any other similar petition seeking quashing of the impugned Criminal Complaint or Summoning Order either before this Hon'ble Court, the Hon'ble Supreme Court of India, or any other Court in India, and the Petitioner(s) have no other equally efficacious alternative remedy available in law.
+That the Petitioner(s) have not filed any other similar petition seeking quashing of the impugned proceedings either before this Hon'ble Court, the Hon'ble Supreme Court of India, or any other Court in India, and the Petitioner(s) have no other equally efficacious alternative remedy available in law.
 
 PRAYER:
 In light of the facts and grounds stated hereinabove, it is most respectfully prayed that this Hon'ble Court may graciously be pleased to:
-(a) Call for the records of Criminal Complaint Case No. [INSERT COMPLAINT CASE NO.] titled "[Complainant Name] v. [Accused Name]" pending before the Court of the Learned Judicial Magistrate First Class (NI Act), [INSERT DISTRICT / COURT], and quash the said Criminal Complaint, the impugned Summoning Order dated [INSERT SUMMONING ORDER DATE], and all consequential proceedings arising therefrom qua the Petitioner(s);
-(b) Grant an *ad-interim ex-parte* stay of all further proceedings in Criminal Complaint Case No. [INSERT COMPLAINT CASE NO.] before the Learned Trial Court during the pendency and final disposal of the present Petition; and
+(a) Call for the records and quash the impugned [Criminal Complaint Case No. / FIR No.] [INSERT CASE / FIR NO.] pending before [INSERT COURT / POLICE STATION], the impugned Orders passed therein, and all consequential proceedings arising therefrom qua the Petitioner(s);
+(b) Grant an *ad-interim ex-parte* stay of all further proceedings and coercive steps against the Petitioner(s) during the pendency and final disposal of the present Petition; and
 (c) Pass such other or further order(s) as this Hon'ble Court may deem fit and proper in the interest of justice.
 
 Place: [INSERT PLACE]
@@ -317,6 +316,93 @@ I, [INSERT NAME OF DEPONENT / PETITIONER], S/o [INSERT FATHER'S NAME], aged abou
 1. **COMPETENCY OF DEPONENT:** That I am the Petitioner / Authorized Representative of Petitioner No. 1 in the accompanying Petition under Section 528 of the Bharatiya Nagarik Suraksha Sanhita, 2023 and am well conversant with the facts and records of the case, and am competent to swear the present Affidavit.
 2. **ADOPTION OF PETITION CONTENTS:** That the accompanying Petition under Section 528 of the BNSS, 2023 has been drafted by my Counsel under my instructions, and the contents of Paragraphs 1 to 5 thereof have been read over and explained to me, which are true and correct to my knowledge based on official records and legal advice believed to be true.
 3. **CERTIFICATION OF ANNEXURES:** That the annexures annexed to the accompanying Petition are true copies of their respective originals.
+
+DEPONENT
+
+VERIFICATION:
+Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Paragraphs 1 to 3 of my above Affidavit are true and correct to my knowledge and belief, and nothing material has been concealed therefrom.
+
+DEPONENT
+""",
+
+    "Anticipatory / Regular Bail Application (Sec 482 / 483 BNSS)": """
+DRAFTING BLUEPRINT — APPLICATION FOR ANTICIPATORY BAIL (SECTION 482 BNSS) OR REGULAR BAIL (SECTION 483 BNSS):
+STRICT RULES FOR THIS TEMPLATE:
+- Output ONLY the complete Court Bail Application package below (Cause Title, Verbatim Paragraphs 1–11, Grounds including *Arnesh Kumar* / *Satender Kumar Antil* / *Gurbaksh Singh Sibbia* / *Sushila Aggarwal*, Mandatory Non-Filing Declaration, Undertaking, Prayer, and Page-Separated Supporting Affidavit).
+- Select Section 482 BNSS (corresponding to Section 438 CrPC) if the Applicant apprehends arrest (Anticipatory Bail), or Section 483 BNSS (corresponding to Section 439 CrPC) if the Applicant is already in custody (Regular Bail).
+- Never invent FIR numbers, Police Station names, or dates of arrest; keep bold `[INSERT ...]` placeholders in ALL CAPS for any missing fact.
+- Keep `... APPLICANT / ACCUSED` and `... RESPONDENT / STATE` on their own separate line below the party names.
+
+IN THE COURT OF THE LEARNED SESSIONS JUDGE / HIGH COURT OF [INSERT STATE / DISTRICT] AT [INSERT PLACE]
+BAIL APPLICATION NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Full Name, Parentage, Age & Residential Address of Applicant / Accused]
+... APPLICANT / ACCUSED
+
+VERSUS
+
+State of [INSERT STATE]
+(Through SHO, Police Station [INSERT POLICE STATION NAME])
+... RESPONDENT / STATE
+
+FIR No.: [INSERT FIR NO.]
+Dated: [INSERT FIR DATE]
+Under Section(s): [INSERT SECTIONS OF BNS, 2023 / IPC, 1860]
+Police Station: [INSERT POLICE STATION]
+
+APPLICATION UNDER SECTION [482 (ANTICIPATORY BAIL) / 483 (REGULAR BAIL)] OF THE BHARATIYA NAGARIK SURAKSHA SANHITA, 2023 (CORRESPONDING TO SECTION [438 / 439] OF THE ERSTWHILE CODE OF CRIMINAL PROCEDURE, 1973) ON BEHALF OF THE APPLICANT ABOVE-NAMED SEEKING GRANT OF [ANTICIPATORY / REGULAR] BAIL
+
+MOST RESPECTFULLY SHOWETH:
+
+1. **PRELIMINARY SUBMISSION & LIBERTY INVOCATION:** That the Applicant above-named is a law-abiding citizen having deep roots in society and permanent residence at [Insert Address from record or `[INSERT COMPLETE RESIDENTIAL ADDRESS]`], and is constrained to approach this Hon'ble Court under Section [482 / 483] of the Bharatiya Nagarik Suraksha Sanhita, 2023 seeking protection of personal liberty guaranteed under Article 21 of the Constitution of India in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS].
+2. **BRIEF CASE OF THE PROSECUTION AS PER FIR:** That the impugned FIR came to be registered on the complaint of [Insert Name of Complainant/Informant from record] alleging inter alia that [Summarize the core allegations, dates, and events stated in the FIR/record accurately].
+3. **FALSE IMPLICATION & DEFENSE VERSION OF THE APPLICANT:** That the Applicant is wholly innocent and has been falsely implicated in the present matter with an ulterior motive to exert pressure and settle a purely civil/commercial/personal dispute through the machinery of criminal law. (Set out the Applicant's factual defense and chronological truth from the record, or retain `[INSERT APPLICANT'S SPECIFIC FACTUAL DEFENSE & CHRONOLOGY]` if not on record).
+4. **NON-COMPLIANCE WITH MANDATORY SAFEGUARDS UNDER SECTION 35(3) BNSS (EARLIER SECTION 41A CRPC):** That where the alleged offence(s) carry a maximum punishment of up to 7 (seven) years, mechanical arrest without recording reasons under Section 35(1)(b) BNSS and without first serving a mandatory Notice of Appearance under Section 35(3) of the Bharatiya Nagarik Suraksha Sanhita, 2023 directly contravenes the binding directions of the Hon'ble Supreme Court in *Arnesh Kumar v. State of Bihar*, (2014) 8 SCC 273 and *Satender Kumar Antil v. Central Bureau of Investigation*, (2022) 10 SCC 51.
+5. **NO REQUIREMENT OF CUSTODIAL INTERROGATION & DOCUMENTARY NATURE OF EVIDENCE:** That the entire case of the prosecution rests upon documentary/electronic evidence which is either already in the possession of the Complainant/Investigating Agency or which the Applicant is ready and willing to produce forthwith. Consequently, custodial interrogation or prolonged incarceration of the Applicant is neither warranted nor necessary for fair investigation (*Sushila Aggarwal v. State (NCT of Delhi)*, (2020) 5 SCC 1; *Gurbaksh Singh Sibbia v. State of Punjab*, (1980) 2 SCC 565).
+6. **ABSENCE OF ESSENTIAL INGREDIENTS OF ALLEGED OFFENCE:** That even taking the allegations in the FIR at face value, the essential statutory ingredients of the offence(s) under Section(s) [Insert Sections] are wholly absent, and a predominantly civil dispute has been given the colour of a criminal offence (*Lalita Kumari v. Govt. of U.P.*, (2014) 2 SCC 1; *G. Sagar Suri v. State of U.P.*, (2000) 2 SCC 636).
+7. **SATISFACTION OF THE TRIPLE TEST FOR BAIL:** That the Applicant fully satisfies the Triple Test for grant of bail laid down by the Hon'ble Supreme Court:
+   (i) **No Flight Risk:** The Applicant is a permanent resident of [Insert City/Place] with family and property ties and has no likelihood of absconding or fleeing from justice;
+   (ii) **No Tampering with Evidence:** All material evidence is documentary in nature and beyond any scope of tampering; and
+   (iii) **No Influencing of Witnesses:** The Applicant undertakes not to directly or indirectly contact, induce, or threaten any prosecution witness.
+8. **CLEAN ANTECEDENTS:** That the Applicant has clean antecedents and has never been convicted in any criminal case by any Court of Law.
+9. **UNDERTAKING TO COOPERATE WITH INVESTIGATION & CONDITIONS UNDER SECTION 482(2) / 480(3) BNSS:** That the Applicant undertakes to join and cooperate with the investigation as and when called upon by the Investigating Officer, to furnish sound surety to the satisfaction of this Hon'ble Court / Arresting Officer, and to abide by all conditions imposed under Section 482(2) / Section 483 of the BNSS, 2023.
+10. **BAIL IS THE RULE AND JAIL IS THE EXCEPTION:** That as reiterated by the Hon'ble Supreme Court from *State of Rajasthan v. Balchand*, (1977) 4 SCC 308 to *Satender Kumar Antil v. CBI*, (2022) 10 SCC 51, pre-trial detention is not meant to be punitive and *"Bail is the rule, while jail is the exception"*.
+11. **MANDATORY DISCLOSURE OF PRIOR BAIL APPLICATIONS:** That no other application for [Anticipatory / Regular] Bail in the present FIR has been filed or is pending before this Hon'ble Court, the Hon'ble High Court, or the Hon'ble Supreme Court of India, save as disclosed herein: `[NIL / INSERT DETAILS OF ANY PRIOR BAIL ORDER IF APPLICABLE]`.
+
+PRAYER:
+In view of the facts and submissions made hereinabove, it is most respectfully prayed that this Hon'ble Court may graciously be pleased to:
+(a) Grant **[Anticipatory Bail under Section 482 BNSS / Regular Bail under Section 483 BNSS]** to the Applicant, directing that in the event of arrest / pending trial in connection with FIR No. [INSERT FIR NO.] dated [INSERT FIR DATE] registered at Police Station [INSERT POLICE STATION] under Section(s) [INSERT OFFENCE SECTIONS], the Applicant be released on bail on such terms and conditions as this Hon'ble Court may deem fit and proper;
+(b) Grant *ad-interim* protection from arrest / coercive action to the Applicant pending final disposal of the present Bail Application; and
+(c) Pass such other or further order(s) as this Hon'ble Court may deem fit and proper in the interest of justice and personal liberty.
+
+Place: [INSERT PLACE]
+Date: [INSERT DATE]
+
+APPLICANT / ACCUSED
+THROUGH
+[NAME OF ADVOCATE]
+Advocate — Counsel for the Applicant
+Enrollment No.: [INSERT ENROLLMENT NO.]
+
+---
+IN THE COURT OF THE LEARNED SESSIONS JUDGE / HIGH COURT OF [INSERT STATE / DISTRICT] AT [INSERT PLACE]
+BAIL APPLICATION NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Applicant Name]
+... APPLICANT / ACCUSED
+VERSUS
+State of [INSERT STATE]
+... RESPONDENT / STATE
+
+SUPPORTING AFFIDAVIT
+
+I, [INSERT NAME OF DEPONENT / PAIROKAR], S/o [INSERT FATHER'S NAME], aged about [INSERT AGE] years, R/o [Insert Address], do hereby solemnly affirm and declare on oath as under:
+
+1. **COMPETENCY OF DEPONENT:** That I am the Applicant / Pairvikar of the Applicant in the accompanying Bail Application under Section [482 / 483] of the Bharatiya Nagarik Suraksha Sanhita, 2023 and am well conversant with the facts and circumstances of the case, and am competent to swear the present Affidavit.
+2. **ADOPTION OF APPLICATION CONTENTS:** That the accompanying Bail Application has been drafted by Counsel under instructions, and the contents of Paragraphs 1 to 11 thereof are true and correct to my knowledge and belief based on records and legal advice believed to be true.
+3. **NON-FILING AFFIRMATION:** That no other bail application on behalf of the Applicant in respect of the subject FIR is pending before any Court in India.
 
 DEPONENT
 
@@ -412,6 +498,209 @@ Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that
 DEPONENT
 """,
 
+    "Civil Written Statement (Order VIII Rule 1 CPC — Defense)": """
+DRAFTING BLUEPRINT — WRITTEN STATEMENT ON BEHALF OF THE DEFENDANT UNDER ORDER VIII RULE 1 OF THE CODE OF CIVIL PROCEDURE, 1908:
+STRICT RULES FOR THIS TEMPLATE:
+- Output ONLY the complete Civil Written Statement package below (Cause Title, Preliminary Objections under Order VII Rule 11 CPC, Limitation & Jurisdiction Objections, Specific Traversal under Order VIII Rules 3–5 CPC, Parawise Reply on Merits, Prayer, Order VI Rule 15 CPC Verification, and Page-Separated Supporting Affidavit).
+- Never invent unverified factual defenses; keep bold `[INSERT ...]` placeholders in ALL CAPS for any fact not in the record.
+- Keep `... PLAINTIFF` and `... DEFENDANT` on their own separate line below the party names.
+
+IN THE COURT OF THE LEARNED DISTRICT JUDGE / SENIOR CIVIL JUDGE, AT [INSERT DISTRICT / PLACE]
+CIVIL SUIT NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Full Name & Address of Plaintiff]
+... PLAINTIFF
+
+VERSUS
+
+[Full Name & Address of Defendant]
+... DEFENDANT
+
+WRITTEN STATEMENT ON BEHALF OF THE DEFENDANT UNDER ORDER VIII RULE 1 OF THE CODE OF CIVIL PROCEDURE, 1908
+
+MOST RESPECTFULLY SHOWETH:
+
+PRELIMINARY OBJECTIONS:
+At the very outset, the Defendant raises the following Preliminary Objections which go to the root of the maintainability of the present Suit and warrant rejection/dismissal of the Plaint at the threshold:
+
+1. **PLAINT LIABLE TO BE REJECTED UNDER ORDER VII RULE 11(a) & (d) CPC:** That a meaningful reading of the Plaint as a whole fails to disclose any real or subsisting cause of action against the answering Defendant, and the Suit as framed is expressly barred by law within the meaning of Order VII Rule 11(a) and (d) of the Code of Civil Procedure, 1908 (*Dahiben v. Arvindbhai Kalyanji Bhanusali*, (2020) 7 SCC 366; *T. Arivandandam v. T.V. Satyapal*, (1977) 4 SCC 467).
+2. **BAR OF LIMITATION UNDER SECTION 3 OF THE LIMITATION ACT, 1963:** (Set out the exact limitation bar identified in the audit from the dates in the Plaint, or state how the alleged claim is barred by the Schedule to the Limitation Act, 1963 and liable to be dismissed under Section 3 of the Limitation Act).
+3. **SUPPRESSION OF MATERIAL FACTS (*SUPPRESSIO VERI, SUGGESTIO FALSI*):** That the Plaintiff has approached this Hon'ble Court with unclean hands and has deliberately suppressed material facts and documents vital to the adjudication of the dispute, disentitling the Plaintiff to any equitable or discretionary relief (*S.P. Chengalvaraya Naidu v. Jagannath*, (1994) 1 SCC 1). [INSERT SPECIFIC MATERIAL FACTS / PAYMENTS / CORRESPONDENCE SUPPRESSED BY THE PLAINTIFF].
+4. **LACK OF TERRITORIAL / PECUNIARY JURISDICTION & DEFICIENT COURT FEE:** That this Hon'ble Court lacks territorial/pecuniary jurisdiction under Section 20 of the Code of Civil Procedure, 1908 as no part of the cause of action arose within the local limits of this Hon'ble Court, and the Suit has been arbitrarily valued without affixing requisite *ad-valorem* Court Fee under Order VII Rule 11(b) and (c) CPC.
+5. **MISJOINDER AND NON-JOINDER OF NECESSARY PARTIES UNDER ORDER I RULE 9 CPC:** That the Suit is bad for misjoinder of improper parties and non-joinder of necessary parties in terms of Order I Rule 9 of the Code of Civil Procedure, 1908.
+
+PARAWISE REPLY ON MERITS:
+Without prejudice to the Preliminary Objections set out hereinabove, the Defendant specifically traverses each allegation in the Plaint in accordance with Order VIII Rules 3 and 5 of the Code of Civil Procedure, 1908. Save and except what is expressly admitted hereinbelow as a matter of record, every allegation in the Plaint is denied in toto:
+
+1. **Reply to Para 1 of the Plaint:** That the contents of Para 1 of the Plaint regarding the description of the Plaintiff are denied for want of knowledge, and the Plaintiff is put to strict proof of the competency and authorization of the signatory under Order VI Rule 14 / Order XXIX Rule 1 CPC.
+2. **Reply to Para 2 of the Plaint:** That the contents of Para 2 of the Plaint are admitted only to the extent of the name and address of the answering Defendant; the rest of the averments are denied.
+3. **Reply to Core Transaction & Liability Paragraphs of the Plaint:** (Reply sequentially to every factual paragraph of the Plaint on record, specifically traversing the alleged debt, contract, or cause of action and inserting `[INSERT DEFENDANT'S SPECIFIC FACTUAL DEFENSE & DOCUMENTARY REFERENCES]` where client instructions are required).
+4. **Reply to Cause of Action, Jurisdiction, Limitation & Valuation Paragraphs:** That the contents of the paragraphs relating to Cause of Action, Jurisdiction, Limitation, and Valuation are denied as false, fabricated, and legally untenable. No cause of action ever accrued in favour of the Plaintiff and against the answering Defendant.
+5. **Reply to the Prayer Clause:** That the Prayer clause of the Plaint is wholly misconceived, baseless, and the Plaintiff is not entitled to any decree, interest, or relief whatsoever against the answering Defendant.
+
+PRAYER:
+It is, therefore, most respectfully prayed that this Hon'ble Court may graciously be pleased to:
+(a) Reject the Plaint under Order VII Rule 11 of the Code of Civil Procedure, 1908 and/or dismiss the Suit of the Plaintiff with exemplary and compensatory costs under Section 35 and Section 35A of the Code of Civil Procedure, 1908 in favour of the answering Defendant; and
+(b) Pass such other or further order(s) as this Hon'ble Court may deem fit and proper in the facts and circumstances of the case.
+
+Place: [INSERT PLACE]
+Date: [INSERT DATE]
+
+DEFENDANT
+THROUGH
+[NAME OF ADVOCATE]
+Advocate — Counsel for the Defendant
+Enrollment No.: [INSERT ENROLLMENT NO.]
+
+VERIFICATION (UNDER ORDER VI RULE 15 OF THE CODE OF CIVIL PROCEDURE, 1908):
+Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Preliminary Objections 1 to 5 are believed to be true on legal advice received, and the contents of the Parawise Reply on Merits are true and correct to my personal knowledge and belief derived from official records, and the last paragraph is the humble Prayer before this Hon'ble Court.
+
+DEFENDANT
+
+---
+IN THE COURT OF THE LEARNED DISTRICT JUDGE / SENIOR CIVIL JUDGE, AT [INSERT PLACE]
+CIVIL SUIT NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Plaintiff Name]
+... PLAINTIFF
+VERSUS
+[Defendant Name]
+... DEFENDANT
+
+AFFIDAVIT IN SUPPORT OF WRITTEN STATEMENT UNDER ORDER VI RULE 15(4) OF THE CODE OF CIVIL PROCEDURE, 1908
+
+I, [INSERT NAME OF DEPONENT], S/o [INSERT FATHER'S NAME], aged about [INSERT AGE] years, Defendant / Authorized Representative of the Defendant, R/o [Insert Address], do hereby solemnly affirm and declare on oath as under:
+
+1. **COMPETENCY OF DEPONENT:** That I am the Defendant / Authorized Representative of the Defendant in the above-captioned Suit and am well conversant with the facts and records of the case, and am competent to swear the present Affidavit.
+2. **ADOPTION OF WRITTEN STATEMENT:** That the accompanying Written Statement under Order VIII Rule 1 of the Code of Civil Procedure, 1908 has been drafted by my Counsel under my instructions, and the contents of the Preliminary Objections, Parawise Reply on Merits, and Verification clause thereof are true and correct to my knowledge and belief.
+
+DEPONENT
+
+VERIFICATION:
+Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Paragraphs 1 and 2 of my above Affidavit are true and correct to my knowledge and belief, and nothing material has been concealed therefrom.
+
+DEPONENT
+""",
+
+    "Temporary Injunction Application (Order XXXIX Rule 1 & 2 CPC)": """
+DRAFTING BLUEPRINT — APPLICATION FOR AD-INTERIM EX-PARTE TEMPORARY INJUNCTION UNDER ORDER XXXIX RULES 1 AND 2 READ WITH SECTION 151 OF THE CODE OF CIVIL PROCEDURE, 1908:
+STRICT RULES FOR THIS TEMPLATE:
+- Output ONLY the complete Order XXXIX Rules 1 & 2 Temporary Injunction Application package below (Cause Title, Verbatim Paragraphs 1–8 covering the mandatory 3-prong test per *Dalpat Kumar v. Prahlad Singh*, Mandatory Compliance Averment under Order XXXIX Rule 3 Proviso CPC, Prayer, and Page-Separated Supporting Affidavit).
+- Never invent property descriptions or dates; keep bold `[INSERT ...]` placeholders in ALL CAPS for any missing fact.
+- Keep `... PLAINTIFF / APPLICANT` and `... DEFENDANT / RESPONDENT` on their own separate line below the party names.
+
+IN THE COURT OF THE LEARNED DISTRICT JUDGE / SENIOR CIVIL JUDGE, AT [INSERT DISTRICT / PLACE]
+I.A. NO. ________ OF 2026
+IN
+CIVIL SUIT NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Full Name & Address of Plaintiff / Applicant]
+... PLAINTIFF / APPLICANT
+
+VERSUS
+
+[Full Name & Address of Defendant / Respondent]
+... DEFENDANT / RESPONDENT
+
+APPLICATION UNDER ORDER XXXIX RULES 1 AND 2 READ WITH SECTION 151 OF THE CODE OF CIVIL PROCEDURE, 1908 ON BEHALF OF THE PLAINTIFF / APPLICANT FOR GRANT OF AD-INTERIM EX-PARTE TEMPORARY INJUNCTION
+
+MOST RESPECTFULLY SHOWETH:
+
+1. **PENDENCY & ADOPTION OF ACCOMPANYING PLAINT:** That the Plaintiff / Applicant has instituted the accompanying Suit for [Insert Nature of Suit, e.g., Permanent Injunction / Specific Performance / Declaration & Recovery] against the Defendant / Respondent before this Hon'ble Court. For the sake of brevity, the contents of the accompanying Plaint and the documents annexed thereto are not repeated herein and may be read as part and parcel of the present Application.
+2. **SUBJECT MATTER & IMMINENT THREAT BY DEFENDANT:** That as detailed in the accompanying Plaint, the Plaintiff is the lawful [owner in possession / agreement holder / right-holder] in respect of the suit property / subject matter described as `[INSERT EXACT DESCRIPTION OF SUIT PROPERTY / SUBJECT MATTER FROM RECORD]`. Recently, on [Insert Date of Threat/Cause of Action or `[INSERT DATE OF THREATENED ACTION]`], the Defendant threatened to illegally alienate, encumber, create third-party interest in, or dispossess/interfere with the Plaintiff's lawful rights over the subject matter.
+3. **STRONG PRIMA FACIE CASE IN FAVOUR OF THE PLAINTIFF:** That the Plaintiff has a strong *prima facie* case on merits based on unimpeachable documentary title/contractual record, and there is every likelihood of the accompanying Suit succeeding upon full trial (*Dalpat Kumar v. Prahlad Singh*, (1992) 1 SCC 719; *Gujarat Bottling Co. Ltd. v. Coca Cola Co.*, (1995) 5 SCC 545).
+4. **BALANCE OF CONVENIENCE LIES ENTIRELY IN FAVOUR OF THE PLAINTIFF:** That the balance of convenience lies entirely in favour of the Plaintiff and against the Defendant. Greater comparative hardship and mischief will be caused to the Plaintiff if the *status quo* is not preserved during the pendency of the Suit than any inconvenience caused to the Defendant by restraining unlawful alteration of the *status quo* (*Wander Ltd. v. Antox India P. Ltd.*, 1990 Supp SCC 727).
+5. **IRREPARABLE LOSS AND INJURY NOT COMPENSABLE IN MONEY:** That if the Defendant is not restrained forthwith by way of an *ad-interim* injunction from alienating, transferring, creating third-party rights, or altering the nature and possession of the suit property/subject matter, the Plaintiff will suffer irreparable loss and injury which cannot be adequately compensated in terms of money, and the very purpose of the Suit will be frustrated by multiplicity of proceedings.
+6. **URGENCY FOR EX-PARTE RELIEF UNDER ORDER XXXIX RULE 3 CPC:** That the object of granting the injunction would be defeated by delay if prior notice is required to be served before granting interim protection, as the Defendant is actively attempting to alter the *status quo* and create third-party equities forthwith.
+7. **UNDERTAKING FOR COMPLIANCE WITH ORDER XXXIX RULE 3 PROVISO CPC:** That in the event this Hon'ble Court is pleased to grant an *ex-parte ad-interim* injunction, the Plaintiff undertakes to strictly comply with the mandatory requirements of the Proviso to Order XXXIX Rule 3 of the Code of Civil Procedure, 1908 within 24 hours by dispatching copies of the Application, Affidavit, Plaint, and documents to the Defendant and filing the compliance affidavit forthwith (*Shiv Kumar Chadha v. Municipal Corporation of Delhi*, (1993) 3 SCC 161).
+8. **BONA FIDE APPLICATION:** That the present Application is made *bona fide* and in the interest of justice to preserve the subject matter of the Suit *pendente lite*.
+
+PRAYER:
+In view of the facts and circumstances stated hereinabove, it is most respectfully prayed that this Hon'ble Court may graciously be pleased to:
+(a) Grant an *ex-parte ad-interim* temporary injunction under Order XXXIX Rules 1 and 2 read with Section 151 of the Code of Civil Procedure, 1908 restraining the Defendant, its agents, servants, assigns, or anyone acting on its behalf from alienating, selling, transferring, encumbering, creating any third-party interest, or interfering with the peaceful possession / *status quo* of `[INSERT SUIT PROPERTY / SUBJECT MATTER]` during the pendency and final disposal of the accompanying Suit;
+(b) Confirm the said interim order till the final disposal of the Suit after notice to the Defendant; and
+(c) Pass such other or further order(s) as this Hon'ble Court may deem fit and proper in the interest of justice.
+
+Place: [INSERT PLACE]
+Date: [INSERT DATE]
+
+PLAINTIFF / APPLICANT
+THROUGH
+[NAME OF ADVOCATE]
+Advocate — Counsel for the Plaintiff / Applicant
+Enrollment No.: [INSERT ENROLLMENT NO.]
+
+---
+IN THE COURT OF THE LEARNED DISTRICT JUDGE / SENIOR CIVIL JUDGE, AT [INSERT PLACE]
+I.A. NO. ________ OF 2026 IN CIVIL SUIT NO. ________ OF 2026
+
+IN THE MATTER OF:
+[Plaintiff Name]
+... PLAINTIFF / APPLICANT
+VERSUS
+[Defendant Name]
+... DEFENDANT / RESPONDENT
+
+SUPPORTING AFFIDAVIT
+
+I, [INSERT NAME OF DEPONENT], S/o [INSERT FATHER'S NAME], aged about [INSERT AGE] years, R/o [Insert Address], do hereby solemnly affirm and declare on oath as under:
+
+1. **COMPETENCY OF DEPONENT:** That I am the Plaintiff / Authorized Representative of the Plaintiff in the accompanying Suit and Application under Order XXXIX Rules 1 and 2 read with Section 151 of the Code of Civil Procedure, 1908 and am well conversant with the facts and records of the case, and am competent to swear the present Affidavit.
+2. **ADOPTION OF APPLICATION CONTENTS:** That the accompanying Application for Temporary Injunction has been drafted by my Counsel under my instructions, and the contents of Paragraphs 1 to 8 thereof are true and correct to my personal knowledge and belief based on official records and legal advice believed to be true.
+
+DEPONENT
+
+VERIFICATION:
+Verified at [INSERT PLACE] on this [INSERT DAY] day of [INSERT MONTH], 2026 that the contents of Paragraphs 1 and 2 of my above Affidavit are true and correct to my knowledge and belief, and nothing material has been concealed therefrom.
+
+DEPONENT
+""",
+
+    "Breach of Contract & Sec 21 Arbitration Invocation Notice": """
+DRAFTING BLUEPRINT — LEGAL NOTICE FOR BREACH OF CONTRACT, RECOVERY OF DAMAGES UNDER SECTION 73 CONTRACT ACT, AND INVOCATION OF ARBITRATION UNDER SECTION 21 OF THE ARBITRATION AND CONCILIATION ACT, 1996:
+STRICT RULES FOR THIS TEMPLATE:
+- Output ONLY the formal Legal Notice & Section 21 Arbitration Invocation below.
+- Populate all known contract dates, clauses, and amounts from the record, and keep bold `[INSERT ...]` placeholders in ALL CAPS for any missing fact.
+
+WITHOUT PREJUDICE
+BY REGISTERED POST A.D. / SPEED POST / EMAIL
+
+[NAME OF ADVOCATE]
+Advocate | Enrollment No.: [INSERT ENROLLMENT NO.]
+Chamber / Office: [INSERT CHAMBER / OFFICE ADDRESS]
+Email: [INSERT EMAIL] | Mobile: [INSERT MOBILE NO.]
+
+Ref. No.: [INSERT REF. NO.]
+Date: [INSERT DATE OF DISPATCH]
+
+To,
+[Full Name, Designation & Registered Address of Counterparty / Respondent] ("Noticee")
+
+SUBJECT: LEGAL NOTICE FOR MATERIAL BREACH OF AGREEMENT DATED [INSERT AGREEMENT DATE], DEMAND FOR RS. [INSERT CLAIM AMOUNT]/- UNDER SECTION 73 OF THE INDIAN CONTRACT ACT, 1872, AND STATUTORY NOTICE INVOKING ARBITRATION UNDER SECTION 21 OF THE ARBITRATION AND CONCILIATION ACT, 1996.
+
+Sir/Madam,
+
+Under instructions from and on behalf of my Client, [Full Name, Constitution & Registered Address of Claimant] (hereinafter referred to as "my Client" or the "Claimant"), I hereby serve upon you the following formal Legal Notice for Breach of Contract and Statutory Notice Invoking Arbitration under Section 21 of the Arbitration and Conciliation Act, 1996:
+
+1. **EXECUTION OF BINDING COMMERCIAL CONTRACT:** That my Client and you entered into a valid and binding written Agreement / Contract bearing Ref. No. [Insert Agreement Ref. No. or `[INSERT AGREEMENT REF. NO.]`] dated [Insert Agreement Date or `[INSERT AGREEMENT DATE]`] for [Insert Scope of Contract / Supply / Services from record].
+2. **PERFORMANCE BY MY CLIENT & MATERIAL BREACH BY NOTICEE:** That my Client duly performed all its reciprocal obligations under the said Agreement in good faith and in accordance with Sections 37 and 51 of the Indian Contract Act, 1872. However, you committed fundamental and material breaches of Clause(s) [Insert Breached Clauses or `[INSERT RELEVANT CONTRACT CLAUSE NO.]`] of the Agreement by [Set out exact breach, default in payment, or non-performance from the record].
+3. **QUANTIFICATION OF CLAIM & DAMAGES UNDER SECTION 73 OF THE INDIAN CONTRACT ACT, 1872:** That as a direct and natural consequence of your material breach of contract, my Client has suffered liquidated unpaid dues and direct damages under Section 73 of the Indian Contract Act, 1872 aggregating to **Rs. [Insert Total Claim Amount]/- (Rupees [Insert Amount in Words] Only)**, comprising (i) Principal Unpaid Dues of Rs. [Insert Principal Amount]/-, and (ii) Damages / Accrued Interest of Rs. [Insert Interest/Damages Amount or `[INSERT QUANTIFIED INTEREST / DAMAGES]`]/- @ [Insert Rate, e.g., 18%] per annum.
+4. **FAILURE OF AMICABLE RESOLUTION:** That despite repeated written reminders and requests dated [Insert Reminder Dates or `[INSERT PRIOR REMINDER DATES]`], you have failed and neglected to cure the breach or discharge the outstanding liability, giving rise to live, subsisting, and arbitrable disputes between the parties.
+5. **ARBITRATION AGREEMENT UNDER SECTION 7 OF THE ARBITRATION AND CONCILIATION ACT, 1996:** That Clause [Insert Arbitration Clause No. or `[INSERT ARBITRATION CLAUSE NO.]`] of the Agreement dated [Insert Agreement Date] contains a binding Arbitration Agreement within the meaning of Section 7 of the Arbitration and Conciliation Act, 1996, stipulating that all disputes and differences arising out of or in connection with the Agreement shall be referred to arbitration seated at [Insert Seat/Venue of Arbitration or `[INSERT SEAT OF ARBITRATION]`].
+6. **STATUTORY INVOCATION OF ARBITRATION UNDER SECTION 21 OF THE ARBITRATION AND CONCILIATION ACT, 1996:** That in exercise of its statutory right under **Section 21 of the Arbitration and Conciliation Act, 1996** (read with *BSNL v. Nortel Networks India Pvt. Ltd.*, (2021) 5 SCC 738), my Client hereby formally invokes the Arbitration Clause and commences arbitral proceedings for adjudication of its claims of Rs. [Insert Total Claim Amount]/- along with *pendente lite* and future interest under Section 31(7) of the Act and costs.
+7. **NOMINATION OF SOLE ARBITRATOR & 30-DAY STATUTORY WINDOW UNDER SECTION 11:** That in accordance with the Arbitration Clause and the law laid down by the Hon'ble Supreme Court in *Perkins Eastman Architects DPC v. HSCC (India) Ltd.*, (2020) 20 SCC 760 (prohibiting unilateral appointment by an interested party), my Client hereby proposes the name of **[INSERT NAME OF PROPOSED INDEPENDENT ARBITRATOR, E.G., FORMER JUDGE / SENIOR ADVOCATE]** to act as the independent Sole Arbitrator to adjudicate the disputes between the parties.
+8. **FINAL CALL & NOTICE OF SECTION 11 / SECTION 9 PROCEEDINGS:** You are hereby called upon within **15 (fifteen) days** of receipt of this Notice to pay the aforesaid sum of Rs. [Insert Total Claim Amount]/- in full settlement of my Client's claim, OR within the statutory period of **30 (thirty) days** from the receipt of this Notice under Section 11(4)/(5) of the Arbitration and Conciliation Act, 1996, communicate your written concurrence to the appointment of the Sole Arbitrator proposed in Paragraph 7 above. Take explicit notice that should you fail to comply within the statutory window, my Client shall immediately approach the Hon'ble High Court of [INSERT JURISDICTIONAL HIGH COURT] under **Section 11(6)** of the Arbitration and Conciliation Act, 1996 for appointment of an Arbitral Tribunal, besides moving the competent Commercial Court under **Section 9** of the Act for interim measures of protection and attachment/securing of the amount in dispute, entirely at your risk, cost, and consequences.
+
+A copy of this Statutory Notice under Section 21 is retained in my office for production before the Hon'ble High Court / Arbitral Tribunal.
+
+Yours faithfully,
+[NAME OF ADVOCATE]
+Advocate — Counsel for the Claimant
+""",
+
     "Court List of Dates & Events (LoD)": """
 DRAFTING BLUEPRINT — SYNOPSIS & CHRONOLOGICAL LIST OF DATES AND EVENTS (LoD):
 STRICT RULES FOR THIS TEMPLATE:
@@ -423,7 +712,7 @@ IN THE COURT OF [INSERT COURT NAME] AT [INSERT PLACE]
 CASE / PETITION NO. ________ OF 2026
 
 IN THE MATTER OF:
-[Full Name of Complainant / Petitioner / Plaintiff]
+[Full Name of Complainant / Petitioner / Plaintiff / Applicant]
 ... COMPLAINANT / PETITIONER / PLAINTIFF
 
 VERSUS
@@ -432,12 +721,12 @@ VERSUS
 ... ACCUSED / RESPONDENT / DEFENDANT
 
 SYNOPSIS OF CASE & DECISIVE STATUTORY ISSUES:
-Write a formal, authoritative 1-paragraph courtroom Synopsis setting out the nature of the proceeding, the cheque details (Cheque No., Draw Date, Amount, Presentation Date, Return Memo Date, and Notice Date), and each decisive statutory bar or cause of action with exact Supreme Court citations (*Shri Ishar Alloy Steels Ltd.*, *Suman Sethi*, *Yogendra Pratap Singh*, and *SMS Pharmaceuticals*).
+Write a formal, authoritative 1-paragraph courtroom Synopsis setting out the nature of the proceeding, the core factual/instrument details from the record, and each decisive statutory bar or cause of action with exact Supreme Court citations identified in the case audit.
 
 CHRONOLOGICAL LIST OF DATES AND EVENTS:
 | S.No. | Date | Chronological Event & Statutory Significance | Page / Para Ref. |
 | :--- | :--- | :--- | :--- |
-(Populate every chronological milestone in its own row: 1. Invoice / Transaction Date; 2. Cheque Draw Date; 3. Expiry of 3-Calendar-Month Statutory Validity u/s 138 Proviso (a); 4. Actual Cheque Presentation Date & Late Day-Count; 5. Bank Return Memo Date; 6. Defective Legal Demand Notice Date, Omnibus Sum Demanded u/s 138(b), Truncated Cure Period u/s 138(c), and Non-Executive Director Admission u/s 141; 7. Present Proceeding / Relief Sought).
+(Populate every chronological milestone from the case record in its own row in strict date order, highlighting the statutory limitation calculations, key admissions, and relief sought).
 
 Place: [INSERT PLACE]
 Date: [INSERT DATE]
@@ -452,7 +741,7 @@ Enrollment No.: [INSERT ENROLLMENT NO.]
 DRAFTING BLUEPRINT — COURT-READY VAKALATNAMA:
 STRICT RULES FOR THIS TEMPLATE:
 - Output ONLY the formal Court Vakalatnama below.
-- Populate the Court Name, Party Names, and exact Party Roles (e.g., COMPLAINANT and ACCUSED for Sec 138 NI Act; PETITIONER and RESPONDENT for Sec 528 BNSS; PLAINTIFF and DEFENDANT for Civil Suits) from the record.
+- Populate the Court Name, Party Names, and exact Party Roles (e.g., COMPLAINANT and ACCUSED for Sec 138 NI Act; PETITIONER and RESPONDENT for Sec 528 BNSS; PLAINTIFF and DEFENDANT for Civil Suits; APPLICANT / ACCUSED and RESPONDENT / STATE for Bail) from the record.
 - Put `IN THE MATTER OF:`, each Party Name, and each `... ROLE` on their own separate lines.
 
 IN THE COURT OF [INSERT COURT NAME] AT [INSERT PLACE]
@@ -460,8 +749,8 @@ CASE / COMPLAINT / PETITION NO. ________ OF 2026
 
 IN THE MATTER OF:
 
-[Insert Full Name of Complainant / Petitioner / Plaintiff from Record]
-... [Select Exact Role: COMPLAINANT / PETITIONER / PLAINTIFF]
+[Insert Full Name of Complainant / Petitioner / Plaintiff / Applicant from Record]
+... [Select Exact Role: COMPLAINANT / PETITIONER / PLAINTIFF / APPLICANT]
 
 VERSUS
 
@@ -470,7 +759,7 @@ VERSUS
 
 VAKALATNAMA
 
-KNOW ALL TO WHOM THESE PRESENTS SHALL COME that I/We, the undersigned **[Insert Full Name of Client Entity/Individual from Record, and `[INSERT COMPLETE ADDRESS]` if address is not on record]**, being the **[Complainant / Petitioner / Plaintiff / Accused / Respondent / Defendant]** in the above-captioned matter, do hereby appoint, retain, and engage:
+KNOW ALL TO WHOM THESE PRESENTS SHALL COME that I/We, the undersigned **[Insert Full Name of Client Entity/Individual from Record, and `[INSERT COMPLETE ADDRESS]` if address is not on record]**, being the **[Complainant / Petitioner / Plaintiff / Accused / Respondent / Defendant / Applicant]** in the above-captioned matter, do hereby appoint, retain, and engage:
 
 [NAME OF ADVOCATE]
 Advocate | Enrollment No.: [INSERT ENROLLMENT NO.]
@@ -479,9 +768,9 @@ Email: [INSERT EMAIL] | Mobile: [INSERT MOBILE NO.]
 
 (hereinafter called the "Advocate(s)") to be my/our true and lawful Advocate(s) to act, appear, and plead for me/us in the above-captioned matter on the following terms:
 
-1. **AUTHORITY TO APPEAR & PLEAD:** To appear, act, and plead for me/us before the aforesaid Hon'ble Court or any other Court or Tribunal to which the said matter may be transferred, committed, or appealed, and to file complaints, petitions, plaints, written statements, replies, affidavits, applications, and documents.
-2. **AUTHORITY TO EXAMINE & CONDUCT TRIAL:** To summon and examine witnesses, cross-examine opposing witnesses, file applications under the Negotiable Instruments Act, 1881, Bharatiya Nagarik Suraksha Sanhita, 2023, Bharatiya Sakshya Adhiniyam, 2023, or Code of Civil Procedure, 1908, and obtain certified copies of judicial records.
-3. **AUTHORITY TO COMPROMISE, COMPOUND & RECEIVE MONIES:** To compound the offence under Section 147 of the Negotiable Instruments Act, 1881, refer the dispute to mediation/Lok Adalat, withdraw or settle the matter under my/our instructions, and receive or deposit any cheques, demand drafts, interim compensation under Section 143A NI Act, or decreetal/settlement amounts on my/our behalf.
+1. **AUTHORITY TO APPEAR & PLEAD:** To appear, act, and plead for me/us before the aforesaid Hon'ble Court or any other Court or Tribunal to which the said matter may be transferred, committed, or appealed, and to file complaints, petitions, plaints, written statements, bail applications, replies, affidavits, applications, and documents.
+2. **AUTHORITY TO EXAMINE & CONDUCT TRIAL:** To summon and examine witnesses, cross-examine opposing witnesses, file applications under the Negotiable Instruments Act, 1881, Bharatiya Nagarik Suraksha Sanhita, 2023, Bharatiya Nyaya Sanhita, 2023, Bharatiya Sakshya Adhiniyam, 2023, Code of Civil Procedure, 1908, or Arbitration and Conciliation Act, 1996, and obtain certified copies of judicial records.
+3. **AUTHORITY TO COMPROMISE, COMPOUND & RECEIVE MONIES:** To compound offences where permissible (including under Section 147 NI Act / Section 359 BNSS), refer the dispute to mediation/Lok Adalat/arbitration, withdraw or settle the matter under my/our instructions, and receive or deposit any cheques, demand drafts, interim compensation under Section 143A NI Act, bail bonds, or decreetal/settlement amounts on my/our behalf.
 4. **AUTHORITY TO APPOINT ASSOCIATE COUNSEL:** To appoint and instruct any other Advocate or junior counsel to appear and act on my/our behalf whenever necessary.
 5. **RATIFICATION & UNDERTAKING:** I/We hereby agree to ratify and confirm all lawful acts done by my/our said Advocate(s) in pursuance of this engagement as if done by me/us personally, and undertake to appear before the Hon'ble Court on every date of hearing as directed.
 
@@ -501,76 +790,88 @@ CLIENT(S) / EXECUTANT(S) SIGNATURE BLOCK:
 """
 }
 
-# 3. MASTER AUDIT SYSTEM ROLE (FOR CHAT & PDF DOCKET AUDITS — MODES 1, 2 & 3)
+# 3. MASTER MULTI-PRACTICE AUDIT SYSTEM ROLE (NI ACT + CRIMINAL BNSS/BNS + CIVIL CPC + CONTRACT/ARBITRATION)
 SYSTEM_ROLE = """
-You are an expert Indian Litigation & Chambers Audit Engine (Agent VIDHI).
-Your job is to audit case facts/documents, identify every legal flaw, tell the lawyer the EXACT next procedural step for BOTH sides (Defense and Complainant) based on the current stage of the matter, and direct them to generate the required documents via **Section II: Agent LEKHAK (Drafting Engine)** and **Section III: Agent DOOT (Clerk & Dispatch)** in the sidebar.
+You are an expert Indian Multi-Practice Litigation & Chambers Audit Engine (Agent VIDHI).
+Your job is to audit case facts/documents across Negotiable Instruments (NI Act), Criminal Law (BNSS/BNS, 2023 & CrPC/IPC), Civil & Property Litigation (CPC, 1908), and Commercial Contracts/Arbitration (Contract Act, 1872 & A&C Act, 1996), identify every legal/procedural flaw, tell the lawyer the EXACT next step for BOTH sides (Defense/Respondent and Complainant/Plaintiff/Applicant), and direct them to generate the required documents via **Section II: Pleading Engine (LEKHAK)** and **Section III: Clerk & Client Dispatch (DOOT)** in the sidebar.
 
-CORE LEGAL & MATH RULES (PERFORM AUTOMATICALLY):
-1. Calendar Math [Sec 9 General Clauses Act]:
-   - Cheque Validity [Sec 138 Proviso (a)]: 3 calendar months from Draw Date to presentation at drawee bank (e.g., 20 June expires 20 Sept; presenting on 25 Sept is 5 days late = STALE/EXPIRED).
-   - Notice Window [Sec 138 Proviso (b)]: 30 days from the date the Complainant RECEIVES the bank Return Memo. Always EXCLUDE the day of receipt (Econ Antri Ltd. v. Rom Industries).
-   - Cure & Filing Window [Sec 138 Proviso (c) & Sec 142(1)(b)]: Notice must grant a full 15-day cure period from delivery. Cause of action accrues on Day 16 (Yogendra Pratap Singh v. Savitri Pandey). Complaint must be filed within 1 calendar month thereafter.
-2. Core Statutory & Precedent Checks:
-   - Time-Barred Debt: Debt >3 years old without fresh written acknowledgment u/s 18 Limitation Act or Sec 25(3) Contract Act is unenforceable.
-   - Part-Payments & Omnibus Demand: Unendorsed part-payment before presentation violates Sec 56 NI Act (Dashrathbhai Trikambhai Patel). Demanding an indivisible omnibus amount (adding unquantified damages/penalties to the cheque sum without bifurcation) invalidates the notice (Suman Sethi v. Ajay K. Churiwal; Rahul Builders).
-   - Vicarious Liability & Non-Signatories: Only the signatory/drawer of an account maintained by them is liable u/s 138 (Aparna A. Shah). Company directors require specific Sec 141 averments of day-to-day conduct of business; non-executive directors without active role cannot be prosecuted (SMS Pharmaceuticals Ltd. v. Neeta Bhalla).
-   - Territorial Jurisdiction [Sec 142(2) NI Act]: Lies strictly at the payee's collecting bank branch (for account presentation) or drawee bank (Bridgestone India)—never where the lawyer's chamber dispatched the notice.
-   - Old-to-New Code Crosswalk: Cite both where helpful (Sec 482 CrPC / Sec 528 BNSS for Quashing; Sec 200 CrPC / Sec 223 BNSS for Cognizance; Sec 65B IEA / Sec 63 BSA for Electronic Evidence; Sec 420 IPC / Sec 318(4) BNS for Cheating).
+CORE MULTI-PRACTICE LEGAL & MATH RULES (PERFORM AUTOMATICALLY):
+1. Negotiable Instruments [Sec 138–142 NI Act & Sec 9 General Clauses Act]:
+   - Cheque Validity [Sec 138 Proviso (a)]: 3 calendar months from Draw Date to presentation at drawee bank (Shri Ishar Alloy Steels Ltd. v. Jayaswal Neco Ltd., (2001) 3 SCC 609).
+   - Notice Window [Sec 138 Proviso (b)]: 30 days from receipt of Return Memo, excluding the day of receipt (Econ Antri Ltd. v. Rom Industries). Demanding an indivisible omnibus sum (adding unquantified damages/penalties without severance) invalidates the notice (Suman Sethi v. Ajay K. Churiwal; Rahul Builders).
+   - Cure & Filing Window [Sec 138 Proviso (c) & Sec 142(1)(b)]: Mandatory 15 clear days from notice delivery. Cause of action accrues on Day 16 (Yogendra Pratap Singh v. Savitri Pandey). Complaint must be filed within 1 calendar month thereafter.
+   - Vicarious Liability [Sec 141 NI Act] & Part-Payment [Sec 56 NI Act]: Non-signatory, non-executive directors without day-to-day role are immune (SMS Pharmaceuticals Ltd. v. Neeta Bhalla; Pooja Ravinder Devidasani; Aparna A. Shah). Unendorsed part-payment before presentation violates Sec 56 NI Act (Dashrathbhai Trikambhai Patel).
+   - Territorial Jurisdiction [Sec 142(2) NI Act]: Payee's collecting bank branch or drawee bank (Bridgestone India).
+2. Criminal Litigation & Bail [BNSS & BNS, 2023 / CrPC & IPC Crosswalk]:
+   - Mandatory Notice Before Arrest [Sec 35(3) BNSS / earlier Sec 41A CrPC]: For offences punishable up to 7 years, police must serve a Section 35(3) BNSS Notice of Appearance; mechanical arrest violates Arnesh Kumar v. State of Bihar, (2014) 8 SCC 273 and Satender Kumar Antil v. CBI, (2022) 10 SCC 51.
+   - Statutory Default Bail [Sec 187(3) BNSS / earlier Sec 167(2) CrPC]: 60 days or 90 days investigation limit for filing chargesheet (Rakesh Kumar Paul v. State of Assam).
+   - Bail & Quashing Standards: Anticipatory Bail (Sec 482 BNSS / Sec 438 CrPC — Sushila Aggarwal; Gurbaksh Singh Sibbia), Regular Bail (Sec 480/483 BNSS / Sec 437/439 CrPC), and High Court Quashing (Sec 528 BNSS / Sec 482 CrPC — State of Haryana v. Bhajan Lal; Pepsi Foods Ltd.; G. Sagar Suri where a civil dispute is given a criminal cloak).
+   - Key BNS/BNSS/BSA Crosswalk: Cheating (Sec 420 IPC -> Sec 318(4) BNS); Criminal Breach of Trust (Sec 406 IPC -> Sec 316(2) BNS); Forgery (Sec 468 IPC -> Sec 336(3) BNS); Criminal Intimidation (Sec 506 IPC -> Sec 351 BNS); Cognizance (Sec 200 CrPC -> Sec 223 BNSS); Electronic Evidence Certificate (Sec 65B IEA -> Sec 63 BSA).
+3. Civil & Property Litigation [CPC, 1908 & Limitation Act, 1963]:
+   - Plaint Rejection [Order VII Rule 11 CPC]: Check (a) absence of cause of action, (b)/(c) undervalued relief / deficient court fee, and (d) suit barred by limitation or statute (Dahiben v. Arvindbhai Kalyanji Bhanusali, (2020) 7 SCC 366).
+   - Written Statement Timeline [Order VIII Rule 1 CPC]: 30 days from service of summons, extendable up to 90 days in ordinary civil suits (Kailash v. Nanhku) and strictly capped at 120 days in Commercial Disputes (SCG Contracts India Pvt. Ltd. v. K.S. Chamankar Infrastructure, (2019) 12 SCC 210).
+   - Temporary Injunction [Order XXXIX Rules 1 & 2 CPC]: Audit the 3 mandatory prongs—(i) Prima Facie Case, (ii) Balance of Convenience, and (iii) Irreparable Injury not compensable in money (Dalpat Kumar v. Prahlad Singh, (1992) 1 SCC 719), plus Order XXXIX Rule 3 Proviso compliance for ex-parte orders.
+   - Civil Recovery Limitation: 3 years from invoice/cheque/breach under Articles 19, 35, 40, and 55 of the Limitation Act, 1963 (unless extended by written acknowledgment u/s 18 Limitation Act or Sec 25(3) Contract Act).
+4. Commercial Contracts & Arbitration [Contract Act, 1872 & A&C Act, 1996]:
+   - Damages & Penalty [Secs 73 & 74 Contract Act]: Distinguish actual loss/liquidated damages under Sec 73 from unenforceable penal clauses under Sec 74 (Kailash Nath Associates v. DDA, (2015) 4 SCC 136).
+   - Arbitration Invocation [Sec 21 & Sec 11 A&C Act]: Mandatory written Section 21 Invocation Notice is a statutory prerequisite to commence arbitration and trigger the 30-day appointment window before moving the High Court u/s 11(6) (BSNL v. Nortel Networks, (2021) 5 SCC 738). Unilateral appointment of a sole arbitrator by an interested party is void (Perkins Eastman Architects DPC v. HSCC (India) Ltd., (2020) 20 SCC 760).
 
 STRICT ACCURACY & FORMATTING RULES:
-- ZERO HALLUCINATION: Never invent facts or manufacture defects from normal boilerplate (e.g., a lawyer's chamber letterhead address in a Demand Notice is NOT a territorial jurisdiction defect).
-- NEVER ECHO PROMPT INSTRUCTIONS: Never print internal instructions or template directions in your response. Output only the final legal analysis.
-- HIGH RECALL & UTILITY: Never hide or suppress a genuine factual, procedural, or statutory flaw. Every point must be accurate, grounded in the text, and useful.
+- ZERO HALLUCINATION: Never invent facts or manufacture defects from normal boilerplate.
+- NEVER ECHO PROMPT INSTRUCTIONS: Output only the final legal analysis.
 - NO HTML IN TABLES: NEVER use `<br>` or any HTML tags inside Markdown tables. Keep table cells on a single line using dashes (`—`) or semicolons (`;`).
-- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Agent LEKHAK (Drafting Engine)** for BOTH **Defense** and **Complainant** from these 7 options:
+- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Section II: Pleading Engine (LEKHAK)** for BOTH sides from these 11 options:
   1. `"Statutory Demand Notice (Sec 138 NI Act)"`
   2. `"Reply to Legal Demand Notice (Defense)"`
   3. `"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`
   4. `"Sec 528 BNSS (482 CrPC) Quashing Petition"`
-  5. `"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`
-  6. `"Court List of Dates & Events (LoD)"`
-  7. `"Vakalatnama (Court Authorization Form)"`
+  5. `"Anticipatory / Regular Bail Application (Sec 482 / 483 BNSS)"`
+  6. `"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`
+  7. `"Civil Written Statement (Order VIII Rule 1 CPC — Defense)"`
+  8. `"Temporary Injunction Application (Order XXXIX Rule 1 & 2 CPC)"`
+  9. `"Breach of Contract & Sec 21 Arbitration Invocation Notice"`
+  10. `"Court List of Dates & Events (LoD)"`
+  11. `"Vakalatnama (Court Authorization Form)"`
 
 ===================================================================
 MODE 1: WHEN NO PDF IS UPLOADED
 - If the user enters CASE FACTS WITH DATES:
-  **CASE STAGE & VERDICT:** [Current Stage | MAINTAINABLE / TIME-BARRED / PREMATURE / DEFECTIVE — 1-sentence bottom line]
-  ### 1. Timeline & Limitation Check
-  | Stage & Provision | Dates & AI Day-Count | Statutory Limit | Status |
+  **CASE STAGE & VERDICT:** [Practice Area & Current Stage | MAINTAINABLE / TIME-BARRED / DEFECTIVE / ACTIONABLE — 1-sentence bottom line]
+  ### 1. Timeline & Statutory Limitation Check
+  | Stage & Provision | Dates & AI Day-Count | Statutory Limit / Rule | Status |
   | :--- | :--- | :--- | :--- |
-  ### 2. Legal Audit & Findings
+  ### 2. Legal Audit & Statutory Findings
   * **[Title of Finding / Defect]:** Exact statutory section, Supreme Court precedent, and legal impact.
   ### 3. Immediate Next Course of Action & Document Generation
-  * **If Acting for Defense (Noticee / Accused):** Exact next procedural step and defense strategy.
-  * **If Acting for Complainant (Payee / Claimant):** Exact next procedural step, curability, or civil recovery route.
+  * **If Acting for Defense / Respondent / Accused:** Exact next procedural step and defense strategy.
+  * **If Acting for Complainant / Plaintiff / Claimant / Applicant:** Exact next procedural step and relief strategy.
   * **Generate in Nyaya-Agent Now (Agent LEKHAK & Agent DOOT):**
-    * **For Defense:** Select **`"[Exact Defense Template Name]"`** (and **`"[2nd Defense Template if applicable]"`**)
-    * **For Complainant:** Select **`"[Exact Complainant Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
+    * **For Defense / Accused / Defendant:** Select **`"[Exact Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
+    * **For Complainant / Plaintiff / Claimant:** Select **`"[Exact Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
 
 - If the user asks a GENERAL / CONCEPTUAL LEGAL QUESTION (no case dates):
   Answer directly and clearly in under 180 words using clean headings and bullet points with exact statutory sections and Supreme Court precedents. Do NOT show a timeline table if no dates are involved.
 
 ===================================================================
 MODE 2: WHEN PDF DOCKET(S) ARE UPLOADED (CASE AUDIT & ACTION PLAN)
-**DOCUMENT STAGE & VERDICT:** [Document Type & Procedural Stage | FATALLY DEFECTIVE / MAINTAINABLE — 1-line outcome]
+**DOCUMENT STAGE & VERDICT:** [Practice Area, Document Type & Procedural Stage | FATALLY DEFECTIVE / MAINTAINABLE / URGENT RELIEF — 1-line outcome]
 
 ### 1. Statutory Timeline & Quantum Snapshot
 | Stage / Check | Document Facts & AI Date Math (`[PAGE X]`, Para) | Statutory Requirement | Status |
 | :--- | :--- | :--- | :--- |
 
-### 2. Identified Legal & Procedural Defects
-* **[Clear Title of Defect] (`[PAGE X]`, Para Y):**
-  * **The Flaw:** Exact dates, amounts, or admissions in the text.
-  * **The Law:** Exact Section and Supreme Court precedent violated.
-  * **Legal Impact:** How this affects the validity of the notice, complaint, or party array.
+### 2. Identified Legal & Procedural Defects / Grounds
+* **[Clear Title of Defect or Ground] (`[PAGE X]`, Para Y):**
+  * **The Flaw / Fact:** Exact dates, amounts, or admissions in the text.
+  * **The Law:** Exact Section and Supreme Court precedent violated or applicable.
+  * **Legal Impact:** How this affects maintainability, bail/injunction entitlement, or defense strategy.
 
 ### 3. Next Course of Action & Document Generation
-* **If Acting for Defense (Recipient / Noticee / Accused):** State the immediate next procedural step (e.g., serve a formal Reply to Notice locking in all statutory objections on record and warning against malicious prosecution u/s 223(1) BNSS, or move the High Court u/s 528 BNSS for quashing if a complaint/summoning order is already passed).
-* **If Acting for Complainant (Sender / Payee / Claimant):** State whether each defect can be cured (e.g., re-present cheque if still within 3 months, issue a corrected severed notice if still within 30 days of Return Memo, or abandon Sec 138 criminal prosecution if the cheque is stale and institute a Summary Suit u/o XXXVII CPC with 18% interest u/s 80 NI Act).
+* **If Acting for Defense / Respondent / Accused:** State the immediate next procedural step.
+* **If Acting for Complainant / Plaintiff / Claimant:** State the immediate next procedural step or cure route.
 * **Generate in Nyaya-Agent Now (Sidebar — Agent LEKHAK & Agent DOOT):**
-  * **If Acting for Defense:** Select **`"Reply to Legal Demand Notice (Defense)"`** (at Pre-Cognizance Notice stage) OR **`"Sec 528 BNSS (482 CrPC) Quashing Petition"`** + **`"Court List of Dates & Events (LoD)"`** + **`"Vakalatnama (Court Authorization Form)"`** (if Summons/Complaint is issued).
-  * **If Acting for Complainant:** Select **`"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`** + **`"Vakalatnama (Court Authorization Form)"`** (where Sec 138 is time-barred/stale) OR **`"Statutory Demand Notice (Sec 138 NI Act)"`** / **`"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`** (where timelines are valid).
+  * **If Acting for Defense / Accused / Defendant:** Select the exact matching blueprint from the 11 options + **`"Vakalatnama (Court Authorization Form)"`**.
+  * **If Acting for Complainant / Plaintiff / Claimant:** Select the exact matching blueprint from the 11 options + **`"Vakalatnama (Court Authorization Form)"`**.
 
 *(Note: If the uploaded PDF is a Court Judgment/Order, summarize: **1. Bench & Holding**, **2. Key Facts**, **3. Core Ratio & Paragraphs (`[PAGE X]`)**, and **4. How to Deploy This Precedent**).*
 
@@ -834,9 +1135,9 @@ st.markdown("""
     <div class="sovereign-masthead">
         <div class="tricolour-rule"></div>
         <div class="masthead-body">
-            <div class="masthead-kicker">Sovereign Indian Litigation Chambers Infrastructure</div>
+            <div class="masthead-kicker">Sovereign Indian Multi-Practice Litigation Chambers OS</div>
             <div class="masthead-title">NYAYA-AGENT</div>
-            <p class="masthead-sub"><b>NETRA</b> (Docket &amp; Vision Ingestion) &nbsp;&bull;&nbsp; <b>VIDHI</b> (Limitation &amp; Precedent Audit) &nbsp;&bull;&nbsp; <b>LEKHAK</b> (Senior Pleading Engine) &nbsp;&bull;&nbsp; <b>DOOT</b> (Chambers Clerk)</p>
+            <p class="masthead-sub"><b>NETRA</b> (Docket &amp; Vision Ingestion) &nbsp;&bull;&nbsp; <b>VIDHI</b> (NI Act, BNSS, CPC &amp; Arbitration Audit) &nbsp;&bull;&nbsp; <b>LEKHAK</b> (11-Blueprint Pleading Engine) &nbsp;&bull;&nbsp; <b>DOOT</b> (Chambers Clerk)</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -864,8 +1165,33 @@ if "doot_whatsapp_msg" not in st.session_state:
     st.session_state.doot_whatsapp_msg = ""
 if "doot_calendar_ics" not in st.session_state:
     st.session_state.doot_calendar_ics = ""
+if "adv_name" not in st.session_state:
+    st.session_state.adv_name = ""
+if "adv_enroll" not in st.session_state:
+    st.session_state.adv_enroll = ""
+if "adv_chamber" not in st.session_state:
+    st.session_state.adv_chamber = ""
+if "adv_contact" not in st.session_state:
+    st.session_state.adv_contact = ""
 
-# 6. DETERMINISTIC COURTROOM WORD (.DOC) & CALENDAR (.ICS) RENDERING ENGINES
+# 6. DETERMINISTIC ADVOCATE LETTERHEAD INJECTOR, WORD (.DOC) & CALENDAR (.ICS) COMPILERS
+def apply_advocate_profile(text):
+    out = text
+    if st.session_state.adv_name.strip():
+        out = re.sub(r'\[NAME OF ADVOCATE\]', st.session_state.adv_name.strip(), out, flags=re.IGNORECASE)
+    if st.session_state.adv_enroll.strip():
+        out = re.sub(r'\[INSERT ENROLLMENT NO\.\]', st.session_state.adv_enroll.strip(), out, flags=re.IGNORECASE)
+    if st.session_state.adv_chamber.strip():
+        out = re.sub(r'\[INSERT CHAMBER\s*/\s*OFFICE ADDRESS\]', st.session_state.adv_chamber.strip(), out, flags=re.IGNORECASE)
+    if st.session_state.adv_contact.strip():
+        out = re.sub(
+            r'Email:\s*\[INSERT EMAIL\]\s*\|\s*Mobile:\s*\[INSERT MOBILE NO\.\]',
+            st.session_state.adv_contact.strip(),
+            out,
+            flags=re.IGNORECASE
+        )
+    return out
+
 def create_ics_alert(event_title, deadline_date, description):
     dt_start = deadline_date.strftime("%Y%m%d")
     dt_end = (deadline_date + timedelta(days=1)).strftime("%Y%m%d")
@@ -920,7 +1246,8 @@ def auto_bold_lead_in(line_html):
     return line_html
 
 def create_word_doc(markdown_text, doc_title="Legal_Document"):
-    cleaned = re.sub(r'<br\s*/?>', ' — ', markdown_text, flags=re.IGNORECASE)
+    cleaned = apply_advocate_profile(markdown_text)
+    cleaned = re.sub(r'<br\s*/?>', ' — ', cleaned, flags=re.IGNORECASE)
     # Guardrail 1: Fix non-existent "High Court of (Judicature at) New Delhi" -> "High Court of Delhi at New Delhi"
     cleaned = re.sub(
         r'HIGH COURT OF (?:JUDICATURE AT )?NEW DELHI(?: AT NEW DELHI)?',
@@ -937,7 +1264,7 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
     # Guardrail 3: Ensure "IN THE MATTER OF:" and "... ROLE" always break onto separate lines for Vakalatnama & Cause Titles
     cleaned = re.sub(r'(IN THE MATTER OF:)\s+', r'\1\n', cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(
-        r'([^\n])\s+(\.\.\.\s*(?:COMPLAINANT|ACCUSED|PETITIONER|RESPONDENT|PLAINTIFF|DEFENDANT|\[SELECT))',
+        r'([^\n])\s+(\.\.\.\s*(?:COMPLAINANT|ACCUSED|PETITIONER|RESPONDENT|PLAINTIFF|DEFENDANT|APPLICANT|\[SELECT))',
         r'\1\n\2',
         cleaned,
         flags=re.IGNORECASE
@@ -950,6 +1277,7 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
     in_table = False
     table_rows = []
     seen_letterhead_name = False
+    custom_adv_upper = st.session_state.adv_name.strip().upper()
 
     def flush_table(rows):
         if not rows:
@@ -992,13 +1320,14 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
 
         # 1. Centered Court Headings, Pleading Titles & Short Top Dispatch Headers
         if (
-            plain_upper in ["WITHOUT PREJUDICE", "WITHOUT PREJUDICE:", "LEGAL NOTICE", "INDEX", "SYNOPSIS", "SUPPORTING AFFIDAVIT", "VAKALATNAMA"]
+            plain_upper in ["WITHOUT PREJUDICE", "WITHOUT PREJUDICE:", "LEGAL NOTICE", "INDEX", "SYNOPSIS", "SUPPORTING AFFIDAVIT", "VAKALATNAMA", "IN", "IN:"]
             or any(plain_upper.startswith(p) for p in [
                 "IN THE COURT OF", "IN THE HIGH COURT OF", "IN THE SUPREME COURT OF",
                 "COMPLAINT CASE NO", "CRIMINAL MISC", "CRL.M.C.", "SUMMARY CIVIL SUIT",
-                "CIVIL SUIT", "CASE / PETITION NO", "CASE / COMPLAINT / PETITION NO",
-                "EXTRAORDINARY CRIMINAL JURISDICTION",
+                "CIVIL SUIT", "BAIL APPLICATION NO", "I.A. NO.", "CASE / PETITION NO",
+                "CASE / COMPLAINT / PETITION NO", "EXTRAORDINARY CRIMINAL JURISDICTION",
                 "(SUIT UNDER ORDER", "COMPLAINT UNDER SECTION", "PETITION UNDER SECTION",
+                "APPLICATION UNDER SECTION", "APPLICATION UNDER ORDER", "WRITTEN STATEMENT ON BEHALF",
                 "SUIT FOR RECOVERY", "SUIT UNDER ORDER",
                 "PRE-SUMMONING EVIDENCE", "AFFIDAVIT IN SUPPORT",
                 "LIST OF DOCUMENTS", "LIST OF WITNESSES", "CHRONOLOGICAL LIST OF DATES"
@@ -1011,8 +1340,8 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
         ):
             html_blocks.append(f"<p class='court-center'>{wrap_bold(format_inline_md(line))}</p>")
 
-        # 2. Letterhead Name vs. Bottom Signature Block for [NAME OF ADVOCATE]
-        elif plain_upper.startswith("[NAME OF ADVOCATE]"):
+        # 2. Letterhead Name vs. Bottom Signature Block for [NAME OF ADVOCATE] or Custom Advocate Name
+        elif plain_upper.startswith("[NAME OF ADVOCATE]") or (custom_adv_upper and plain_upper == custom_adv_upper):
             if not seen_letterhead_name and len(html_blocks) < 8:
                 seen_letterhead_name = True
                 html_blocks.append(f"<p class='letterhead-title'>{wrap_bold(format_inline_md(line))}</p>")
@@ -1020,7 +1349,7 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
                 html_blocks.append(f"<p class='sig-block'>{wrap_bold(format_inline_md(line))}</p>")
 
         # 3. Automatic Solid Divider Under Letterhead Email/Mobile Line
-        elif plain_upper.startswith("EMAIL:") and len(html_blocks) < 12:
+        elif (plain_upper.startswith("EMAIL:") or (st.session_state.adv_contact.strip() and plain_upper == st.session_state.adv_contact.strip().upper())) and len(html_blocks) < 12:
             html_blocks.append(f"<p class='left-line'>{format_inline_md(line)}</p>")
             html_blocks.append("<hr>")
 
@@ -1039,15 +1368,16 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
         elif plain_upper in ["YOURS FAITHFULLY,", "YOURS TRULY,", "FILED BY:", "THROUGH", "THROUGH:", "IDENTIFIED & ACCEPTED BY:"]:
             html_blocks.append(f"<p class='signoff-line'>{wrap_bold(format_inline_md(line))}</p>")
 
-        elif plain_upper in ["COMPLAINANT", "PETITIONER(S)", "PETITIONER", "PLAINTIFF", "DEPONENT"]:
+        elif plain_upper in ["COMPLAINANT", "PETITIONER(S)", "PETITIONER", "PLAINTIFF", "PLAINTIFF / APPLICANT", "DEFENDANT", "APPLICANT / ACCUSED", "APPLICANT", "DEPONENT"]:
             html_blocks.append(f"<p class='court-sig-right'>{wrap_bold(format_inline_md(line))}</p>")
 
-        # 7. Cause Title Party Role Labels (... COMPLAINANT / ... ACCUSED / ... PETITIONER)
+        # 7. Cause Title Party Role Labels (... COMPLAINANT / ... ACCUSED / ... PETITIONER / ... APPLICANT)
         elif plain_upper.startswith("...") or any(plain_upper.endswith(s) for s in [
             "... COMPLAINANT", "... ACCUSED", "... ACCUSED PERSON(S)",
             "... PETITIONER", "... PETITIONER(S)", "... RESPONDENT", "... RESPONDENT(S)",
-            "... PLAINTIFF", "... DEFENDANT", "... COMPLAINANT / PETITIONER / PLAINTIFF",
-            "... ACCUSED / RESPONDENT / DEFENDANT"
+            "... PLAINTIFF", "... DEFENDANT", "... PLAINTIFF / APPLICANT", "... DEFENDANT / RESPONDENT",
+            "... APPLICANT / ACCUSED", "... RESPONDENT / STATE",
+            "... COMPLAINANT / PETITIONER / PLAINTIFF", "... ACCUSED / RESPONDENT / DEFENDANT"
         ]):
             html_blocks.append(f"<p class='right-label'>{wrap_bold(format_inline_md(line))}</p>")
 
@@ -1058,11 +1388,12 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
         # 9. Major Section Headings
         elif any(plain_upper.startswith(p) for p in [
             "PART I", "PART II", "PART III", "SECTION A", "SECTION B",
-            "PRELIMINARY STATEMENT", "PRAYER", "VERIFICATION", "SYNOPSIS OF CASE", "CLIENT(S) / EXECUTANT(S)"
+            "PRELIMINARY STATEMENT", "PRELIMINARY OBJECTIONS", "PARAWISE REPLY ON MERITS",
+            "PRAYER", "VERIFICATION", "SYNOPSIS OF CASE", "CLIENT(S) / EXECUTANT(S)"
         ]):
             html_blocks.append(f"<p class='sec-heading'>{wrap_bold(format_inline_md(line))}</p>")
 
-        # 10. Short Left-Aligned Lines (Addresses, Place/Date at bottom, Counsel titles) -> NEVER JUSTIFY
+        # 10. Short Left-Aligned Lines (Addresses, FIR metadata, Place/Date at bottom, Counsel titles) -> NEVER JUSTIFY
         elif len(line) < 95 and not re.match(r'^(\d+(?:\.\d+)?\.|\([a-z]\)|-\s|•\s|GROUND\s+[A-Z]|QUESTION\s+[A-Z]|Reply to Para|Without prejudice|KNOW ALL|IN WITNESS)', line, re.IGNORECASE):
             html_blocks.append(f"<p class='left-line'>{format_inline_md(line)}</p>")
 
@@ -1281,10 +1612,10 @@ with st.sidebar:
     # SECTION I: PRIMARY DOCKET & AUDIT (AGENT NETRA & VIDHI)
     st.markdown("### I. Case Docket (NETRA & VIDHI)")
     uploaded_pdfs = st.file_uploader(
-        "Upload Notice, Complaint, or Case File(s)",
+        "Upload Notice, FIR, Plaint, Contract, or Case File(s)",
         type=["pdf"],
         accept_multiple_files=True,
-        help="Upload 1 or more PDFs to audit, or leave empty to enter facts in the main console."
+        help="Upload 1 or more PDFs (NI Act, Criminal FIR/Bail, Civil CPC Plaint, or Contract) to audit, or enter facts in the console."
     )
     
     trigger_audit = False
@@ -1354,11 +1685,11 @@ with st.sidebar:
         st.session_state.docket_summary = ""
         st.session_state.total_pages = 0
 
-    # SECTION II: SENIOR PLEADING ENGINE (AGENT LEKHAK)
+    # SECTION II: SENIOR PLEADING ENGINE (AGENT LEKHAK — 11 BLUEPRINTS)
     st.markdown("### II. Pleading Engine (LEKHAK)")
     with st.form("draft_engine_form", border=False):
         draft_type = st.selectbox(
-            "Select Legal Instrument",
+            "Select Legal Instrument (11 Blueprints)",
             list(DRAFT_BLUEPRINTS.keys())
         )
         trigger_draft = st.form_submit_button("Draft Pleading (LEKHAK)", use_container_width=True)
@@ -1382,7 +1713,10 @@ with st.sidebar:
                 "15-Day Notice Cure Expiry (Sec 138(c) NI Act)",
                 "30-Day Notice Dispatch Limit (Sec 138(b) NI Act)",
                 "1-Month Complaint Filing Limit (Sec 142(1)(b))",
-                "Sec 528 BNSS High Court Filing / Hearing"
+                "30/90-Day Written Statement Limit (Order VIII Rule 1 CPC)",
+                "24-Hour Ex-Parte Injunction Compliance (Order XXXIX Rule 3 CPC)",
+                "30-Day Arbitrator Appointment Window (Sec 11/21 A&C Act)",
+                "Sec 482/483 BNSS Bail / Sec 528 BNSS High Court Hearing"
             ]
         )
         doot_date = st.date_input("Statutory Deadline / Hearing Date", value=datetime.today() + timedelta(days=15))
@@ -1400,8 +1734,33 @@ with st.sidebar:
                 use_container_width=True
             )
 
-   # SECTION IV: CHAMBERS & ENGINE SETUP (COLLAPSIBLE DRAWER — AUTO-TUCKED WHEN CLOUD KEY ACTIVE)
-    with st.expander("IV. Chambers & Engine Setup", expanded=not bool(cloud_keys)):
+    # SECTION IV: CHAMBERS LETTERHEAD & ENGINE SETUP (COLLAPSIBLE DRAWER)
+    with st.expander("IV. Chambers Letterhead & Engine Setup", expanded=not bool(cloud_keys)):
+        st.caption("Advocate Letterhead Lock (Auto-Stamps All Pleadings & Vakalatnama)")
+        st.session_state.adv_name = st.text_input(
+            "Advocate Full Name",
+            value=st.session_state.adv_name,
+            placeholder="e.g., Adv. Rajesh Singh Rajput"
+        )
+        st.session_state.adv_enroll = st.text_input(
+            "Bar Council Enrollment No.",
+            value=st.session_state.adv_enroll,
+            placeholder="e.g., PH/1234/2005 or D/5678/2010"
+        )
+        st.session_state.adv_chamber = st.text_input(
+            "Chamber / Office Address",
+            value=st.session_state.adv_chamber,
+            placeholder="e.g., Chamber No. 402, District Courts, Faridabad"
+        )
+        st.session_state.adv_contact = st.text_input(
+            "Email & Mobile Line",
+            value=st.session_state.adv_contact,
+            placeholder="e.g., Email: counsel@chambers.in | Mobile: +91-98XXXXXXXX"
+        )
+        if st.session_state.adv_name.strip():
+            st.caption(f"✓ Active Letterhead: {st.session_state.adv_name.strip()}")
+
+        st.markdown("---")
         user_api_key = st.text_input(
             "Google API Key",
             type="password",
@@ -1419,6 +1778,7 @@ with st.sidebar:
             ],
             index=1
         )
+
     # HANDLE AGENT DOOT EXECUTION
     if trigger_doot:
         if not st.session_state.messages and not st.session_state.docket_text:
@@ -1433,7 +1793,7 @@ with st.sidebar:
                 doot_prompt = f"""
                 You are Agent DOOT (Autonomous Chambers Law Clerk). Based on the case audit/facts below, write a crisp, professional 5-line WhatsApp update for the Lawyer to send to their Client:
                 - Line 1: *⚖️ CASE STATUS UPDATE — CHAMBERS BRIEFING*
-                - Line 2: *Matter / Instrument:* (Parties, Cheque No. & Amount)
+                - Line 2: *Matter / Subject:* (Parties & Core Dispute/Instrument)
                 - Line 3: *Legal Audit Verdict:* (1-sentence summary of key statutory finding)
                 - Line 4: *Immediate Next Action:* (What pleading/step we are taking next)
                 - Line 5: *Key Statutory Date:* {doot_deadline_type} on {doot_date.strftime('%d %b %Y')}.
@@ -1474,17 +1834,17 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 10. CAPTURE USER ACTION (CHAT, AUDIT, OR DRAFT) & LOCK IN SESSION STATE
-chat_prompt = st.chat_input("Enter case facts with dates, statutory queries, or questions regarding the uploaded docket...")
+chat_prompt = st.chat_input("Enter case facts (NI Act, Criminal FIR/Bail, Civil CPC, or Contract/Arbitration), statutory queries, or docket questions...")
 
 if trigger_audit and st.session_state.docket_signature:
     st.session_state.messages = []
     st.session_state.generated_draft = ""
     st.session_state.generated_draft_title = ""
     audit_prompt = (
-        "**Agent Handoff (`NETRA → VIDHI` — Procedural & Limitation Audit):** Execute MODE 2 for the uploaded document(s). "
-        "Verify all statutory timelines automatically, list every genuine legal/factual defect clearly with exact page/paragraph citations, "
+        "**Agent Handoff (`NETRA → VIDHI` — Multi-Practice Procedural & Limitation Audit):** Execute MODE 2 for the uploaded document(s). "
+        "Verify all statutory timelines automatically, list every genuine legal/factual defect or ground clearly with exact page/paragraph citations, "
         "and under Section 3 state the immediate next procedural step and exact **Agent LEKHAK** sidebar document to generate for "
-        "BOTH **Defense (Noticee/Accused)** and **Complainant (Payee/Claimant)**."
+        "BOTH **Defense/Respondent/Accused** and **Complainant/Plaintiff/Claimant**."
     )
     st.session_state.messages.append({"role": "user", "content": audit_prompt})
     st.session_state.pending_request = {"is_draft": False, "draft_type": None}
@@ -1551,7 +1911,7 @@ if st.session_state.pending_request:
                         1. Output ONLY the formal legal document text itself following the exact verbatim paragraphs and structure in the Blueprint below. Do NOT summarize or shorten any paragraph of the Blueprint, and NEVER output any parenthetical drafting instructions.
                         2. Do NOT generate any other document besides "{active_draft_type}".
                         3. NEVER write "Nyaya-AI", "Nyaya-Agent", or "Senior Advocate" anywhere, and never write "Supreme Court of India" in the Advocate letterhead or signature block. Always use clean bracketed placeholders (`[NAME OF ADVOCATE]`, `[INSERT ENROLLMENT NO.]`, `[INSERT CHAMBER / OFFICE ADDRESS]`).
-                        4. STRICT ANTI-FABRICATION RULE: Populate every exact date, cheque number, amount, party name, paragraph reference, and legal defect present in the Case Docket and Audit History below. However, NEVER invent or guess any date, bank branch, invoice number, factual defense, or case number that is missing from the record—always retain the bold bracketed placeholder in ALL CAPS (e.g., `[INSERT COLLECTING BANK & BRANCH]`, `[INSERT RETURN MEMO RECEIPT DATE]`) for any missing fact.
+                        4. STRICT ANTI-FABRICATION RULE: Populate every exact date, cheque/FIR/invoice/contract number, amount, party name, paragraph reference, and legal defect present in the Case Docket and Audit History below. However, NEVER invent or guess any date, bank branch, police station, invoice number, factual defense, or case number that is missing from the record—always retain the bold bracketed placeholder in ALL CAPS (e.g., `[INSERT COLLECTING BANK & BRANCH]`, `[INSERT FIR NO.]`, `[INSERT SUIT PROPERTY / SUBJECT MATTER]`) for any missing fact.
 
                         {selected_blueprint}
                         {docket_block}
@@ -1648,6 +2008,8 @@ if st.session_state.pending_request:
                     
                     if winner:
                         clean_output = re.sub(r'<br\s*/?>', ' — ', winner["text"], flags=re.IGNORECASE)
+                        if is_draft_generation:
+                            clean_output = apply_advocate_profile(clean_output)
                         
                         st.markdown(clean_output)
                         docket_tag = f" | {st.session_state.total_pages}p Docket" if st.session_state.total_pages else ""
