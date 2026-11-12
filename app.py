@@ -581,7 +581,7 @@ MODE 3: FOLLOW-UP QUESTIONS IN CHAT
 - Only include a table if comparing multiple dates or provisions (never use `<br>` inside table cells).
 """
 
-# 4. EDITORIAL COURTROOM UI (Crisp White Canvas, Pure Black Times New Roman, Burnished Gold Headings & Subtle Tricolour Bar)
+# 4. EDITORIAL COURTROOM UI (Crisp White Canvas, Pure Black Times New Roman, Burnished Gold Headings & Protected Icons)
 st.markdown("""
     <style>
     /* Global Canvas & Editorial Typography */
@@ -591,6 +591,16 @@ st.markdown("""
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* CRITICAL FIX: Protect Streamlit Material Icons (arrows, upload, sidebar toggle) */
+    [data-testid="stIconMaterial"],
+    span[data-testid="stIconMaterial"],
+    .material-symbols-rounded,
+    [translate="no"] {
+        font-family: 'Material Symbols Rounded' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
     }
 
     /* Force Light Mode on Top Bar & Bottom Chat Bar */
@@ -610,7 +620,7 @@ st.markdown("""
     }
 
     /* Ensure all standard paragraphs, lists, and chat output render in crisp black Times New Roman */
-    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span, [data-testid="stChatMessageContent"] {
+    .stMarkdown p, .stMarkdown li, [data-testid="stChatMessageContent"] p, [data-testid="stChatMessageContent"] li {
         color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-size: 1.07rem;
@@ -646,10 +656,9 @@ st.markdown("""
         margin-top: 8px;
         margin-bottom: 8px;
     }
-    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] label p,
     [data-testid="stSidebar"] .stCaption,
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] span {
+    [data-testid="stSidebar"] .stMarkdown p {
         color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
     }
@@ -769,7 +778,7 @@ st.markdown("""
         font-family: 'Times New Roman', Times, Georgia, serif;
     }
 
-    /* Crisp White & Burnished Gold Buttons (Fixes Black 'Draft Pleading' Button) */
+    /* Crisp White & Burnished Gold Buttons */
     .stButton > button,
     .stButton > button[kind="primary"],
     .stButton > button[kind="secondary"],
@@ -814,6 +823,11 @@ st.markdown("""
         border: 1px solid #E5E0D5 !important;
         border-radius: 2px !important;
         margin-bottom: 8px;
+    }
+    [data-testid="stExpander"] summary p {
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 600 !important;
     }
     </style>
     
