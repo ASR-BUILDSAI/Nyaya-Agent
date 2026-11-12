@@ -1400,7 +1400,7 @@ with st.sidebar:
                 use_container_width=True
             )
 
-    # SECTION IV: CHAMBERS & ENGINE SETUP (COLLAPSIBLE DRAWER — AUTO-TUCKED WHEN CLOUD KEY ACTIVE)
+   # SECTION IV: CHAMBERS & ENGINE SETUP (COLLAPSIBLE DRAWER — AUTO-TUCKED WHEN CLOUD KEY ACTIVE)
     with st.expander("IV. Chambers & Engine Setup", expanded=not bool(cloud_keys)):
         user_api_key = st.text_input(
             "Google API Key",
@@ -1417,9 +1417,8 @@ with st.sidebar:
                 "High Precision (3.8 → 3.6 → 3.1-Pro → 3.5)",
                 "Parallel Race (3.6 → 3.5-Flash-Lite)"
             ],
-            index=0
+            index=1
         )
-
     # HANDLE AGENT DOOT EXECUTION
     if trigger_doot:
         if not st.session_state.messages and not st.session_state.docket_text:
