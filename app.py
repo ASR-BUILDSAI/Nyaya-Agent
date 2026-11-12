@@ -581,28 +581,47 @@ MODE 3: FOLLOW-UP QUESTIONS IN CHAT
 - Only include a table if comparing multiple dates or provisions (never use `<br>` inside table cells).
 """
 
-# 4. EDITORIAL COURTROOM UI (Crisp White Canvas, Pure Black Times New Roman, Burnished Gold Headings & Subtle Tricolour Bar)
+# 4. EDITORIAL COURTROOM UI (WITH FULL OS/BROWSER DARK-MODE IMMUNITY SHIELD)
 st.markdown("""
     <style>
-    /* Global Canvas & Editorial Typography */
-    .stApp {
-        background-color: #FFFFFF;
-        color: #111111;
-        font-family: 'Times New Roman', Times, Georgia, serif;
+    /* 1. Force Light Color-Scheme Across Root, Top Bar & Bottom Bar (Overrides OS Dark Mode) */
+    :root, html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
+        color-scheme: light !important;
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
-    /* Ensure all standard paragraphs, lists, and chat output render in crisp black Times New Roman */
-    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span, [data-testid="stChatMessageContent"] {
+    header[data-testid="stHeader"] {
+        background-color: #FFFFFF !important;
+        border-bottom: 1px solid #EFECE4 !important;
+    }
+    header[data-testid="stHeader"] * {
+        color: #111111 !important;
+    }
+    [data-testid="stBottom"],
+    [data-testid="stBottom"] > div,
+    [data-testid="stBottomBlockContainer"] {
+        background-color: #FFFFFF !important;
+        border-top: 1px solid #EFECE4 !important;
+    }
+
+    /* 2. Crisp Black Times New Roman for All Body Text, Chat & Lists */
+    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span,
+    [data-testid="stChatMessageContent"], [data-testid="stChatMessageContent"] * {
         color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-size: 1.07rem;
         line-height: 1.65;
     }
 
-    /* Burnished Courtroom Gold Headings */
-    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+    /* 3. Burnished Courtroom Gold Headings (Overrides Above Rule for Headings) */
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4,
+    [data-testid="stChatMessageContent"] h1,
+    [data-testid="stChatMessageContent"] h2,
+    [data-testid="stChatMessageContent"] h3,
+    [data-testid="stChatMessageContent"] h4 {
         color: #8B6914 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-weight: 700 !important;
@@ -613,10 +632,12 @@ st.markdown("""
         margin-bottom: 12px;
     }
 
-    /* Clean Archival Parchment Sidebar (Harvey-Style Decluttered Workspace) */
-    [data-testid="stSidebar"] {
-        background-color: #FAF9F5;
-        border-right: 1px solid #E5E0D5;
+    /* 4. Archival Parchment Sidebar & Expander Drawers (Dark-Mode Immune) */
+    [data-testid="stSidebar"],
+    [data-testid="stSidebar"] > div:first-child {
+        background-color: #FAF9F5 !important;
+        border-right: 1px solid #E5E0D5 !important;
+        color: #111111 !important;
     }
     [data-testid="stSidebar"] .stMarkdown h3,
     [data-testid="stSidebar"] .stMarkdown h4 {
@@ -632,14 +653,103 @@ st.markdown("""
     }
     [data-testid="stSidebar"] label,
     [data-testid="stSidebar"] .stCaption,
-    [data-testid="stSidebar"] p {
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] div[role="radiogroup"] * {
         color: #1A1A1A !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
     }
+    [data-testid="stExpander"],
+    [data-testid="stExpander"] details,
+    [data-testid="stExpander"] summary {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        border-color: #E5E0D5 !important;
+        border-radius: 2px !important;
+    }
+    [data-testid="stExpander"] summary span,
+    [data-testid="stExpander"] summary p,
+    [data-testid="stExpander"] summary svg {
+        color: #8B6914 !important;
+        fill: #8B6914 !important;
+        font-weight: 700 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
 
-    /* Subtle Sovereign Indian Tricolour Accent & Editorial Masthead */
+    /* 5. Force All Inputs, Dropdowns, File Uploaders & Popover Menus to Crisp White */
+    [data-baseweb="select"] > div,
+    [data-baseweb="input"] > div,
+    [data-baseweb="base-input"],
+    [data-baseweb="textarea"],
+    input, textarea {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        -webkit-text-fill-color: #111111 !important;
+        caret-color: #111111 !important;
+        border-color: #D5CBB8 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #6B6659 !important;
+        -webkit-text-fill-color: #6B6659 !important;
+    }
+    [data-baseweb="select"] span,
+    [data-baseweb="select"] div,
+    [data-baseweb="select"] svg {
+        color: #111111 !important;
+        fill: #111111 !important;
+    }
+    /* Dropdown Popover List When Clicked */
+    [data-baseweb="popover"],
+    [data-baseweb="popover"] > div,
+    [data-baseweb="menu"],
+    ul[role="listbox"],
+    li[role="option"] {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+    li[role="option"]:hover,
+    li[role="option"][aria-selected="true"] {
+        background-color: #F8F5EC !important;
+        color: #8B6914 !important;
+    }
+    /* File Uploader Box */
+    [data-testid="stFileUploader"] section,
+    [data-testid="stFileUploaderDropzone"] {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        border: 1px dashed #C8BFA8 !important;
+        border-radius: 2px !important;
+    }
+    [data-testid="stFileUploaderDropzone"] *,
+    [data-testid="stFileUploader"] small,
+    [data-testid="stFileUploader"] span {
+        color: #111111 !important;
+    }
+    [data-testid="stFileUploaderDropzone"] button {
+        background-color: #FAF9F5 !important;
+        color: #111111 !important;
+        border: 1px solid #C8BFA8 !important;
+    }
+    /* Bottom Chat Input Box */
+    [data-testid="stChatInput"],
+    [data-testid="stChatInput"] > div {
+        background-color: #FAF9F5 !important;
+        border: 1px solid #D5CBB8 !important;
+        border-radius: 3px !important;
+    }
+    [data-testid="stChatInput"] textarea {
+        background-color: transparent !important;
+        color: #111111 !important;
+        -webkit-text-fill-color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-size: 1.03rem !important;
+    }
+
+    /* 6. Subtle Sovereign Indian Tricolour Accent & Editorial Masthead */
     .sovereign-masthead {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
         border: 1px solid #E5E0D5;
         border-left: 4px solid #8B6914;
         border-radius: 2px;
@@ -662,7 +772,7 @@ st.markdown("""
         padding: 14px 20px 12px 20px;
     }
     .masthead-kicker {
-        color: #8B6914;
+        color: #8B6914 !important;
         font-family: 'Times New Roman', Times, Georgia, serif;
         font-size: 0.76rem;
         font-weight: 700;
@@ -671,7 +781,7 @@ st.markdown("""
         margin-bottom: 2px;
     }
     .masthead-title {
-        color: #111111;
+        color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif;
         font-size: 1.85rem;
         font-weight: 700;
@@ -679,60 +789,57 @@ st.markdown("""
         letter-spacing: -0.01em;
     }
     .masthead-sub {
-        color: #333333;
+        color: #333333 !important;
         font-family: 'Times New Roman', Times, Georgia, serif;
         font-size: 0.96rem;
         margin: 0;
     }
 
-    /* Courtroom Pleading Cards for Chat Messages */
+    /* 7. Courtroom Pleading Cards & Tables */
     [data-testid="stChatMessage"] {
-        background-color: #FFFFFF;
-        border: 1px solid #E5E0D5;
-        border-left: 3px solid #8B6914;
+        background-color: #FFFFFF !important;
+        border: 1px solid #E5E0D5 !important;
+        border-left: 3px solid #8B6914 !important;
         border-radius: 3px;
         padding: 18px 22px;
         margin-bottom: 14px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
     }
-
-    /* High-Contrast Judicial Tables */
     .stMarkdown table {
         width: 100%;
         border-collapse: collapse;
         margin: 12px 0 18px 0;
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
     }
     .stMarkdown th {
-        background-color: #F8F5EC;
+        background-color: #F8F5EC !important;
         color: #8B6914 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-weight: 700;
         text-align: left;
         padding: 9px 12px;
-        border: 1px solid #D5CBB8;
+        border: 1px solid #D5CBB8 !important;
     }
     .stMarkdown td {
+        background-color: #FFFFFF !important;
         padding: 8px 12px;
-        border: 1px solid #E5E0D5;
+        border: 1px solid #E5E0D5 !important;
         color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
     }
 
-    /* Active Docket Badge */
+    /* 8. Active Docket Badge & Buttons */
     .docket-badge {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
         border: 1px solid #DCD5C6;
         border-left: 3px solid #8B6914;
         padding: 8px 11px;
         border-radius: 2px;
         font-size: 0.88rem;
-        color: #111111;
+        color: #111111 !important;
         margin: 6px 0 10px 0;
         font-family: 'Times New Roman', Times, Georgia, serif;
     }
-
-    /* Crisp Courtroom Buttons & Expanders */
     .stButton > button[kind="primary"],
     [data-testid="stFormSubmitButton"] > button {
         background-color: #111111 !important;
@@ -743,6 +850,10 @@ st.markdown("""
         font-weight: 600 !important;
         letter-spacing: 0.02em;
     }
+    .stButton > button[kind="primary"] *,
+    [data-testid="stFormSubmitButton"] > button * {
+        color: #FFFFFF !important;
+    }
     .stButton > button[kind="primary"]:hover,
     [data-testid="stFormSubmitButton"] > button:hover {
         background-color: #8B6914 !important;
@@ -750,7 +861,8 @@ st.markdown("""
         border-color: #8B6914 !important;
     }
     .stButton > button[kind="secondary"],
-    .stDownloadButton > button {
+    .stDownloadButton > button,
+    [data-testid="stLinkButton"] > a {
         background-color: #FFFFFF !important;
         color: #111111 !important;
         border: 1px solid #C8BFA8 !important;
@@ -758,11 +870,10 @@ st.markdown("""
         font-family: 'Times New Roman', Times, Georgia, serif !important;
         font-weight: 600 !important;
     }
-    [data-testid="stExpander"] {
-        background-color: #FFFFFF;
-        border: 1px solid #E5E0D5 !important;
-        border-radius: 2px !important;
-        margin-bottom: 8px;
+    .stButton > button[kind="secondary"] *,
+    .stDownloadButton > button *,
+    [data-testid="stLinkButton"] > a * {
+        color: #111111 !important;
     }
     </style>
     
