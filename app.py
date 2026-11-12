@@ -452,24 +452,25 @@ Enrollment No.: [INSERT ENROLLMENT NO.]
 DRAFTING BLUEPRINT — COURT-READY VAKALATNAMA:
 STRICT RULES FOR THIS TEMPLATE:
 - Output ONLY the formal Court Vakalatnama below.
-- Populate the Court Name, Party Names, and Party Roles from the record, and retain bold `[INSERT ...]` placeholders in ALL CAPS for any missing advocate or case number detail.
-- Keep `... COMPLAINANT / PETITIONER / PLAINTIFF` and `... ACCUSED / RESPONDENT / DEFENDANT` on their own separate line below the party names.
+- Populate the Court Name, Party Names, and exact Party Roles (e.g., COMPLAINANT and ACCUSED for Sec 138 NI Act; PETITIONER and RESPONDENT for Sec 528 BNSS; PLAINTIFF and DEFENDANT for Civil Suits) from the record.
+- Put `IN THE MATTER OF:`, each Party Name, and each `... ROLE` on their own separate lines.
 
 IN THE COURT OF [INSERT COURT NAME] AT [INSERT PLACE]
 CASE / COMPLAINT / PETITION NO. ________ OF 2026
 
 IN THE MATTER OF:
-[Full Name of Complainant / Petitioner / Plaintiff]
-... COMPLAINANT / PETITIONER / PLAINTIFF
+
+[Insert Full Name of Complainant / Petitioner / Plaintiff from Record]
+... [Select Exact Role: COMPLAINANT / PETITIONER / PLAINTIFF]
 
 VERSUS
 
-[Full Name of Accused / Respondent / Defendant]
-... ACCUSED / RESPONDENT / DEFENDANT
+[Insert Full Name of Accused / Respondent / Defendant from Record]
+... [Select Exact Role: ACCUSED / RESPONDENT / DEFENDANT]
 
 VAKALATNAMA
 
-KNOW ALL TO WHOM THESE PRESENTS SHALL COME that I/We, the undersigned **[INSERT FULL NAME & ADDRESS OF CLIENT SIGNING VAKALATNAMA]**, being the **[Complainant / Petitioner / Plaintiff / Accused / Respondent / Defendant]** in the above-captioned matter, do hereby appoint, retain, and engage:
+KNOW ALL TO WHOM THESE PRESENTS SHALL COME that I/We, the undersigned **[Insert Full Name of Client Entity/Individual from Record, and `[INSERT COMPLETE ADDRESS]` if address is not on record]**, being the **[Complainant / Petitioner / Plaintiff / Accused / Respondent / Defendant]** in the above-captioned matter, do hereby appoint, retain, and engage:
 
 [NAME OF ADVOCATE]
 Advocate | Enrollment No.: [INSERT ENROLLMENT NO.]
@@ -503,7 +504,7 @@ CLIENT(S) / EXECUTANT(S) SIGNATURE BLOCK:
 # 3. MASTER AUDIT SYSTEM ROLE (FOR CHAT & PDF DOCKET AUDITS — MODES 1, 2 & 3)
 SYSTEM_ROLE = """
 You are an expert Indian Litigation & Chambers Audit Engine (Agent VIDHI).
-Your job is to audit case facts/documents, identify every legal flaw, tell the lawyer the EXACT next procedural step for BOTH sides (Defense and Complainant) based on the current stage of the matter, and direct them to generate the required documents via **Section 3: Agent LEKHAK (Drafting Engine)** and **Section 4: Agent DOOT (Clerk & Dispatch)** in the sidebar.
+Your job is to audit case facts/documents, identify every legal flaw, tell the lawyer the EXACT next procedural step for BOTH sides (Defense and Complainant) based on the current stage of the matter, and direct them to generate the required documents via **Section II: Agent LEKHAK (Drafting Engine)** and **Section III: Agent DOOT (Clerk & Dispatch)** in the sidebar.
 
 CORE LEGAL & MATH RULES (PERFORM AUTOMATICALLY):
 1. Calendar Math [Sec 9 General Clauses Act]:
@@ -522,7 +523,7 @@ STRICT ACCURACY & FORMATTING RULES:
 - NEVER ECHO PROMPT INSTRUCTIONS: Never print internal instructions or template directions in your response. Output only the final legal analysis.
 - HIGH RECALL & UTILITY: Never hide or suppress a genuine factual, procedural, or statutory flaw. Every point must be accurate, grounded in the text, and useful.
 - NO HTML IN TABLES: NEVER use `<br>` or any HTML tags inside Markdown tables. Keep table cells on a single line using dashes (`—`) or semicolons (`;`).
-- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Section 3: Agent LEKHAK (Drafting Engine)** for BOTH **Defense** and **Complainant** from these 7 options:
+- DUAL-SIDE STAGE-AWARE NEXT STEPS (CRITICAL): Always state the next step AND the exact template to select in **Agent LEKHAK (Drafting Engine)** for BOTH **Defense** and **Complainant** from these 7 options:
   1. `"Statutory Demand Notice (Sec 138 NI Act)"`
   2. `"Reply to Legal Demand Notice (Defense)"`
   3. `"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`
@@ -541,11 +542,11 @@ MODE 1: WHEN NO PDF IS UPLOADED
   ### 2. Legal Audit & Findings
   * **[Title of Finding / Defect]:** Exact statutory section, Supreme Court precedent, and legal impact.
   ### 3. Immediate Next Course of Action & Document Generation
-  * **🛡️ If Acting for Defense (Noticee / Accused):** Exact next procedural step and defense strategy.
-  * **⚔️ If Acting for Complainant (Payee / Claimant):** Exact next procedural step, curability, or civil recovery route.
-  * **⚡ Generate in Nyaya-Agent Now (Section 3 — Agent LEKHAK & Section 4 — Agent DOOT):**
-    * **For Defense:** Select 👉 **`"[Exact Defense Template Name]"`** (and **`"[2nd Defense Template if applicable]"`**)
-    * **For Complainant:** Select 👉 **`"[Exact Complainant Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
+  * **If Acting for Defense (Noticee / Accused):** Exact next procedural step and defense strategy.
+  * **If Acting for Complainant (Payee / Claimant):** Exact next procedural step, curability, or civil recovery route.
+  * **Generate in Nyaya-Agent Now (Agent LEKHAK & Agent DOOT):**
+    * **For Defense:** Select **`"[Exact Defense Template Name]"`** (and **`"[2nd Defense Template if applicable]"`**)
+    * **For Complainant:** Select **`"[Exact Complainant Template Name]"`** + **`"Vakalatnama (Court Authorization Form)"`**
 
 - If the user asks a GENERAL / CONCEPTUAL LEGAL QUESTION (no case dates):
   Answer directly and clearly in under 180 words using clean headings and bullet points with exact statutory sections and Supreme Court precedents. Do NOT show a timeline table if no dates are involved.
@@ -565,11 +566,11 @@ MODE 2: WHEN PDF DOCKET(S) ARE UPLOADED (CASE AUDIT & ACTION PLAN)
   * **Legal Impact:** How this affects the validity of the notice, complaint, or party array.
 
 ### 3. Next Course of Action & Document Generation
-* **🛡️ If Acting for Defense (Recipient / Noticee / Accused):** State the immediate next procedural step (e.g., serve a formal Reply to Notice locking in all statutory objections on record and warning against malicious prosecution u/s 223(1) BNSS, or move the High Court u/s 528 BNSS for quashing if a complaint/summoning order is already passed).
-* **⚔️ If Acting for Complainant (Sender / Payee / Claimant):** State whether each defect can be cured (e.g., re-present cheque if still within 3 months, issue a corrected severed notice if still within 30 days of Return Memo, or abandon Sec 138 criminal prosecution if the cheque is stale and institute a Summary Suit u/o XXXVII CPC with 18% interest u/s 80 NI Act).
-* **⚡ Generate in Nyaya-Agent Now (Navigate to Section 3: Agent LEKHAK & Section 4: Agent DOOT):**
-  * **🛡️ If Acting for Defense:** Select 👉 **`"Reply to Legal Demand Notice (Defense)"`** (at Pre-Cognizance Notice stage) OR 👉 **`"Sec 528 BNSS (482 CrPC) Quashing Petition"`** + **`"Court List of Dates & Events (LoD)"`** + **`"Vakalatnama (Court Authorization Form)"`** (if Summons/Complaint is issued).
-  * **⚔️ If Acting for Complainant:** Select 👉 **`"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`** + **`"Vakalatnama (Court Authorization Form)"`** (where Sec 138 is time-barred/stale) OR 👉 **`"Statutory Demand Notice (Sec 138 NI Act)"`** / **`"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`** (where timelines are valid).
+* **If Acting for Defense (Recipient / Noticee / Accused):** State the immediate next procedural step (e.g., serve a formal Reply to Notice locking in all statutory objections on record and warning against malicious prosecution u/s 223(1) BNSS, or move the High Court u/s 528 BNSS for quashing if a complaint/summoning order is already passed).
+* **If Acting for Complainant (Sender / Payee / Claimant):** State whether each defect can be cured (e.g., re-present cheque if still within 3 months, issue a corrected severed notice if still within 30 days of Return Memo, or abandon Sec 138 criminal prosecution if the cheque is stale and institute a Summary Suit u/o XXXVII CPC with 18% interest u/s 80 NI Act).
+* **Generate in Nyaya-Agent Now (Sidebar — Agent LEKHAK & Agent DOOT):**
+  * **If Acting for Defense:** Select **`"Reply to Legal Demand Notice (Defense)"`** (at Pre-Cognizance Notice stage) OR **`"Sec 528 BNSS (482 CrPC) Quashing Petition"`** + **`"Court List of Dates & Events (LoD)"`** + **`"Vakalatnama (Court Authorization Form)"`** (if Summons/Complaint is issued).
+  * **If Acting for Complainant:** Select **`"Civil Recovery Notice / Order XXXVII Summary Suit Draft"`** + **`"Vakalatnama (Court Authorization Form)"`** (where Sec 138 is time-barred/stale) OR **`"Statutory Demand Notice (Sec 138 NI Act)"`** / **`"Complaint u/s 138 NI Act r/w Sec 223 BNSS"`** (where timelines are valid).
 
 *(Note: If the uploaded PDF is a Court Judgment/Order, summarize: **1. Bench & Holding**, **2. Key Facts**, **3. Core Ratio & Paragraphs (`[PAGE X]`)**, and **4. How to Deploy This Precedent**).*
 
@@ -580,81 +581,198 @@ MODE 3: FOLLOW-UP QUESTIONS IN CHAT
 - Only include a table if comparing multiple dates or provisions (never use `<br>` inside table cells).
 """
 
-# 4. CLEAN CHAMBERS UI (Midnight & Gold Aesthetic)
+# 4. EDITORIAL COURTROOM UI (Crisp White Canvas, Pure Black Times New Roman, Burnished Gold Headings & Subtle Tricolour Bar)
 st.markdown("""
     <style>
+    /* Global Canvas & Editorial Typography */
     .stApp {
-        background-color: #0B0F19;
-        color: #E2E8F0;
+        background-color: #FFFFFF;
+        color: #111111;
+        font-family: 'Times New Roman', Times, Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    [data-testid="stSidebar"] {
-        background-color: #111827;
-        border-right: 1px solid #1E293B;
+    
+    /* Ensure all standard paragraphs, lists, and chat output render in crisp black Times New Roman */
+    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span, [data-testid="stChatMessageContent"] {
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-size: 1.07rem;
+        line-height: 1.65;
     }
-    .legal-header {
-        border-left: 4px solid #C5A059;
-        padding-left: 16px;
-        margin-bottom: 20px;
-    }
-    .legal-header h1 {
-        color: #F8FAFC;
-        font-family: 'Georgia', serif;
-        font-size: 2.1rem;
-        margin-bottom: 2px;
-    }
-    .legal-header p {
-        color: #94A3B8;
-        font-size: 0.95rem;
-        margin-top: 0;
-    }
-    [data-testid="stChatMessage"] {
-        background-color: #131B2E;
-        border: 1px solid #1E293B;
-        border-radius: 8px;
-        padding: 18px;
-        margin-bottom: 14px;
-        line-height: 1.6;
-    }
-    .stMarkdown h3 {
-        color: #C5A059 !important;
-        font-family: 'Georgia', serif;
-        border-bottom: 1px solid #1E293B;
-        padding-bottom: 6px;
-        margin-top: 22px;
+
+    /* Burnished Courtroom Gold Headings */
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+        color: #8B6914 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.01em;
+        border-bottom: 1px solid #E6DEC8;
+        padding-bottom: 5px;
+        margin-top: 20px;
         margin-bottom: 12px;
     }
+
+    /* Clean Archival Parchment Sidebar (Harvey-Style Decluttered Workspace) */
+    [data-testid="stSidebar"] {
+        background-color: #FAF9F5;
+        border-right: 1px solid #E5E0D5;
+    }
+    [data-testid="stSidebar"] .stMarkdown h3,
+    [data-testid="stSidebar"] .stMarkdown h4 {
+        color: #8B6914 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-size: 1.02rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #E5E0D5;
+        padding-bottom: 4px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] .stCaption,
+    [data-testid="stSidebar"] p {
+        color: #1A1A1A !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+
+    /* Subtle Sovereign Indian Tricolour Accent & Editorial Masthead */
+    .sovereign-masthead {
+        background-color: #FFFFFF;
+        border: 1px solid #E5E0D5;
+        border-left: 4px solid #8B6914;
+        border-radius: 2px;
+        margin-bottom: 22px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        overflow: hidden;
+    }
+    .tricolour-rule {
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(
+            90deg,
+            #C86428 0%, #C86428 33.33%,
+            #FFFFFF 33.33%, #FFFFFF 66.66%,
+            #1B6B2F 66.66%, #1B6B2F 100%
+        );
+        border-bottom: 1px solid #EBE6DC;
+    }
+    .masthead-body {
+        padding: 14px 20px 12px 20px;
+    }
+    .masthead-kicker {
+        color: #8B6914;
+        font-family: 'Times New Roman', Times, Georgia, serif;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+    }
+    .masthead-title {
+        color: #111111;
+        font-family: 'Times New Roman', Times, Georgia, serif;
+        font-size: 1.85rem;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+        letter-spacing: -0.01em;
+    }
+    .masthead-sub {
+        color: #333333;
+        font-family: 'Times New Roman', Times, Georgia, serif;
+        font-size: 0.96rem;
+        margin: 0;
+    }
+
+    /* Courtroom Pleading Cards for Chat Messages */
+    [data-testid="stChatMessage"] {
+        background-color: #FFFFFF;
+        border: 1px solid #E5E0D5;
+        border-left: 3px solid #8B6914;
+        border-radius: 3px;
+        padding: 18px 22px;
+        margin-bottom: 14px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    /* High-Contrast Judicial Tables */
     .stMarkdown table {
         width: 100%;
         border-collapse: collapse;
         margin: 12px 0 18px 0;
+        background-color: #FFFFFF;
     }
     .stMarkdown th {
-        background-color: #1E293B;
-        color: #C5A059;
-        font-weight: 600;
+        background-color: #F8F5EC;
+        color: #8B6914 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 700;
         text-align: left;
-        padding: 10px 12px;
-        border: 1px solid #334155;
+        padding: 9px 12px;
+        border: 1px solid #D5CBB8;
     }
     .stMarkdown td {
-        padding: 9px 12px;
-        border: 1px solid #1E293B;
-        color: #E2E8F0;
+        padding: 8px 12px;
+        border: 1px solid #E5E0D5;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
     }
+
+    /* Active Docket Badge */
     .docket-badge {
-        background-color: #131B2E;
-        border-left: 3px solid #C5A059;
-        padding: 10px 12px;
-        border-radius: 4px;
-        font-size: 0.85rem;
-        color: #E2E8F0;
-        margin: 8px 0 12px 0;
+        background-color: #FFFFFF;
+        border: 1px solid #DCD5C6;
+        border-left: 3px solid #8B6914;
+        padding: 8px 11px;
+        border-radius: 2px;
+        font-size: 0.88rem;
+        color: #111111;
+        margin: 6px 0 10px 0;
+        font-family: 'Times New Roman', Times, Georgia, serif;
+    }
+
+    /* Crisp Courtroom Buttons & Expanders */
+    .stButton > button[kind="primary"],
+    [data-testid="stFormSubmitButton"] > button {
+        background-color: #111111 !important;
+        color: #FFFFFF !important;
+        border: 1px solid #8B6914 !important;
+        border-radius: 2px !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.02em;
+    }
+    .stButton > button[kind="primary"]:hover,
+    [data-testid="stFormSubmitButton"] > button:hover {
+        background-color: #8B6914 !important;
+        color: #FFFFFF !important;
+        border-color: #8B6914 !important;
+    }
+    .stButton > button[kind="secondary"],
+    .stDownloadButton > button {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        border: 1px solid #C8BFA8 !important;
+        border-radius: 2px !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 600 !important;
+    }
+    [data-testid="stExpander"] {
+        background-color: #FFFFFF;
+        border: 1px solid #E5E0D5 !important;
+        border-radius: 2px !important;
+        margin-bottom: 8px;
     }
     </style>
     
-    <div class="legal-header">
-        <h1>⚖️ Nyaya-Agent: Autonomous Chambers OS</h1>
-        <p>Multi-Agent Legal Architecture — <b>NETRA</b> (Docket/Vision) • <b>VIDHI</b> (Procedural Audit) • <b>LEKHAK</b> (Senior Pleading Engine) • <b>DOOT</b> (Clerk & Dispatch)</p>
+    <div class="sovereign-masthead">
+        <div class="tricolour-rule"></div>
+        <div class="masthead-body">
+            <div class="masthead-kicker">Sovereign Indian Litigation Chambers Infrastructure</div>
+            <div class="masthead-title">NYAYA-AGENT</div>
+            <p class="masthead-sub"><b>NETRA</b> (Docket &amp; Vision Ingestion) &nbsp;&bull;&nbsp; <b>VIDHI</b> (Limitation &amp; Precedent Audit) &nbsp;&bull;&nbsp; <b>LEKHAK</b> (Senior Pleading Engine) &nbsp;&bull;&nbsp; <b>DOOT</b> (Chambers Clerk)</p>
+        </div>
     </div>
 """, unsafe_allow_html=True)
 
@@ -750,6 +868,14 @@ def create_word_doc(markdown_text, doc_title="Legal_Document"):
         r'(IN THE [A-Z\s\(\)]*COURT[^\n]*?)\bAT ([A-Z\s]{3,25}) AT \2\b',
         r'\1AT \2',
         cleaned
+    )
+    # Guardrail 3: Ensure "IN THE MATTER OF:" and "... ROLE" always break onto separate lines for Vakalatnama & Cause Titles
+    cleaned = re.sub(r'(IN THE MATTER OF:)\s+', r'\1\n', cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(
+        r'([^\n])\s+(\.\.\.\s*(?:COMPLAINANT|ACCUSED|PETITIONER|RESPONDENT|PLAINTIFF|DEFENDANT|\[SELECT))',
+        r'\1\n\2',
+        cleaned,
+        flags=re.IGNORECASE
     )
     cleaned = re.sub(r'^```[a-zA-Z]*\n', '', cleaned.strip())
     cleaned = re.sub(r'\n```$', '', cleaned.strip())
@@ -1083,35 +1209,17 @@ def call_model(model_name, api_key_or_pool, payload):
     elapsed = time.time() - start_time
     return {"success": False, "model": model_name, "error": last_error, "time": elapsed}
 
-# 8. STREAMLINED SIDEBAR (MULTI-AGENT CHAMBERS WORKFLOW)
+# 8. DECLUTTERED CHAMBERS SIDEBAR (EDITORIAL HARVEY-STYLE WORKSPACE — ALL PARAMETERS INTACT)
 with st.sidebar:
-    st.markdown("### 1. Chambers Setup")
     cloud_keys = get_api_key_pool("")
-    user_api_key = st.text_input(
-        "Google API Key (Optional if Cloud Key Active)",
-        type="password",
-        placeholder="Chambers Cloud Key Pool Active..." if cloud_keys else "Paste AI Studio Key(s)..."
-    )
-    api_key_pool = get_api_key_pool(user_api_key)
-    if cloud_keys and not user_api_key.strip():
-        st.caption(f"🔒 **Chambers Cloud Key Active ({len(cloud_keys)} Key Pool)** — Ready for law firm testing.")
 
-    routing_mode = st.radio(
-        "Inference Mode",
-        [
-            "🔥 High (3.8 → 3.6 → 3.1-Pro → 3.5)",
-            "🏇 Parallel Race (3.6 → 3.5-Flash-Lite)"
-        ],
-        index=0
-    )
-    
-    st.markdown("---")
-    st.markdown("### 2. Case Docket (Agent NETRA)")
+    # SECTION I: PRIMARY DOCKET & AUDIT (AGENT NETRA & VIDHI)
+    st.markdown("### I. Case Docket (NETRA & VIDHI)")
     uploaded_pdfs = st.file_uploader(
         "Upload Notice, Complaint, or Case File(s)",
         type=["pdf"],
         accept_multiple_files=True,
-        help="Optional: Upload 1 or more PDFs to audit, or leave empty to ask normal legal questions in chat."
+        help="Upload 1 or more PDFs to audit, or leave empty to enter facts in the main console."
     )
     
     trigger_audit = False
@@ -1119,7 +1227,7 @@ with st.sidebar:
     if uploaded_pdfs:
         current_sig = "|".join([f"{f.name}:{f.size}" for f in uploaded_pdfs])
         if current_sig != st.session_state.docket_signature:
-            with st.spinner("👁️ Agent NETRA: Indexing Case Docket & Scanning Exhibits..."):
+            with st.spinner("Agent NETRA: Indexing Case Docket & Exhibits..."):
                 st.session_state.docket_signature = current_sig
                 st.session_state.generated_draft = ""
                 st.session_state.generated_draft_title = ""
@@ -1145,13 +1253,13 @@ with st.sidebar:
                         doc_text = "\n".join(extracted_pages).strip()
                         if len(doc_text) > 30:
                             combined_text_blocks.append(f"\n=== DOCUMENT: {pdf_file.name} ===\n{doc_text}")
-                            file_badges.append(f"📄 `{pdf_file.name}` ({num_p}p)")
+                            file_badges.append(f"• {pdf_file.name} ({num_p}p)")
                         else:
                             vision_files.append({
                                 "name": pdf_file.name,
                                 "base64": base64.b64encode(raw_bytes).decode("utf-8")
                             })
-                            file_badges.append(f"👁️ `{pdf_file.name}` ({num_p}p Scanned)")
+                            file_badges.append(f"• {pdf_file.name} ({num_p}p Scanned)")
                     except Exception:
                         raw_bytes = pdf_file.getvalue()
                         vision_files.append({
@@ -1159,7 +1267,7 @@ with st.sidebar:
                             "base64": base64.b64encode(raw_bytes).decode("utf-8")
                         })
                         total_p += 1
-                        file_badges.append(f"👁️ `{pdf_file.name}` (Scanned)")
+                        file_badges.append(f"• {pdf_file.name} (Scanned)")
                 
                 st.session_state.docket_text = "\n".join(combined_text_blocks).strip()
                 st.session_state.docket_vision_files = vision_files
@@ -1168,12 +1276,12 @@ with st.sidebar:
         
         st.markdown(
             f"<div class='docket-badge'>"
-            f"<b>👁️ Agent NETRA — Active Docket ({st.session_state.total_pages} Page(s)):</b><br>"
+            f"<b>Active Docket ({st.session_state.total_pages} Page(s)):</b><br>"
             f"{st.session_state.docket_summary}"
             f"</div>",
             unsafe_allow_html=True
         )
-        trigger_audit = st.button("⚖️ Agent VIDHI: Audit Case & Next Steps", use_container_width=True, type="primary")
+        trigger_audit = st.button("Audit Docket & Limitation (VIDHI)", use_container_width=True, type="primary")
     else:
         st.session_state.docket_text = ""
         st.session_state.docket_vision_files = []
@@ -1181,49 +1289,80 @@ with st.sidebar:
         st.session_state.docket_summary = ""
         st.session_state.total_pages = 0
 
-    st.markdown("---")
-    st.markdown("### 3. Agent LEKHAK (Drafting Engine)")
+    # SECTION II: SENIOR PLEADING ENGINE (AGENT LEKHAK)
+    st.markdown("### II. Pleading Engine (LEKHAK)")
     with st.form("draft_engine_form", border=False):
         draft_type = st.selectbox(
-            "Select Next Document to Generate",
+            "Select Legal Instrument",
             list(DRAFT_BLUEPRINTS.keys())
         )
-        trigger_draft = st.form_submit_button("✍️ Hand Off to Agent LEKHAK (Draft)", use_container_width=True)
+        trigger_draft = st.form_submit_button("Draft Pleading (LEKHAK)", use_container_width=True)
 
-    # ONLY UNLOCK WORD DOWNLOAD ONCE AGENT LEKHAK HAS GENERATED A LEGAL DOCUMENT
     if st.session_state.generated_draft:
         safe_filename = re.sub(r'[^A-Za-z0-9]+', '_', st.session_state.generated_draft_title).strip('_') + ".doc"
         st.download_button(
-            label="📥 Agent LEKHAK: Export Word (.doc)",
+            label="Download MS Word Pleading (.doc)",
             data=create_word_doc(st.session_state.generated_draft, st.session_state.generated_draft_title),
             file_name=safe_filename,
             mime="application/msword",
             use_container_width=True
         )
-        st.caption("⚠️ **Counsel Review:** Verify all `[BRACKETED PLACEHOLDERS]`, dates, and annexures in MS Word before signing/filing.")
-    else:
-        st.caption("💡 Click **✍️ Hand Off to Agent LEKHAK** above to unlock the editable Word (`.doc`) download.")
+        st.caption("Counsel Review: Verify bracketed placeholders and dates in MS Word prior to filing.")
 
-    st.markdown("---")
-    st.markdown("### 4. Agent DOOT (Clerk & Dispatch)")
-    doot_deadline_type = st.selectbox(
-        "Statutory Deadline / Alert Type",
-        [
-            "15-Day Notice Cure Expiry (Sec 138(c) NI Act)",
-            "30-Day Notice Dispatch Limit (Sec 138(b) NI Act)",
-            "1-Month Complaint Filing Limit (Sec 142(1)(b))",
-            "Sec 528 BNSS High Court Filing / Hearing"
-        ]
-    )
-    doot_date = st.date_input("Statutory Deadline / Hearing Date", value=datetime.today() + timedelta(days=15))
+    # SECTION III: CLERK & CLIENT DISPATCH (COLLAPSIBLE DRAWER — AGENT DOOT)
+    with st.expander("III. Clerk & Client Dispatch (DOOT)", expanded=bool(st.session_state.doot_whatsapp_msg)):
+        doot_deadline_type = st.selectbox(
+            "Statutory Deadline / Alert Type",
+            [
+                "15-Day Notice Cure Expiry (Sec 138(c) NI Act)",
+                "30-Day Notice Dispatch Limit (Sec 138(b) NI Act)",
+                "1-Month Complaint Filing Limit (Sec 142(1)(b))",
+                "Sec 528 BNSS High Court Filing / Hearing"
+            ]
+        )
+        doot_date = st.date_input("Statutory Deadline / Hearing Date", value=datetime.today() + timedelta(days=15))
+        trigger_doot = st.button("Prepare Client Briefing & Alert", use_container_width=True)
 
-    if st.button("📬 Agent DOOT: Prepare Client Dispatch", use_container_width=True):
+        if st.session_state.doot_whatsapp_msg:
+            st.text_area("Client Briefing (WhatsApp)", st.session_state.doot_whatsapp_msg, height=135)
+            encoded_wa = urllib.parse.quote(st.session_state.doot_whatsapp_msg)
+            st.link_button("Dispatch via WhatsApp", f"https://wa.me/?text={encoded_wa}", use_container_width=True)
+            st.download_button(
+                label="Download Calendar Alert (.ics)",
+                data=st.session_state.doot_calendar_ics,
+                file_name="Nyaya_Agent_Statutory_Deadline.ics",
+                mime="text/calendar",
+                use_container_width=True
+            )
+
+    # SECTION IV: CHAMBERS & ENGINE SETUP (COLLAPSIBLE DRAWER — AUTO-TUCKED WHEN CLOUD KEY ACTIVE)
+    with st.expander("IV. Chambers & Engine Setup", expanded=not bool(cloud_keys)):
+        user_api_key = st.text_input(
+            "Google API Key",
+            type="password",
+            placeholder="Cloud Key Pool Active..." if cloud_keys else "Paste AI Studio Key(s)..."
+        )
+        api_key_pool = get_api_key_pool(user_api_key)
+        if cloud_keys and not user_api_key.strip():
+            st.caption(f"Chambers Cloud Key Active ({len(cloud_keys)} Key Pool)")
+
+        routing_mode = st.radio(
+            "Inference Mode",
+            [
+                "High Precision (3.8 → 3.6 → 3.1-Pro → 3.5)",
+                "Parallel Race (3.6 → 3.5-Flash-Lite)"
+            ],
+            index=0
+        )
+
+    # HANDLE AGENT DOOT EXECUTION
+    if trigger_doot:
         if not st.session_state.messages and not st.session_state.docket_text:
-            st.warning("Run an Audit or enter case facts first so Agent DOOT can summarize the case.")
+            st.warning("Run a Case Audit or enter case facts first so Agent DOOT can prepare the client briefing.")
         elif not api_key_pool:
-            st.error("Please configure your Google API Key in Sidebar or Streamlit Secrets.")
+            st.error("Please configure your Google API Key in Section IV or Streamlit Secrets.")
         else:
-            with st.spinner("📬 Agent DOOT: Drafting WhatsApp Client Update & Calendar Alert..."):
+            with st.spinner("Agent DOOT: Preparing Client Briefing & Calendar Alert..."):
                 case_ctx = "\n\n".join([f"{m['role'].upper()}: {m['content']}" for m in st.session_state.messages[-4:]])
                 if not case_ctx and st.session_state.docket_text:
                     case_ctx = st.session_state.docket_text[:8000]
@@ -1252,23 +1391,11 @@ with st.sidebar:
                             doot_date,
                             st.session_state.doot_whatsapp_msg
                         )
+                        st.rerun()
                         break
 
-    if st.session_state.doot_whatsapp_msg:
-        st.text_area("📱 WhatsApp Client Summary (Agent DOOT)", st.session_state.doot_whatsapp_msg, height=145)
-        encoded_wa = urllib.parse.quote(st.session_state.doot_whatsapp_msg)
-        st.link_button("📲 Send to Client on WhatsApp", f"https://wa.me/?text={encoded_wa}", use_container_width=True)
-        st.download_button(
-            label="📅 Download Calendar Alert (.ics)",
-            data=st.session_state.doot_calendar_ics,
-            file_name="Nyaya_Agent_Statutory_Deadline.ics",
-            mime="text/calendar",
-            use_container_width=True
-        )
-
     st.markdown("---")
-    st.caption("🤖 **Active Swarm (v1.1):** `NETRA` → `VIDHI` → `LEKHAK` → `DOOT`  \n🚀 **v2.0 Next:** `BHASHA` (Indic Layer) • `KHOJ` (E-Courts)")
-    if st.button("🗑️ New Case / Clear Chat", use_container_width=True):
+    if st.button("New Matter / Clear Record", use_container_width=True):
         st.session_state.messages = []
         st.session_state.generated_draft = ""
         st.session_state.generated_draft_title = ""
@@ -1283,14 +1410,14 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 10. CAPTURE USER ACTION (CHAT, AUDIT, OR DRAFT) & LOCK IN SESSION STATE
-chat_prompt = st.chat_input("Ask a legal question, paste case dates, or ask about the uploaded PDF...")
+chat_prompt = st.chat_input("Enter case facts with dates, statutory queries, or questions regarding the uploaded docket...")
 
 if trigger_audit and st.session_state.docket_signature:
     st.session_state.messages = []
     st.session_state.generated_draft = ""
     st.session_state.generated_draft_title = ""
     audit_prompt = (
-        "⚖️ **Agent Handoff (`NETRA → VIDHI` — Procedural & Limitation Audit):** Execute MODE 2 for the uploaded document(s). "
+        "**Agent Handoff (`NETRA → VIDHI` — Procedural & Limitation Audit):** Execute MODE 2 for the uploaded document(s). "
         "Verify all statutory timelines automatically, list every genuine legal/factual defect clearly with exact page/paragraph citations, "
         "and under Section 3 state the immediate next procedural step and exact **Agent LEKHAK** sidebar document to generate for "
         "BOTH **Defense (Noticee/Accused)** and **Complainant (Payee/Claimant)**."
@@ -1301,9 +1428,9 @@ if trigger_audit and st.session_state.docket_signature:
 
 elif trigger_draft:
     if not st.session_state.messages and not st.session_state.docket_signature:
-        st.warning("Please upload a PDF or enter case facts in the chat first before generating a document.")
+        st.warning("Please upload a PDF docket or enter case facts in the console before generating a pleading.")
     else:
-        draft_prompt = f"✍️ **Agent Handoff (`VIDHI → LEKHAK` — Senior Pleading Drafter):** Generate `{draft_type}`"
+        draft_prompt = f"**Agent Handoff (`VIDHI → LEKHAK` — Senior Pleading Drafter):** Generate `{draft_type}`"
         st.session_state.messages.append({"role": "user", "content": draft_prompt})
         st.session_state.pending_request = {"is_draft": True, "draft_type": draft_type}
         st.rerun()
@@ -1322,12 +1449,12 @@ if st.session_state.pending_request:
         if not api_key_pool:
             st.session_state.messages.pop()
             st.session_state.pending_request = None
-            st.error("Please enter your Google API Key in the sidebar or configure `GEMINI_API_KEY` in Streamlit Secrets.")
+            st.error("Please enter your Google API Key in Section IV of the sidebar or configure `GEMINI_API_KEY` in Streamlit Secrets.")
         else:
             spinner_text = (
-                f"🤝 Multi-Agent Handoff (VIDHI → LEKHAK): Drafting {active_draft_type}..."
+                f"Agent LEKHAK: Drafting {active_draft_type}..."
                 if is_draft_generation
-                else "⚖️ Agent VIDHI (Procedural & Limitation Agent): Auditing Case & Statutory Timelines..."
+                else "Agent VIDHI: Auditing Case Record & Statutory Timelines..."
             )
             with st.spinner(spinner_text):
                 try:
@@ -1432,7 +1559,7 @@ if st.session_state.pending_request:
                                 break
                             else:
                                 errors.append(f"{result['model']} ({result['error']})")
-                        mode_badge = "🔥 High Mode"
+                        mode_badge = "High Precision"
                         
                     # OPTION 2: PARALLEL RACE (3.6 DOWN TO 3.5-FLASH-LITE + 2.5 SAFETY NET)
                     else:
@@ -1453,19 +1580,19 @@ if st.session_state.pending_request:
                             else:
                                 errors.append(f"{result['model']} ({result['error']})")
                         executor.shutdown(wait=False, cancel_futures=True)
-                        mode_badge = "🏇 Parallel Race"
+                        mode_badge = "Parallel Race"
                     
                     if winner:
                         clean_output = re.sub(r'<br\s*/?>', ' — ', winner["text"], flags=re.IGNORECASE)
                         
                         st.markdown(clean_output)
-                        docket_tag = f" | 📄 {st.session_state.total_pages}p Docket" if st.session_state.total_pages else ""
+                        docket_tag = f" | {st.session_state.total_pages}p Docket" if st.session_state.total_pages else ""
                         if is_draft_generation:
-                            agent_badge = "🤝 Handoff: `NETRA → VIDHI → LEKHAK`" if st.session_state.total_pages else "🤝 Handoff: `VIDHI → LEKHAK`"
+                            agent_badge = "Pipeline: `NETRA → VIDHI → LEKHAK`" if st.session_state.total_pages else "Pipeline: `VIDHI → LEKHAK`"
                         else:
-                            agent_badge = "🤝 Handoff: `NETRA → VIDHI`" if st.session_state.total_pages else "⚖️ Agent: `VIDHI`"
+                            agent_badge = "Pipeline: `NETRA → VIDHI`" if st.session_state.total_pages else "Agent: `VIDHI`"
                             
-                        st.caption(f"{agent_badge} | {mode_badge} | `{winner['model']}` in **{winner['time']:.2f}s**{docket_tag}")
+                        st.caption(f"{agent_badge} | {mode_badge} | `{winner['model']}` ({winner['time']:.2f}s){docket_tag}")
                         st.session_state.messages.append({"role": "assistant", "content": clean_output})
                         
                         if is_draft_generation:
