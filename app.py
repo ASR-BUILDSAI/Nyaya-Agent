@@ -585,14 +585,30 @@ MODE 3: FOLLOW-UP QUESTIONS IN CHAT
 st.markdown("""
     <style>
     /* Global Canvas & Editorial Typography */
-    .stApp {
-        background-color: #FFFFFF;
-        color: #111111;
-        font-family: 'Times New Roman', Times, Georgia, serif;
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
+    /* Force Light Mode on Top Bar & Bottom Chat Bar */
+    header[data-testid="stHeader"],
+    [data-testid="stBottom"],
+    [data-testid="stBottom"] > div,
+    [data-testid="stChatInput"],
+    [data-testid="stChatInput"] > div {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+    }
+    [data-testid="stChatInput"] textarea {
+        background-color: #FAF9F5 !important;
+        color: #111111 !important;
+        border: 1px solid #C8BFA8 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+
     /* Ensure all standard paragraphs, lists, and chat output render in crisp black Times New Roman */
     .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span, [data-testid="stChatMessageContent"] {
         color: #111111 !important;
@@ -613,9 +629,9 @@ st.markdown("""
         margin-bottom: 12px;
     }
 
-    /* Clean Archival Parchment Sidebar (Harvey-Style Decluttered Workspace) */
-    [data-testid="stSidebar"] {
-        background-color: #FAF9F5;
+    /* Clean Archival Parchment Sidebar */
+    [data-testid="stSidebar"], [data-testid="stSidebar"] > div {
+        background-color: #FAF9F5 !important;
         border-right: 1px solid #E5E0D5;
     }
     [data-testid="stSidebar"] .stMarkdown h3,
@@ -632,8 +648,29 @@ st.markdown("""
     }
     [data-testid="stSidebar"] label,
     [data-testid="stSidebar"] .stCaption,
-    [data-testid="stSidebar"] p {
-        color: #1A1A1A !important;
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span {
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+
+    /* Force Crisp White on All Dropdowns, Inputs, Forms & File Uploaders */
+    [data-testid="stForm"],
+    div[data-baseweb="select"] > div,
+    div[data-baseweb="input"] > div,
+    div[data-baseweb="base-input"],
+    input, textarea,
+    [data-testid="stFileUploader"] section,
+    [data-testid="stFileUploader"] button {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        border-color: #C8BFA8 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+    }
+    ul[data-baseweb="menu"],
+    li[role="option"] {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
     }
 
@@ -687,7 +724,7 @@ st.markdown("""
 
     /* Courtroom Pleading Cards for Chat Messages */
     [data-testid="stChatMessage"] {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
         border: 1px solid #E5E0D5;
         border-left: 3px solid #8B6914;
         border-radius: 3px;
@@ -732,34 +769,48 @@ st.markdown("""
         font-family: 'Times New Roman', Times, Georgia, serif;
     }
 
-    /* Crisp Courtroom Buttons & Expanders */
+    /* Crisp White & Burnished Gold Buttons (Fixes Black 'Draft Pleading' Button) */
+    .stButton > button,
     .stButton > button[kind="primary"],
-    [data-testid="stFormSubmitButton"] > button {
-        background-color: #111111 !important;
-        color: #FFFFFF !important;
-        border: 1px solid #8B6914 !important;
+    .stButton > button[kind="secondary"],
+    [data-testid="stFormSubmitButton"] > button,
+    .stDownloadButton > button,
+    [data-testid="stLinkButton"] > a {
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
+        border: 1.5px solid #8B6914 !important;
         border-radius: 2px !important;
         font-family: 'Times New Roman', Times, Georgia, serif !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         letter-spacing: 0.02em;
+        box-shadow: none !important;
     }
-    .stButton > button[kind="primary"]:hover,
-    [data-testid="stFormSubmitButton"] > button:hover {
+    .stButton > button p,
+    [data-testid="stFormSubmitButton"] > button p,
+    .stDownloadButton > button p,
+    [data-testid="stLinkButton"] > a p {
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, Georgia, serif !important;
+        font-weight: 700 !important;
+    }
+    .stButton > button:hover,
+    [data-testid="stFormSubmitButton"] > button:hover,
+    .stDownloadButton > button:hover,
+    [data-testid="stLinkButton"] > a:hover {
         background-color: #8B6914 !important;
         color: #FFFFFF !important;
         border-color: #8B6914 !important;
     }
-    .stButton > button[kind="secondary"],
-    .stDownloadButton > button {
+    .stButton > button:hover p,
+    [data-testid="stFormSubmitButton"] > button:hover p,
+    .stDownloadButton > button:hover p,
+    [data-testid="stLinkButton"] > a:hover p {
+        color: #FFFFFF !important;
+    }
+    [data-testid="stExpander"],
+    [data-testid="stExpander"] summary {
         background-color: #FFFFFF !important;
         color: #111111 !important;
-        border: 1px solid #C8BFA8 !important;
-        border-radius: 2px !important;
-        font-family: 'Times New Roman', Times, Georgia, serif !important;
-        font-weight: 600 !important;
-    }
-    [data-testid="stExpander"] {
-        background-color: #FFFFFF;
         border: 1px solid #E5E0D5 !important;
         border-radius: 2px !important;
         margin-bottom: 8px;
