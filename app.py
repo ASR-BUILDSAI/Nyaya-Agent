@@ -1184,7 +1184,7 @@ if "adv_email" not in st.session_state:
 if "adv_mobile" not in st.session_state:
     st.session_state.adv_mobile = ""
 
-# 6. DETERMINISTIC ADVOCATE LETTERHEAD INJECTOR, WORD (.DOC) & CALENDAR (.ICS) COMPILERS
+# 6. DETERMINISTIC ADVOCATE LETTERHEAD INJECTOR & GLOBAL PLEADING SANITIZER
 def apply_advocate_profile(text):
     out = text
     name_val = st.session_state.adv_name.strip()
@@ -1193,18 +1193,22 @@ def apply_advocate_profile(text):
     email_val = st.session_state.adv_email.strip()
     mobile_val = st.session_state.adv_mobile.strip()
 
+    # 1. Global Fix: Remove duplicate "Section(s) Section" or "Sections Section" across all 11 blueprints
+    out = re.sub(r'\bSection(?:\(s\)|s)?\s+Section(?:\(s\)|s)?\b', 'Section', out, flags=re.IGNORECASE)
+
+    # 2. Stamp Advocate Credentials everywhere
     if name_val:
         out = re.sub(r'\[NAME OF ADVOCATE\]', name_val, out, flags=re.IGNORECASE)
     if enroll_val:
-        out = re.sub(r'\[INSERT ENROLLMENT NO\.\]', enroll_val, out, flags=re.IGNORECASE)
+        out = re.sub(r'\[INSERT ENROLLMENT[^\]]*\]', enroll_val, out, flags=re.IGNORECASE)
     if chamber_val:
-        out = re.sub(r'\[INSERT CHAMBER\s*/\s*OFFICE ADDRESS\]', chamber_val, out, flags=re.IGNORECASE)
+        out = re.sub(r'\[INSERT CHAMBER[^\]]*\]', chamber_val, out, flags=re.IGNORECASE)
     if email_val:
-        out = re.sub(r'\[INSERT EMAIL\]', email_val, out, flags=re.IGNORECASE)
+        out = re.sub(r'\[INSERT EMAIL[^\]]*\]', email_val, out, flags=re.IGNORECASE)
     if mobile_val:
-        out = re.sub(r'\[INSERT MOBILE NO\.\]', mobile_val, out, flags=re.IGNORECASE)
+        out = re.sub(r'\[INSERT MOBILE[^\]]*\]', mobile_val, out, flags=re.IGNORECASE)
 
-    # Also append Chamber, Email & Mobile to any Court Pleading bottom signature block if missing
+    # 3. Ensure Court Pleading bottom signature block has Chamber, Email & Mobile below Enrollment No.
     extra_lines = []
     if chamber_val and chamber_val not in out:
         extra_lines.append(f"Chamber / Office: {chamber_val}")
@@ -1217,6 +1221,13 @@ def apply_advocate_profile(text):
         addon = "\n" + "\n".join(extra_lines)
         out = re.sub(r'(Enrollment No\.:\s*[^\n]+)', r'\1' + addon, out, count=1)
 
+    # 4. Global Fix: If AI placed APPLICANT/ACCUSED/PETITIONER/PLAINTIFF below Email/Mobile, move it above THROUGH
+    out = re.sub(
+        r'(THROUGH\s*\n(?:[^\n]+\n){1,6}?Email:[^\n]+\n)\s*(APPLICANT\s*/\s*ACCUSED|PETITIONER\(S\)|PLAINTIFF|DEFENDANT|COMPLAINANT)',
+        r'\2\n\n\1',
+        out,
+        flags=re.IGNORECASE
+    )
     return out
 
 def create_ics_alert(event_title, deadline_date, description):
@@ -1764,34 +1775,24 @@ with st.sidebar:
     # SECTION IV: CHAMBERS LETTERHEAD & ENGINE SETUP (COLLAPSIBLE DRAWER)
     with st.expander("IV. Chambers Letterhead & Engine Setup", expanded=not bool(cloud_keys)):
         st.caption("Advocate Letterhead Lock (Stamps Notices, Pleadings & Vakalatnama)")
-        st.session_state.adv_name = st.text_input(
-            "Advocate Full Name",
-            value=st.session_state.adv_name
-        )
-        st.session_state.adv_enroll = st.text_input(
-            "Bar Council Enrollment No.",
-            value=st.session_state.adv_enroll
-        )
-        st.session_state.adv_chamber = st.text_input(
-            "Chamber / Office Address",
-            value=st.session_state.adv_chamber
-        )
-        st.session_state.adv_email = st.text_input(
-            "Official Email ID",
-            value=st.session_state.adv_email
-        )
-        st.session_state.adv_mobile = st.text_input(
-            "Mobile Number",
-            value=st.session_state.adv_mobile
-        )
+        st.session_state.adv_name = st.text_input("Advocate Full Name", value=st.session_state.adv_name)
+        st.session_state.adv_enroll = st.text_input("Bar Council Enrollment No.", value=st.session_state.adv_enroll)
+        st.session_state.adv_chamber = st.text_input("Chamber / Office Address", value=st.session_state.adv_chamber)
+        st.session_state.adv_email = st.text_input("Official Email ID", value=st.session_state.adv_email)
+        st.session_state.adv_mobile = st.text_input("Mobile Number", value=st.session_state.adv_mobile)
+
+        if st.button("Save & Stamp Letterhead", use_container_width=True):
+            if st.session_state.generated_draft:
+                st.session_state.generated_draft = apply_advocate_profile(st.session_state.generated_draft)
+                if st.session_state.messages and st.session_state.messages[-1]["role"] == "assistant":
+                    st.session_state.messages[-1]["content"] = st.session_state.generated_draft
+            st.rerun()
+
         if st.session_state.adv_name.strip():
-            st.caption(f"✓ Active Letterhead: {st.session_state.adv_name.strip()}")
+            st.caption(f"✓ Active: {st.session_state.adv_name.strip()} | {st.session_state.adv_mobile.strip()}")
 
         st.markdown("---")
-        user_api_key = st.text_input(
-            "Google API Key",
-            type="password"
-        )
+        user_api_key = st.text_input("Google API Key", type="password")
         api_key_pool = get_api_key_pool(user_api_key)
         if cloud_keys and not user_api_key.strip():
             st.caption(f"Chambers Cloud Key Active ({len(cloud_keys)} Key Pool)")
